@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<JScopeProject>
+    <FileVersion major="1" minor="1" />
+    <Project>
+        <Configuration>
+            <JLink>
+                <Options Connection="1" IsRTTSession="0" IsRTTWithTimeStamp="0" SamplingPeriod="100" SerialNo="0" JTAG_IRPre="0" JTAG_DRPre="0" IP="" TargetDevice="AT32F413CCU7" TargetInterface="SWD" InterfaceSpeed="4000" />
+            </JLink>
+            <ElfFile Name="G:\lww\zcl_0729\ÖÖÖ²¹¤¾ß_F413\project\at_start_f413\examples\usart\zcl_0729\mdk_v5\objects\printf.axf" />
+            <Scope>
+                <Options TimeResolutionUs="1000000" />
+            </Scope>
+        </Configuration>
+        <Windows>
+            <Graph Show="1" />
+            <Watch Show="1" />
+        </Windows>
+        <SelectedSymbols>
+            <Symbol>
+                <Options Name="Ia" Address="0x20000260" Type="double" TypeID="2" Size="8" GraphColorRed="255" GraphColorGreen="0" GraphColorBlue="0" YMinSampled="-0.332457" YMaxSampled="0.367852" YAvgSampled="0.0137067" Offset="4" ShowInGraph="1" ACCoupling="0" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="..\motor_app\motor_app.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ib" Address="0x20000268" Type="double" TypeID="2" Size="8" GraphColorRed="0" GraphColorGreen="0" GraphColorBlue="255" YMinSampled="-0.319816" YMaxSampled="0.365324" YAvgSampled="0.0279427" Offset="12" ShowInGraph="1" ACCoupling="0" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="..\motor_app\motor_app.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+            <Symbol>
+                <Options Name="Ic" Address="0x20000270" Type="double" TypeID="2" Size="8" GraphColorRed="0" GraphColorGreen="255" GraphColorBlue="0" YMinSampled="-0.313496" YMaxSampled="0.357739" YAvgSampled="0.0249779" Offset="20" ShowInGraph="1" ACCoupling="0" YOffset="0" IsAutoConfig="0" YResolution="1" MaxValue="-2147483648" File="..\motor_app\motor_app.c" Scope="0" DrawStyle="0" />
+            </Symbol>
+        </SelectedSymbols>
+    </Project>
+</JScopeProject>

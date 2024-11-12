@@ -1,0 +1,18 @@
+T3A24 000:191.750   SEGGER J-Link V7.86e Log File
+T3A24 000:199.516   DLL Compiled: Mar 22 2023 16:22:22
+T3A24 000:199.526   Logging started @ 2024-10-28 07:42
+T3A24 000:199.533 - 199.537ms
+T3A24 000:199.760 JLINK_SetWarnOutHandler(...)
+T3A24 000:207.327 - 7.571ms
+T3A24 000:207.359 JLINK_OpenEx(...)
+T3A24 000:242.659   Out of sync , resynchronizing...
+T3A24 1562:111.090   Out of sync , resynchronizing...
+T3A24 1562:111.383   Out of sync , resynchronizing...
+T3A24 1562:111.407   
+  ***** Error: 
+T3A24 1562:111.418   Cannot connect to J-Link
+T3A24 1562:128.962 - 1561921.619ms returns "Cannot connect to J-Link"
+T3A24 1562:146.004 JLINK_Close()
+T3A24 1562:154.520 - 8.531ms
+T3A24 1562:154.542   
+T3A24 1562:154.549   Closed

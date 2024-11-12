@@ -1,0 +1,6 @@
+-c --cpu Cortex-M4.fp -g -O0 --apcs=interwork --split_sections -I ..\..\..\..\..\..\libraries\drivers\inc -I ..\..\..\..\..\..\libraries\cmsis\cm4\core_support -I ..\..\..\..\..\..\libraries\cmsis\cm4\device_support -I ..\inc -I ..\at32f413_board -I ..\thread -I ..\middle_port -I ..\motor_app -I ..\VOFA -I ..\..\zcl_0729_V4 -I .\lib -I ..\FreeRTOS -I ..\FreeRTOS\Source -I ..\FreeRTOS\Source\portable\RVDS\ARM_CM4F -I ..\FreeRTOS\Source\portable\MemMang -I ..\FreeRTOS\Source\include -I ..\tool\RTT
+-I.\RTE\_RHINO-Pro_bldc
+-IC:\Keil_v5\ARM\PACK\ARM\CMSIS\5.3.0\CMSIS\Include
+-IC:\Keil_v5\ARM\PACK\ArteryTek\AT32F413_DFP\2.0.6\Device\Include
+-D__UVISION_VERSION="525" -D_RTE_ -DAT32F413CCU7 -DAT32F413CCU7 -DUSE_STDPERIPH_DRIVER -DAT_START_F413_V1 -DAT_START_F413_V1 -D__CC_ARM -D__TARGET_FPU_VFP -D__FPU_PRESENT="1U" -DARM_MATH_CM4 -DDRIVE_BOARD
+-o .\objects\at32f413_usb.o --omf_browse .\objects\at32f413_usb.crf --depend .\objects\at32f413_usb.d "..\..\..\..\..\..\libraries\drivers\src\at32f413_usb.c"

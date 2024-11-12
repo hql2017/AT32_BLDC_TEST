@@ -1,0 +1,12 @@
+.\objects\port.o: ..\..\..\middlewares\freertos\source\portable\rvds\ARM_CM4F\port.c
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
+.\objects\port.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\port.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\port.o: ..\inc\FreeRTOSConfig.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\portable.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\deprecated_definitions.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\portable\rvds\ARM_CM4F\portmacro.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\mpu_wrappers.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\task.h
+.\objects\port.o: ..\..\..\middlewares\freertos\source\include\list.h

@@ -1,0 +1,16 @@
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\tasks.c
+.\objects\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+.\objects\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\FreeRTOS.h
+.\objects\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stddef.h
+.\objects\tasks.o: D:\Keil_v5\ARM\ARMCC\Bin\..\include\stdint.h
+.\objects\tasks.o: ..\inc\FreeRTOSConfig.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\projdefs.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\portable.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\deprecated_definitions.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\portable\rvds\ARM_CM4F\portmacro.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\mpu_wrappers.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\task.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\list.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\timers.h
+.\objects\tasks.o: ..\..\..\middlewares\freertos\source\include\stack_macros.h
