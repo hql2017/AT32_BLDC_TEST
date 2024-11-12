@@ -135,8 +135,7 @@ void vApexGC_Task( void * pvParameters )
 	#endif		
 	for(;;)
 	{		
-		countTimeMs++;
-	
+		countTimeMs++;	
 		#ifdef DEBUG_RTT
 			if(countTimeMs>200)//1s
 			{
@@ -168,8 +167,7 @@ void vApexGC_Task( void * pvParameters )
 					if(timeOut%48000==0)  taskYIELD();//exit task
 					if(timeOut>144000) break;//3ms	
 				}
-				fresh_adc_value();//get latest value
-				if(GC_Frequency==0) GC_Frequency=8000;
+				fresh_adc_value();//get latest value			
 				if(GC_Frequency==8000)
 				{
 					GC_8k_AdcValue=get_gc_8k_value();	
@@ -238,8 +236,7 @@ void vApexGC_Task( void * pvParameters )
 					if(timeOut%48000==0)  taskYIELD();//exit task
 					if(timeOut>144000) break;//3ms	
 				}
-				fresh_adc_value();//get latest value
-				if(GC_Frequency==0) GC_Frequency=8000;
+				fresh_adc_value();//get latest value				
 				if(GC_Frequency==8000)
 				{
 					GC_8k_AdcValue=get_gc_8k_value();	
@@ -430,13 +427,17 @@ void vAppKeyTask( void * pvParameters )
 	static uint8_t sendKeyMessage=null_signal,buttonLock=1;	
 	uint8_t countTimeMs=10;//scan
 	#ifdef LED_INDICATE_ENABLE			
-		LedFunctionSet(LED_B ,LED_KEEP_ON,LED_T_IDLE,LED_OFF);
-		LedFunctionSet(LED_Y ,LED_OFF,LED_T_IDLE,LED_OFF);
+		
 		if(get_insert_state()==RESET)
 		{	//insert//charge
 			LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
 			LedFunctionSet(LED_Y ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
-		}		
+		}
+		else
+		{
+			LedFunctionSet(LED_B ,LED_KEEP_ON,LED_T_IDLE,LED_OFF);
+			LedFunctionSet(LED_Y ,LED_OFF,LED_T_IDLE,LED_OFF);
+		}				
 	#endif
 	for(;;)
 	{		
@@ -477,8 +478,7 @@ void vAppBeepTemporaryTask( void * pvParameters )
 	static unsigned char  buzzerOp=BUZZER_MODE_POWER_ON_HINT_VOL;//开机提示音
 	unsigned short int freq=4000;//		
 	for(;;)
-	{
-		
+	{		
 		if(buzzerOp==BUZZER_MODE_POWER_ON_HINT_VOL)
 		{
 			buzzerOp=BUZZER_MODE_MUTE;	

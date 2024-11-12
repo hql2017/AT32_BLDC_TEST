@@ -12,7 +12,7 @@
 #include "at32f413_board.h"
 #include "at32f413.h"
 
-uint32_t sys_time_flag;//ϵͳ��ʱ�Ӵ� ms
+uint32_t sys_time_flag;//系统主时钟戳 ms
 /* delay macros */
 #define STEP_DELAY_MS                    50
 
@@ -272,7 +272,7 @@ void send_data(u8 *buf, u16 len)
 
 
 /**
-  * @brief ��ֹ
+  * @brief 中止
   * @param  none
   * @retval none
   */
@@ -283,7 +283,7 @@ void Suspend_RTOS_stick(void)
 	SysTick->CTRL &= ~SysTick_CTRL_ENABLE_Msk;
 }
 /**
-  * @brief  �ָ�
+  * @brief  恢复
   * @param  none
   * @retval none
   */

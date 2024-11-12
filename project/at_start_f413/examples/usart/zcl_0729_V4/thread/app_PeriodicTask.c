@@ -66,7 +66,7 @@ void BatteryCapacityManage( unsigned int realTimeMs,unsigned int perTimeMs)
 		}
 		else 
 		{
-			if(lowpowerCount>perTimeMs)//·À¶¶
+			if(lowpowerCount>perTimeMs)
 			{
 				if(lowpowerCount>100)
 				{
@@ -95,12 +95,12 @@ void BatteryCapacityManage( unsigned int realTimeMs,unsigned int perTimeMs)
   ***********************************************************************************************************/
 void InsertStatusMonitor(  unsigned int realTimeMs,unsigned int perTimeMs)
 {	
-	unsigned char buff,value,sendBuff;
+	unsigned char value,sendBuff;
 	static unsigned char recValue;	
-		if(perTimeMs!=0&&realTimeMs%perTimeMs==0)	return;
+	if(perTimeMs!=0&&realTimeMs%perTimeMs==0)	
+	{
 		if(get_insert_state()==RESET) 
-		{
-			buff=0x10;
+		{		
 			if(get_charge_state()==SET)
 			{
 				value=BAT_STATUS_CHARGING;
@@ -108,58 +108,56 @@ void InsertStatusMonitor(  unsigned int realTimeMs,unsigned int perTimeMs)
 			else
 			{			
 				value=BAT_STATUS_CHARGING_FULL;
-			}
-			value=(get_charge_state()==SET)?1:0;		
-			value|=buff;
+			}			
 		}
 		else 
-		{
-			buff=0;
-			value=0x00;
+		{			
+			value=BAT_STATUS_CHARGING_EXIT;
 		}	
 		if(recValue!=value)	 
 		{						
 			if(value==BAT_STATUS_CHARGING)
 			{				
 				#ifdef LED_INDICATE_ENABLE
-					LedFunctionSet(LED_Y ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
-					LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
-				#endif
+				LedFunctionSet(LED_Y ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
+				LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
+				#endif				
+				sendBuff=MENU_CHARGING_PAGE;										
+				xQueueSend(xQueueMenuValue, &sendBuff, 0);
+				sendBuff=BUZZER_MODE_BEEP;
+				xQueueSend(xQueueBeepMode, &sendBuff, 0);
+				sendBuff=null_signal;			
 			}
 			else if(value==BAT_STATUS_CHARGING_FULL)
 			{				
 				#ifdef LED_INDICATE_ENABLE
-					LedFunctionSet(LED_Y ,LED_KEEP_ON,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
-					LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
-				#endif
+				LedFunctionSet(LED_Y ,LED_KEEP_ON,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
+				LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON); 
+				#endif				
+				sendBuff=MENU_CHARGING_PAGE;										
+				xQueueSend(xQueueMenuValue, &sendBuff, 0);
+				sendBuff=BUZZER_MODE_BEEP;
+				xQueueSend(xQueueBeepMode, &sendBuff, 0);
+				sendBuff=null_signal;			
 			}
 			else if(value==BAT_STATUS_CHARGING_EXIT)
 			{				
 				#ifdef LED_INDICATE_ENABLE				
-					LedFunctionSet(LED_Y ,LED_OFF,LED_T_HIGH_PRIORITY,LED_OFF); 	//exit charge
-					LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_OFF);
-				#endif			
-			}		
-			if((recValue&0x10)!=buff)
-			{
-				if(buff==0x10)
-				{
-					sendBuff=MENU_CHARGING_PAGE;
-				}
-				else
-				{
-					sendBuff=MENU_HOME_PAGE;
-				}								
+				LedFunctionSet(LED_Y ,LED_OFF,LED_T_HIGH_PRIORITY,LED_OFF); 	//exit charge
+				LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_OFF);
+				#endif	
+				sendBuff=MENU_HOME_PAGE;												
 				xQueueSend(xQueueMenuValue, &sendBuff, 0);
 				sendBuff=BUZZER_MODE_BEEP;
 				xQueueSend(xQueueBeepMode, &sendBuff, 0);
-				sendBuff=null_signal;								
-			}		
+				sendBuff=null_signal;			
+			}	
 			recValue=value;		//disp
 			#ifdef DEBUG_RTT
 				SEGGER_RTT_WriteString(0, "insert\r\n");	
 			#endif
-		}	
+		}
+	}	
 }
 
 
@@ -181,7 +179,7 @@ void vAppPeriodicTask( void * pvParameters )
 		#ifdef WDT_ENABLE
 		xEventGroupSetBits(WDTEventGroup,PERIODIC_TASK_EVENT_BIT);
 		#endif			
-		InsertStatusMonitor( countPeriodicTimeMs,200);//300ms
+		InsertStatusMonitor( countPeriodicTimeMs,100);//300ms
 		BatteryCapacityManage( countPeriodicTimeMs, 10);
 		#ifdef LED_INDICATE_ENABLE		
 		LedPeriodicProcessing( countPeriodicTimeMs,100);//100ms

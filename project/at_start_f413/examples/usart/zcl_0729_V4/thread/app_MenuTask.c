@@ -35,8 +35,6 @@ extern QueueHandle_t  xQueueBatValue;//batValue
 extern QueueHandle_t xQueueApexValue;
 extern SemaphoreHandle_t xSemaphoreDispRfresh;
 
-
-
 static void Disp_ApexPreForSet(u8 value);
 static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag, short int apexValue);
 #ifdef  APEX_FUNCTION_EBABLE
@@ -46,8 +44,8 @@ extern SemaphoreHandle_t xSemaphoreApexAutoCalibration;
 #define MINIMUM_CW_CCW_ANGLE_GAP          80//minimum routor angle in  " motor_settings.mode=EndoModePositionToggle "	
 	
 #ifdef ZHX
-#define MAX_MOTOR_SPEED   2200//2000//闁跨喎褰ㄩ悮瀛樺闁跨喐鏋婚幏锟�(max 2450*6=14700)
-#define MAX_TORQUE_UUPER_THRESHOLD   50//42//闁跨喎褰ㄩ悮瀛樺闁跨喐鏋婚幏锟�(46.281g.cm/A~~0.454N.cm/A)(18.41mN.m or 1.841N.cm  1g.cm=0.00981N.cm=0.0981mN.m=0.0000981N.m)(闁跨喐鏋婚幏鐤祮闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�4.0A闁跨喐鏋婚幏閿嬪闁跨喐鏋婚幏锟�187.71 g.cm=1.841N.cm=18.41mN.m=0.1841N.m)
+#define MAX_MOTOR_SPEED   2200//2000//闂佽法鍠庤ぐ銊╂偖鐎涙ê顏堕梺璺ㄥ枑閺嬪骞忛敓锟�(max 2450*6=14700)
+#define MAX_TORQUE_UUPER_THRESHOLD   50//42//闂佽法鍠庤ぐ銊╂偖鐎涙ê顏堕梺璺ㄥ枑閺嬪骞忛敓锟�(46.281g.cm/A~~0.454N.cm/A)(18.41mN.m or 1.841N.cm  1g.cm=0.00981N.cm=0.0981mN.m=0.0000981N.m)(闂佽法鍠愰弸濠氬箯閻ゎ垱绁梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷4.0A闂佽法鍠愰弸濠氬箯闁垮顥夐梺璺ㄥ枑閺嬪骞忛敓锟�187.71 g.cm=1.841N.cm=18.41mN.m=0.1841N.m)
 #define HALF_MAX_TORQUE_UUPER_THRESHOLD   MAX_TORQUE_UUPER_THRESHOLD/2
 #define MINIMUM_ROTOR_ANGLE          10//minimum routor angle in  " motor_settings.mode=EndoModePositionToggle "
 
@@ -58,10 +56,10 @@ short int speed_list[20]={100,150,200,250,300,350,400,450,500,550,600,800,1000,1
 //	short int speed_list[20]={100,150,200,250,300,350,400,450,500,550,600,800,1000,1200,1500,1800,MAX_MOTOR_SPEED,2200,2500};	
 	//7V
 //unsigned short int torque_limit[22]={torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque65_Ncm ,\
-//	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque50_Ncm ,torque45_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque05_Ncm  ,torque05_Ncm  ,torque05_Ncm,torque05_Ncm,torque05_Ncm};//unit mN.m闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归崜宥堟祮闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻懘姘ュ€ч幏鐑芥晸閿燂拷
+//	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque50_Ncm ,torque45_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque05_Ncm  ,torque05_Ncm  ,torque05_Ncm,torque05_Ncm,torque05_Ncm};//unit mN.m闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊宕滃鍫熺ギ闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘嚇濮樸儱鈧囧箯閻戣姤鏅搁柨鐕傛嫹
 //8V
 unsigned short int torque_limit[22]={torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque65_Ncm ,\
-	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque60_Ncm ,torque60_Ncm  ,torque50_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque08_Ncm  ,torque06_Ncm,torque06_Ncm,torque06_Ncm};//unit mN.m闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归崜宥堟祮闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻懘姘ュ€ч幏鐑芥晸閿燂拷
+	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque60_Ncm ,torque60_Ncm  ,torque50_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque08_Ncm  ,torque06_Ncm,torque06_Ncm,torque06_Ncm};//unit mN.m闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊宕滃鍫熺ギ闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘嚇濮樸儱鈧囧箯閻戣姤鏅搁柨鐕傛嫹
 	
 	#else 
 #define MAX_MOTOR_SPEED    2450//moons =3000
@@ -121,24 +119,17 @@ static error_status  APEXIdleTimeManage(unsigned int systemTime,unsigned int tar
 	error_status err;	
 	static  unsigned int recTicks;
 	err=ERROR;
-	if(targetTime==0) //闁跨喐鏋婚幏鐑芥晸閻偆銆嬮幏閿嬫闁跨喐鏋婚幏锟�
+	if(targetTime==0||recTicks>systemTime) 
 	{
 		recTicks=systemTime;		
 	}	
 	else
-	{
-		if(recTicks>systemTime) 
-		{      
-			recTicks=systemTime;
-		}
-		else 
+	{		
+		if(systemTime>targetTime+recTicks)
 		{
-			if(systemTime>targetTime+recTicks)
-			{
-//				recTicks=systemTime;//閸欐牠鏁撻弬銈嗗瀵邦亪鏁撻弬銈嗗闁跨喐鏋婚幏閿嬫
-				err=SUCCESS;
-			}
-		}
+			//recTicks=systemTime;
+			err=SUCCESS;
+		}		
 	}	
 	return err;
 }
@@ -152,24 +143,18 @@ static error_status  MenuIdleTimeManage(unsigned int systemTime,unsigned int tar
 	error_status err;	
 	static  unsigned int recTicks;
 	err=ERROR;
-	if(targetTime==0) 
+	if(targetTime==0||recTicks>systemTime) 
 	{
 		recTicks=systemTime;		
 	}
 	else
-	{
-		if(recTicks>systemTime) 
+	{		
+		if(systemTime-recTicks>targetTime)
 		{
 			recTicks=systemTime;
+			err=SUCCESS;
 		}
-		else 
-		{
-			if(systemTime-recTicks>targetTime)
-			{
-				recTicks=systemTime;
-				err=SUCCESS;
-			}
-		}
+	
 	}	
 	return err;
 }
@@ -183,24 +168,17 @@ static error_status  DeviceOffTimeManage(unsigned int systemTime,unsigned int ta
 	error_status err;	
 	static  unsigned int recTicks;
 	err=ERROR;
-	if(targetTime==0) 
+	if(targetTime==0||recTicks>systemTime) 
 	{
 		recTicks=systemTime;		
 	}
 	else
-	{
-		if(recTicks>systemTime) 
+	{		
+		if(systemTime-recTicks>targetTime)
 		{
 			recTicks=systemTime;
-		}
-		else 
-		{
-			if(systemTime-recTicks>targetTime)
-			{
-				recTicks=systemTime;
-				err=SUCCESS;
-			}
-		}
+			err=SUCCESS;
+		}		
 	}	
 	return err;
 }
@@ -300,7 +278,7 @@ void MenuDevicePowerOff(unsigned char feedDogFlag)
 		while(1) 
 		{			
 //			if(feedDogFlag!=0)
-//			{//闁跨喖銈烘潏鐐闁跨喐鍩呮导娆愬闁跨喐鏋婚幏鐑芥晸閿燂拷
+//			{//闂佽法鍠栭妶鐑樻綇閻愵剙顏堕梺璺ㄥ枑閸╁懏瀵煎▎鎰伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柨鐕傛嫹
 				#ifdef WDT_ENABLE
 					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
 				#endif
@@ -319,9 +297,9 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 	error_status err;
 	err=ERROR;
 	//if(programNum<10) //==10onlay apex mode
-	if((programNum>5)&&programNum<10) //==10onlay apex mode//p0~p5,for bit 閿涘瞼顩﹀顫叏閺€鐧哥礉娴ｈ法鏁ゆ妯款吇閸婏拷
+	if((programNum>5)&&programNum<10) //==10onlay apex mode//p0~p5,for bit 
 	{		
-		if(selectNum==ADJUST_MOTOR_PARAM_PROGRAM_NUM)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+		if(selectNum==ADJUST_MOTOR_PARAM_PROGRAM_NUM)
 		{	//p0~p9
 		}		
 		else if(selectNum==ADJUST_MOTOR_PARAM_SPEED)//speed
@@ -375,13 +353,13 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 		{			
 			if(addOrSub==MENU_PARAM_ADD)
 			{	
-				if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].dir==EndoModePositionToggle)//闁跨喐鏋婚幏鐑芥晸閼恒儲婀伴柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐤祮閹殿參鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸缂傚顣幏锟�
+				if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].dir==EndoModePositionToggle)
 				{
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum++;	
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum%=(MAX_torque_42_Ncm+1);
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum<torque20_Ncm) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum=torque20_Ncm;
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
-					 {//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+					 {
 						 motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					 }	
 				}		
@@ -390,7 +368,7 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum++;	
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum%=(torque20_Ncm+1);
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
-					 {//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+					 {
 						 motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					 }							
 				}
@@ -399,7 +377,7 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum++;	
 					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum%=(MAX_torque_42_Ncm+1);	
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
-					{//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+					{
 						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum=torque06_Ncm;
 					}	
 				}	
@@ -435,7 +413,7 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum%=(torque20_Ncm+1);							
 					}							
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
-					{//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+					{
 						 motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					}	
 				}
@@ -451,7 +429,7 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
 						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum%=(MAX_torque_42_Ncm+1);							
 					}							
 					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
-					{//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+					{
 						 motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					}	
 				}					
@@ -529,7 +507,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 	
 	error_status err;
 	err=ERROR;
-  if(programNum<10) //==10 only apex mode闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+  if(programNum<10) //==10 only apex mode
 	{
 		if(motor_param_un.system_motor_pattern[programNum].pNum!=programNum) //first
 		{
@@ -537,9 +515,9 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 			motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum=torque40_Ncm;//				
 			motor_param_un.system_motor_pattern[programNum].forwardPosition = 30; 
 			motor_param_un.system_motor_pattern[programNum].reversePosition = -150; 		
-			motor_param_un.system_motor_pattern[programNum].torqueThresholdNum = torque40_Ncm;// (unit mN.m)(4.0 unit N.cm) // 闁跨喐鏋婚幏鐑芥晸閺傘倖瀚规潪顒勬晸閹搭亝鍞婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+			motor_param_un.system_motor_pattern[programNum].torqueThresholdNum = torque40_Ncm;// (unit mN.m)(4.0 unit N.cm) 
 			motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum =	torque20_Ncm;	
-			motor_param_un.system_motor_pattern[programNum].toggleSpeedNum =spd300_Rpm_num; //闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗濡€崇础闁跨喎濮拋瑙勫		
+			motor_param_un.system_motor_pattern[programNum].toggleSpeedNum =spd300_Rpm_num; 
 		}		
 		//.....//save to FLASH when power off	
 		// MOTOR_SETTING_UPDATE
@@ -557,20 +535,20 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 		if(motor_param_un.system_motor_pattern[programNum].dir==EndoModeTorqueATC)
 		{		
 			if(motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum>torque_limit[motor_param_un.system_motor_pattern[programNum].motorSpeedNum])
-			 {//闁跨喎濮拋瑙勫闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
-				 motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
-			 }				
+			{
+				motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
+			}				
 			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;			
-			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//閹殿參鏁撻弬銈嗗閺嶁€冲櫙闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗濡€崇础娴ｅ潡鏁撻弬銈嗗 int  param=5闁跨喐鏋婚幏锟�5閸嬪繘鏁撻弬銈嗗5 闁跨喐鏋婚幏锟�-5 閸嬪繘鏁撻弬銈嗗5闁跨喐鏋婚幏锟�
+			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//闁规鍙冮弫鎾诲棘閵堝棗顏堕柡宥佲偓鍐叉珯闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏舵俊顖椻偓宕囩濞达絽娼￠弫鎾诲棘閵堝棗顏� int  param=5闂佽法鍠愰弸濠氬箯閿燂拷5闁稿绻橀弫鎾诲棘閵堝棗顏�5 闂佽法鍠愰弸濠氬箯閿燂拷-5 闁稿绻橀弫鎾诲棘閵堝棗顏�5闂佽法鍠愰弸濠氬箯閿燂拷
 			if(motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum>torque20_Ncm)
 			{
-				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.10;//閹殿參鏁撻弬銈嗗閺嶁€冲櫙闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗濡€崇础娴ｅ潡鏁撻弬銈嗗 int  param=5闁跨喐鏋婚幏锟�5閸嬪繘鏁撻弬銈嗗5 闁跨喐鏋婚幏锟�-5 閸嬪繘鏁撻弬銈嗗5闁跨喐鏋婚幏锟�
+				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.10;
 			}
 		}
-		else if(motor_param_un.system_motor_pattern[programNum].dir==EndoModePositionToggle)//闁跨喐鏆€鐠佽瀚归柨鐔告灮閹风兘鏁撶悰妤嬫嫹
+		else if(motor_param_un.system_motor_pattern[programNum].dir==EndoModePositionToggle)
 		{
 			motor_settings.upper_threshold=MAX_TORQUE_UUPER_THRESHOLD*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//motor_param_un.system_motor_pattern[programNum].torqueThreshold*0.16;
-			motor_settings.lower_threshold=MAX_TORQUE_UUPER_THRESHOLD*0.06;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//閹殿參鏁撻弬銈嗗閺嶁€冲櫙闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗濡€崇础娴ｅ潡鏁撻弬銈嗗 int  par
+			motor_settings.lower_threshold=MAX_TORQUE_UUPER_THRESHOLD*0.06;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//闁规鍙冮弫鎾诲棘閵堝棗顏堕柡宥佲偓鍐叉珯闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏舵俊顖椻偓宕囩濞达絽娼￠弫鎾诲棘閵堝棗顏� int  par
 		}
 		else 
 		{
@@ -585,7 +563,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 		{
 			motor_param_un.system_motor_pattern[programNum].motorSpeedNum=MAX_spd_Rpm_num;
 		}	
-		motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];//闁跨喎濮拋瑙勫閺嶁€冲櫙闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗濡€崇础娴ｅ潡鏁撻弬銈嗗 int  param=0.01闁跨喐鏋婚幏锟�0.01閸嬪繘鏁撻弬銈嗗1% 闁跨喐鏋婚幏锟�-0.01 閸嬪繘鏁撻弬銈嗗1%闁跨喐鏋婚幏锟�
+		motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
 		motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];	
 		motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[programNum].toggleSpeedNum];//[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
 	//to motor control	
@@ -643,7 +621,7 @@ static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,unsigned char s
 	OLED_ShowNum(40,48,temp2,1,16,(selectNum!=2));//int
 	OLED_ShowChar(48,48,'.',16,(selectNum!=2));
 	temp2=temp%10;
-	OLED_ShowNum(52,48,temp2,1,16,(selectNum!=2));//鐏忓繘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�	
+	OLED_ShowNum(52,48,temp2,1,16,(selectNum!=2));	
 	if(motorParam->dir==EndoModePositionToggle)
 	{
 		OLED_ShowString(116,0,"REC",16,(selectNum!=3));
@@ -766,9 +744,9 @@ static void OLED_Display_MAIN(unsigned short int programNum ,uint8_t select)
 		}	
 		else //if(programNum>5)//p7~P10
 		{
-			OLED_ShowString(32,0,"    ",16,1);//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+			OLED_ShowString(32,0,"    ",16,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 			OLED_ShowChar(64,0,'P',16,1);	
-			OLED_ShowNum(72,0,programNum-5,1,16,1);//閺勫墽銇歅1-P4
+			OLED_ShowNum(72,0,programNum-5,1,16,1);//闁哄嫬澧介妵姝�1-P4
 			//OLED_ShowChar(22,4,' ',16,1);
 			OLED_ShowString(80,0,"    ",16,1);
 			OLED_ShowString(72,24,"rpm",16,1);			
@@ -891,7 +869,7 @@ static void SubmenuApexControlMode( unsigned char apexMode,unsigned char enableF
 	{
 		OLED_ShowString(28,8,"APICAL ACTION",16,1);	
 		OLED_ShowString(32,40,"OFF",16,(enableFlag!=0));	
-		OLED_ShowString(64,40,"REV",16,(enableFlag!=1));//REC閺勵垰绶氭径宥堟祮閿涘EV閸欏秴鎮�
+		OLED_ShowString(64,40,"REV",16,(enableFlag!=1));//REV
 		OLED_ShowString(96,40,"STOP",16,(enableFlag!=2));
 	}	
 }
@@ -930,7 +908,6 @@ static void SubmenuCalibration(unsigned char flag)
 {	
 	if(flag==0||flag==1)
 	{
-
 		OLED_ShowString(16,8,"AUTO CALIBRATION",16,1);
 		OLED_ShowString(22,40,"NO",16,(flag!=0));	
 		OLED_ShowString(68,40,"YES",16,(flag!=1));	
@@ -978,14 +955,12 @@ static void SubmenuRestoreParam(unsigned char flag)
   * @brief 	SubmenuPageHandle
   * @param  systemTime
   * @retval none
-SETTING_FOR:	 闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗firstFlag閹兼椽鏁撻弬銈嗗闁跨喐鏋婚幏宄邦潗闁鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閿燂拷
   */
 static  void SubmenuPageHandle(unsigned short int subPageID,unsigned short int signal,unsigned int systemTime,unsigned char firstFlag)
 {
 	error_status err;
 	static unsigned char secendNum,retCaliFanish=0;		
-//	static unsigned char motorOrApex=0;
-	//闁跨喐鏋婚幏椋庡剨
+//	static unsigned char motorOrApex=0;	
 	static unsigned int recSystemTime;
 	static unsigned char blinkFlag;
 	if(firstFlag==0)	
@@ -1015,8 +990,8 @@ static  void SubmenuPageHandle(unsigned short int subPageID,unsigned short int s
 	{	
 		switch(subPageID)
 		{		
-		#ifdef APEX_FUNCTION_EBABLE	
-		case SETTING_FOR:	 
+			#ifdef APEX_FUNCTION_EBABLE	
+			case SETTING_FOR:	 
 				if(systemTime-recSystemTime>500)	
 				{
 					recSystemTime=systemTime;
@@ -1028,192 +1003,168 @@ static  void SubmenuPageHandle(unsigned short int subPageID,unsigned short int s
 					SubmenuEntranceMotorOrApex((firstFlag-1)|blinkFlag);
 				}	
 			break;			
-		case AUTO_START:
-					if(signal==s_button_press_signal)
-					{	//save and next
-//						SubmenuApexControlMode( AUTO_START,sys_param_un.device_param.auto_start_flag);	
-					}		
-					else if(signal==add_button_press_signal||signal==sub_button_press_signal)
-					{		
-						sys_param_un.device_param.auto_start_flag++;							
-						sys_param_un.device_param.auto_start_flag%=2;
-						SubmenuApexControlMode( AUTO_START,sys_param_un.device_param.auto_start_flag);		
-					}		
-				break;	
-		case AUTO_STOP:
-					if(signal==s_button_press_signal)
-					{	//save
-//						SubmenuApexControlMode( AUTO_STOP,sys_param_un.device_param.auto_stop_flag);		
-					}		
-					else if(signal==add_button_press_signal||signal==sub_button_press_signal)
+			case AUTO_START:	
+				 if(signal==add_button_press_signal||signal==sub_button_press_signal)
+				{		
+					sys_param_un.device_param.auto_start_flag++;							
+					sys_param_un.device_param.auto_start_flag%=2;
+					SubmenuApexControlMode( AUTO_START,sys_param_un.device_param.auto_start_flag);		
+				}		
+			break;	
+			case AUTO_STOP:
+				if(signal==add_button_press_signal||signal==sub_button_press_signal)
+				{	
+					sys_param_un.device_param.auto_stop_flag++;							
+					sys_param_un.device_param.auto_stop_flag%=2;
+					SubmenuApexControlMode( AUTO_STOP,sys_param_un.device_param.auto_stop_flag);		
+				}	
+			break;	
+			case APICAL_ACTION:			
+				if(signal==add_button_press_signal||signal==sub_button_press_signal)
+				{
+					sys_param_un.device_param.apical_action_flag++;
+					sys_param_un.device_param.apical_action_flag%=3;			
+					SubmenuApexControlMode( APICAL_ACTION,sys_param_un.device_param.apical_action_flag);		
+				}		
+			break;
+			case 	APICAL_OFFESET:				
+				if(signal==sub_button_press_signal)
+				{
+					sys_param_un.device_param.ref_tine++;
+					sys_param_un.device_param.ref_tine%=13;			
+					SubmenuApexOffeset( sys_param_un.device_param.ref_tine);	
+				}
+				else if(signal==add_button_press_signal)
+				{
+					if(sys_param_un.device_param.ref_tine==0)
+					{
+						sys_param_un.device_param.ref_tine=12;
+					}
+					else 
+					{
+						sys_param_un.device_param.ref_tine--;
+						sys_param_un.device_param.ref_tine%=13;		
+					}
+					SubmenuApexOffeset( sys_param_un.device_param.ref_tine);	
+				}
+				else
+				{						
+					ApexBarFlashForSet(xTaskGetTickCount(),1, 30);
+				}	
+			break;
+			#endif
+			case CW_ANGLE:
+				if(signal==add_button_press_signal)
+				{						
+					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition+=MINIMUM_ROTOR_ANGLE;
+					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition>360) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition=MINIMUM_ROTOR_ANGLE;
+					SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);
+				}
+				else if(signal==sub_button_press_signal)
+				{
+					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition<MINIMUM_ROTOR_ANGLE+MINIMUM_ROTOR_ANGLE) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition=360;
+					else motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition-=MINIMUM_ROTOR_ANGLE;	
+					SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);						
+				}	
+			break;	
+			case CCW_ANGLE:
+				if(signal==add_button_press_signal)
+				{
+					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition-=MINIMUM_ROTOR_ANGLE;
+					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition<-360) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition=-MINIMUM_ROTOR_ANGLE;
+					SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);	
+				}
+				else if(signal==sub_button_press_signal)
+				{
+					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition+=MINIMUM_ROTOR_ANGLE;	
+					if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition>-MINIMUM_ROTOR_ANGLE)	
 					{	
-						sys_param_un.device_param.auto_stop_flag++;							
-						sys_param_un.device_param.auto_stop_flag%=2;
-						SubmenuApexControlMode( AUTO_STOP,sys_param_un.device_param.auto_stop_flag);		
-					}	
-				break;	
-		case APICAL_ACTION:
-					if(signal==s_button_press_signal)
-					{	//save					
-//						SubmenuApexControlMode( APICAL_ACTION,sys_param_un.device_param.auto_start_flag);						
-					}		
-					if(signal==add_button_press_signal||signal==sub_button_press_signal)
-					{
-						sys_param_un.device_param.apical_action_flag++;
-						sys_param_un.device_param.apical_action_flag%=3;			
-						SubmenuApexControlMode( APICAL_ACTION,sys_param_un.device_param.apical_action_flag);		
-					}		
-			break;
-		case 	APICAL_OFFESET:
-					if(signal==s_button_press_signal)
-					{	//save					
-//						SubmenuApexOffeset( sys_param_un.device_param.ref_tine);					
-					}		
-					if(signal==sub_button_press_signal)
-					{
-						sys_param_un.device_param.ref_tine++;
-						sys_param_un.device_param.ref_tine%=13;			
-						SubmenuApexOffeset( sys_param_un.device_param.ref_tine);	
-					}
-					else if(signal==add_button_press_signal)
-					{
-						if(sys_param_un.device_param.ref_tine==0)
-						{
-							sys_param_un.device_param.ref_tine=12;
-						}
-						else 
-						{
-							sys_param_un.device_param.ref_tine--;
-							sys_param_un.device_param.ref_tine%=13;		
-						}
-						SubmenuApexOffeset( sys_param_un.device_param.ref_tine);	
-					}
-					else
-					{						
-						ApexBarFlashForSet(xTaskGetTickCount(),1, 30);
-					}						
-					
-			break;
-		#endif
-		case CW_ANGLE:
-					if(signal==s_button_press_signal)
-					{
-						//save	and next										
-					}
-					else if(signal==add_button_press_signal)
-					{						
-						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition+=MINIMUM_ROTOR_ANGLE;
-						if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition>360) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition=MINIMUM_ROTOR_ANGLE;
-						SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);
-					}
-					else if(signal==sub_button_press_signal)
-					{
-						if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition<MINIMUM_ROTOR_ANGLE+MINIMUM_ROTOR_ANGLE) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition=360;
-						else motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition-=MINIMUM_ROTOR_ANGLE;	
-						SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);						
-					}	
-				break;	
-		case CCW_ANGLE:
-					if(signal==s_button_press_signal)
-					{
-						//save	and next	
-					}					
-					else if(signal==add_button_press_signal)
-					{
-						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition-=MINIMUM_ROTOR_ANGLE;
-						if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition<-360) motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition=-MINIMUM_ROTOR_ANGLE;
-						SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);	
-					}
-					else if(signal==sub_button_press_signal)
-					{
-						motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition+=MINIMUM_ROTOR_ANGLE;	
-						if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition>-MINIMUM_ROTOR_ANGLE)		 motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition=-360;	
-									
-						SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);	
-					}									
-				break;			
+					motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition=-360;	
+					}			
+					SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);	
+				}									
+			break;			
 			case HANDEDNESS:	
-					if(signal==add_button_press_signal||signal==sub_button_press_signal)
-					{	
-						sys_param_un.device_param.use_hand++;
-						sys_param_un.device_param.use_hand%=2;	
-						SubmenuHandness(sys_param_un.device_param.use_hand);
-					}					
+				if(signal==add_button_press_signal||signal==sub_button_press_signal)
+				{	
+					sys_param_un.device_param.use_hand++;
+					sys_param_un.device_param.use_hand%=2;	
+					SubmenuHandness(sys_param_un.device_param.use_hand);
+				}					
 			break;
 			case AUTO_CALIBRATION:
-					if(signal==add_button_press_signal||signal==sub_button_press_signal)
-					{	
-						secendNum++;//on or off
-						secendNum%=2;	
-						SubmenuCalibration(secendNum);
-					}
-					if(secendNum==0)
+				if(signal==add_button_press_signal||signal==sub_button_press_signal)
+				{	
+					secendNum++;//on or off
+					secendNum%=2;	
+					SubmenuCalibration(secendNum);
+				}
+				if(secendNum==0)
+				{
+					timerCountDown(systemTime/1000,10,0);				
+				}
+				else if(secendNum==1)
+				{						
+					err=timerCountDown(systemTime/1000,10,1)	;//start 10 
+					if(err==SUCCESS)	
 					{
-						timerCountDown(systemTime/1000,10,0);				
-					}
-					else if(secendNum==1)
-					{						
-						err=timerCountDown(systemTime/1000,10,1)	;//start 10 
-						if(err==SUCCESS)	
-						{
-							secendNum=2;//start
-							retCaliFanish=0;
-							SubmenuCalibration(2);
-//							xSemaphoreGive(xSemaphoreApexAutoCalibration);							
-						}	
-					}
-					else if(secendNum==2)
-					{
-						vTaskDelay(35);//wait apex calibration
-						secendNum=3;
-					}
-					 else if(secendNum==3)
-					{		//start								
-							
-							#ifdef WDT_ENABLE							
-								vTaskSuspend(WDT_ManageTask_Handle);								
-								Wdt_Reset(MAX_WDT_FEED_TIME_MS*32);	//MAX_WDT_FEED_TIME_MS*32=9600mS						
-							#endif 						
-							retCaliFanish=App_MotorControl(MOTOR_MODE_SEARCH_ANGLE);						
-							#ifdef WDT_ENABLE
-								Wdt_Init();												
-								xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);		
-								vTaskResume(WDT_ManageTask_Handle);																
-							#endif						
-											
-							if(retCaliFanish==0)
-							{//	disp indicate	
-								SubmenuCalibration(4);		
-							}
-							else
-							{	//successful								
-								SubmenuCalibration(3);
-							}	
-							xSemaphoreGive(xSemaphoreDispRfresh);	
-							MenuIdleTimeManage(systemTime,0);	
-							DeviceOffTimeManage(systemTime,0);							
-							#ifdef  APEX_FUNCTION_EBABLE							
-							xSemaphoreGive(xSemaphoreApexAutoCalibration);
-							#endif								
-							#ifdef WDT_ENABLE																		
-							xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
-							vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset							
-							xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
-							vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset
-							xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);	
-							vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset
-							xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);	
-							#else
-							vTaskDelay(900);//wait wdt dog reset			
-							#endif															
-							secendNum=4;//end								
-					}		
-					else
-					{
-						//wait idle tiem
-							signal=MENU_HOME_PAGE;//exit
-							xQueueSend(xQueueMenuValue, &signal, 0);
+						secendNum=2;//start
+						retCaliFanish=0;
+						SubmenuCalibration(2);
+//						xSemaphoreGive(xSemaphoreApexAutoCalibration);							
 					}	
+				}
+				else if(secendNum==2)
+				{
+					vTaskDelay(35);//wait apex calibration
+					secendNum=3;
+				}
+				else if(secendNum==3)
+				{		//start								
+							
+					#ifdef WDT_ENABLE							
+					vTaskSuspend(WDT_ManageTask_Handle);								
+					Wdt_Reset(MAX_WDT_FEED_TIME_MS*32);	//MAX_WDT_FEED_TIME_MS*32=9600mS						
+					#endif 						
+					retCaliFanish=App_MotorControl(MOTOR_MODE_SEARCH_ANGLE);						
+					#ifdef WDT_ENABLE
+					Wdt_Init();												
+					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);		
+					vTaskResume(WDT_ManageTask_Handle);																
+					#endif				
+					if(retCaliFanish==0)
+					{//	disp indicate	
+						SubmenuCalibration(4);		
+					}
+					else
+					{	//successful								
+						SubmenuCalibration(3);
+					}	
+					xSemaphoreGive(xSemaphoreDispRfresh);	
+					MenuIdleTimeManage(systemTime,0);	
+					DeviceOffTimeManage(systemTime,0);							
+					#ifdef  APEX_FUNCTION_EBABLE							
+					xSemaphoreGive(xSemaphoreApexAutoCalibration);
+					#endif								
+					#ifdef WDT_ENABLE																		
+					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
+					vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset							
+					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
+					vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset
+					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);	
+					vTaskDelay(MAX_WDT_FEED_TIME_MS);//wait wdt dog reset
+					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);	
+					#else
+					vTaskDelay(900);//wait wdt dog reset			
+					#endif															
+					secendNum=4;//end								
+				}		
+				else
+				{
+				//wait idle tiem
+					signal=MENU_HOME_PAGE;//exit
+					xQueueSend(xQueueMenuValue, &signal, 0);
+				}	
 				break;
 				case RESTORE_DEFAULT_SETTING:
 					if(signal==add_button_press_signal||signal==sub_button_press_signal)
@@ -1250,11 +1201,11 @@ static  void SubmenuPageHandle(unsigned short int subPageID,unsigned short int s
 					}
 					else
 					{						
-							MenuDevicePowerOff(2);															
+						MenuDevicePowerOff(2);															
 					}						
 					break;
 			default:
-				break;		 
+			break;		 
 	}	
 	if(signal!=null_signal)
 	{						
@@ -1285,46 +1236,46 @@ static  void SubmenuPageTurns(unsigned short int subPageID)
 	{	
 		#ifdef APEX_FUNCTION_EBABLE	
 		case SETTING_FOR:				
-				if(sys_param_un.device_param.use_p_num==10&&sys_param_un.device_param.apexFunctionLoad!=0)	
-				{
-					SubmenuEntranceMotorOrApex(1);	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
-				}	
-				else 
-				{
-					SubmenuEntranceMotorOrApex(0);	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
-				}	
-//					SubmenuEntranceMotorOrApex(motorOrApexSetFlag);	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�		
-			break;			
+			if(sys_param_un.device_param.use_p_num==10&&sys_param_un.device_param.apexFunctionLoad!=0)	
+			{
+				SubmenuEntranceMotorOrApex(1);	
+			}	
+			else 
+			{
+				SubmenuEntranceMotorOrApex(0);	
+			}	
+//			SubmenuEntranceMotorOrApex(motorOrApexSetFlag);		
+		break;			
 		case AUTO_START:
-				SubmenuApexControlMode( AUTO_START,sys_param_un.device_param.auto_start_flag);
-				break;	
+			SubmenuApexControlMode( AUTO_START,sys_param_un.device_param.auto_start_flag);
+		break;	
 		case AUTO_STOP:
-				SubmenuApexControlMode( AUTO_STOP,sys_param_un.device_param.auto_stop_flag);
-				break;	
+			SubmenuApexControlMode( AUTO_STOP,sys_param_un.device_param.auto_stop_flag);
+		break;	
 		case APICAL_ACTION:
-				SubmenuApexControlMode( APICAL_ACTION,sys_param_un.device_param.apical_action_flag);
+			SubmenuApexControlMode( APICAL_ACTION,sys_param_un.device_param.apical_action_flag);
 		break;
 		case APICAL_OFFESET:
 			SubmenuApexOffeset(	sys_param_un.device_param.ref_tine);
 		break;
 		#endif
 		case CW_ANGLE:
-				SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);
-				break;	
+			SubmenuMotorParam( CW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition);
+		break;	
 		case CCW_ANGLE:
-				SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);
-				break;		
+			SubmenuMotorParam( CCW_ANGLE , motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition);
+		break;		
 		case HANDEDNESS:	
-				SubmenuHandness(sys_param_un.device_param.use_hand);			
-			break;
+			SubmenuHandness(sys_param_un.device_param.use_hand);			
+		break;
 		case AUTO_CALIBRATION:
-				SubmenuCalibration(0);
-			break;
+			SubmenuCalibration(0);
+		break;
 		case RESTORE_DEFAULT_SETTING:
-				SubmenuRestoreParam(0);
-			break;	
+			SubmenuRestoreParam(0);
+		break;	
 		default:
-			break;		 
+		break;		 
 	}	
 }
 
@@ -1358,9 +1309,9 @@ static void Disp_TorqueProgressBar(u8 x,u8 y ,u8 value)
 	for(i=0;i<5;i++)
 	{
 		j=5-i;	
-			if(j>3)//闁跨喐鏋婚幏鐑芥晸鐞涙鎷�
+		if(j>3)
 		{			
-			OLED_ShowNum(x1-3+i*25,y1+4,j,1,8,1);//>4 闁跨喐鏋婚幏鐑芥晸閹恒儲鍞婚幏鐑芥晸閿燂拷	
+			OLED_ShowNum(x1-3+i*25,y1+4,j,1,8,1);//>4 
 			OLED_DrawPoint(x1+3+i*25, y1+9,1);
 			OLED_DrawPoint(x1+4+i*25, y1+9,1);
 			OLED_DrawPoint(x1+3+i*25, y1+10,1);
@@ -1427,8 +1378,8 @@ static void TorqueProgressBarFlash(unsigned int systemTimeMs,unsigned char start
 				torqueValue=torque_list[torque20_Ncm];
 			}			
 		}	
-		maxTorqueNum=(torque_list[MAX_torque_42_Ncm]-30)*2/5+13;//闁跨喐鏋婚幏鐑芥晸閼存哎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�	
-    if(maxTorqueNum>21)		 maxTorqueNum=21;//闁跨喐鏋婚幏椋庛仛闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗	
+		maxTorqueNum=(torque_list[MAX_torque_42_Ncm]-30)*2/5+13;	
+   		if(maxTorqueNum>21)		 maxTorqueNum=21;	
 		if(torqueValue>50)
 		{
 			torqueReference=maxTorqueNum;
@@ -1480,65 +1431,63 @@ static void TorqueProgressBarFlash(unsigned int systemTimeMs,unsigned char start
 	}	
 	else 
 	{					
-			if(systemTimeMs-recTimeMs>500)
-			{			
-				torqueValue = TorqueRangeCheck(torqueValue);					
-				if(torqueValue>30)
+		if(systemTimeMs-recTimeMs>500)
+		{			
+			torqueValue = TorqueRangeCheck(torqueValue);					
+			if(torqueValue>30)
+			{
+				torqueNum=(torqueValue-30)*2/5+13;
+			}
+			else
+			{
+				if(torqueValue<5)
 				{
-					torqueNum=(torqueValue-30)*2/5+13;
+					torqueNum=0;
 				}
 				else
 				{
-					if(torqueValue<5)
-					{
-						torqueNum=0;
-					}
-					else
-					{
-						torqueNum=(torqueValue-5)>>1;//offset
-					}
+					torqueNum=(torqueValue-5)>>1;//offset
 				}
-						
-				if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].dir!=EndoModeTorqueATC)
+			}						
+			if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].dir!=EndoModeTorqueATC)
+			{
+//				if(torqueNum>torqueReference)//闂佽法鍠曟繛鍥礌閳╁啫顏堕梺璺ㄥ枑閺嬪骞忔搴涗粵
+//				{
+//					torqueNum=torqueReference;
+//			}		
+			}	
+			if(torqueNum>maxTorqueNum) torqueNum=maxTorqueNum;						
+			for(i=0;i<22;i++)
+			{
+				m=(i<torqueNum)?1:0;
+				j=i*5;					
+				if(i<7)
 				{
-
-//					if(torqueNum>torqueReference)//闁跨喕濞囬崠鈩冨闁跨喐鏋婚幏椋庛仛
-//					{
-//						torqueNum=torqueReference;
-//					}		
-				}	
-				if(torqueNum>maxTorqueNum) torqueNum=maxTorqueNum;						
-				for(i=0;i<22;i++)
-				{
-					m=(i<torqueNum)?1:0;
-					j=i*5;					
-					if(i<7)
-					{
 //					disp_DrawColumn(x+100-j,y,12+i,0);
-						disp_DrawColumn(x+101-j,y+1,12+i,m);
-						disp_DrawColumn(x+102-j,y,14+i,m);
-						disp_DrawColumn(x+103-j,y+1,12+i,m);
+					disp_DrawColumn(x+101-j,y+1,12+i,m);
+					disp_DrawColumn(x+102-j,y,14+i,m);
+					disp_DrawColumn(x+103-j,y+1,12+i,m);
 //					disp_DrawColumn(x+104-j,y,12+i,0);							
-					}
-					else if(i<13)
-					{					
+				}
+				else if(i<13)
+				{					
 //					disp_DrawColumn(x+100-j,y,i*3,0);
-						disp_DrawColumn(x+101-j,y+1,i*3,m);
-						disp_DrawColumn(x+102-j,y,i*3+2,m);
-						disp_DrawColumn(x+103-j,y+1,i*3,m);
+					disp_DrawColumn(x+101-j,y+1,i*3,m);
+					disp_DrawColumn(x+102-j,y,i*3+2,m);
+					disp_DrawColumn(x+103-j,y+1,i*3,m);
 //					disp_DrawColumn(x+104-j,y,i*3,0);			
-					}
-					else
-					{
-						j=6*i-11;
+				}
+				else
+				{
+					j=6*i-11;
 //					disp_DrawColumn(x+100-j,y,40,0);
-						disp_DrawColumn(x+101-j,y+2,36,m);
-						disp_DrawColumn(x+102-j,y+1,38,m);
-						disp_DrawColumn(x+103-j,y,40,m);
-						disp_DrawColumn(x+104-j,y+1,38,m);
-						disp_DrawColumn(x+105-j,y+2,36,m);			
-					}		
-				}	
+					disp_DrawColumn(x+101-j,y+2,36,m);
+					disp_DrawColumn(x+102-j,y+1,38,m);
+					disp_DrawColumn(x+103-j,y,40,m);
+					disp_DrawColumn(x+104-j,y+1,38,m);
+					disp_DrawColumn(x+105-j,y+2,36,m);			
+				}		
+			}	
 				//torque//test
 //				Disp_TorqueOnly(124,40,torqueValue);
 //				if(torqueValue>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum]	)
@@ -1550,38 +1499,38 @@ static void TorqueProgressBarFlash(unsigned int systemTimeMs,unsigned char start
 //				{
 //					Disp_TorqueOnly(124,40,torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum]);
 //				}								
-				recTimeMs=systemTimeMs;	
-				blinkFlag=(blinkFlag)?0:1;				
-				i=torqueReference;
-				j=i*5;
-				if(i<7)
-				{
-//					disp_DrawColumn(x+100-j,y,12+i,0);
-					disp_DrawColumn(x+101-j,y+1,12+i,blinkFlag);
-					disp_DrawColumn(x+102-j,y,14+i,blinkFlag);
-					disp_DrawColumn(x+103-j,y+1,12+i,blinkFlag);
-					disp_DrawColumn(x+104-j,y,12+i,0);		
-				}
-				else if(i<13)
-				{
-//					disp_DrawColumn(x+100-j,y,i*3,0);
-					disp_DrawColumn(x+101-j,y+1,i*3,blinkFlag);
-					disp_DrawColumn(x+102-j,y,i*3+2,blinkFlag);
-					disp_DrawColumn(x+103-j,y+1,i*3,blinkFlag);
-				}		
-				else
-				{
-						j=i*6-11;
-//						disp_DrawColumn(x+100-j,y,38,0);
-						disp_DrawColumn(x+101-j,y+2,36,blinkFlag);
-						disp_DrawColumn(x+102-j,y+1,38,blinkFlag);
-						disp_DrawColumn(x+103-j,y,40,blinkFlag);
-						disp_DrawColumn(x+104-j,y+1,38,blinkFlag);
-						disp_DrawColumn(x+105-j,y+2,36,blinkFlag);	
-				}				
-//			xTaskNotifyGive(beepTemporaryTask_Handle);					
-				xSemaphoreGive(xSemaphoreDispRfresh);	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻柧甯秶閹风兘鈧氨鐓￠崚鐑芥晸閺傘倖瀚�
+			recTimeMs=systemTimeMs;	
+			blinkFlag=(blinkFlag)?0:1;				
+			i=torqueReference;
+			j=i*5;
+			if(i<7)
+			{
+//				disp_DrawColumn(x+100-j,y,12+i,0);
+				disp_DrawColumn(x+101-j,y+1,12+i,blinkFlag);
+				disp_DrawColumn(x+102-j,y,14+i,blinkFlag);
+				disp_DrawColumn(x+103-j,y+1,12+i,blinkFlag);
+				disp_DrawColumn(x+104-j,y,12+i,0);		
 			}
+			else if(i<13)
+			{
+//				disp_DrawColumn(x+100-j,y,i*3,0);
+				disp_DrawColumn(x+101-j,y+1,i*3,blinkFlag);
+				disp_DrawColumn(x+102-j,y,i*3+2,blinkFlag);
+				disp_DrawColumn(x+103-j,y+1,i*3,blinkFlag);
+			}		
+			else
+			{
+				j=i*6-11;
+//				disp_DrawColumn(x+100-j,y,38,0);
+				disp_DrawColumn(x+101-j,y+2,36,blinkFlag);
+				disp_DrawColumn(x+102-j,y+1,38,blinkFlag);
+				disp_DrawColumn(x+103-j,y,40,blinkFlag);
+				disp_DrawColumn(x+104-j,y+1,38,blinkFlag);
+				disp_DrawColumn(x+105-j,y+2,36,blinkFlag);	
+			}				
+//			xTaskNotifyGive(beepTemporaryTask_Handle);					
+				xSemaphoreGive(xSemaphoreDispRfresh);	
+		}
 	}
 }
 
@@ -1599,7 +1548,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 	if(startFlag==0)//preparation work
 	{
 		recTimeMs=systemTimeMs;
-//	recApexValue=33;//<0 ,闁跨喐鏆€閹恒儻缍囬幏锟�<3闁跨喐鏋婚幏锟�23,4闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+//	recApexValue=33;//<0 ,闂佽法鍠愰弳鈧柟鎭掑劵缂嶅洭骞忛敓锟�<3闂佽法鍠愰弸濠氬箯閿燂拷23,4闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 		recApexValue=0;
 		temp=0;
 //	OLED_ShowString(110,40,"APEX",24,1);
@@ -1613,15 +1562,15 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 			if(apexValue<1)
 			{			
 //				if(temp!=0)
-					recApexValue=33;
-					temp=0;
+				recApexValue=33;
+				temp=0;
 			}
 			else temp=apexValue;					
 			// over area (40~60)
 			if(recApexValue!=temp)
 			{
 				if(temp>=30) recApexValue=30;//
-				if(temp==0) recApexValue=temp;//閸忋劑鏁撻弬銈嗗
+				if(temp==0) recApexValue=temp;//闁稿繈鍔戦弫鎾诲棘閵堝棗顏�
 				if(recApexValue>temp) 
 				{
 					if(recApexValue==1) recApexValue=0;					
@@ -1683,14 +1632,14 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 					else if(recApexValue>25)
 					{
 	//				disp_DrawColumn(x,y,40,0);
-						if(i==sys_param_un.device_param.ref_tine)//闁跨喕濞囬崠鈩冨闁跨喐鏋婚幏锟�
+						if(i==sys_param_un.device_param.ref_tine)//闂佽法鍠曟繛鍥礌閳╁啫顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 						{
 							disp_DrawColumn(x+1,y+2,36,1);
 							disp_DrawColumn(x+2,y+1,38,1);
 							disp_DrawColumn(x+3,y,40,1);
 							disp_DrawColumn(x+4,y+1,38,1);
 							disp_DrawColumn(x+5,y+2,36,1);						
-	//						disp_DrawRow(x+3,y+41,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+	//						disp_DrawRow(x+3,y+41,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 	//						disp_DrawRow(x+2,y+42,3,1);
 	//						disp_DrawRow(x+1,y+43,5,1);
 						}
@@ -1714,7 +1663,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 						disp_DrawColumn(x+5,y+2,36,j);			
 					}		
 				}
-				// oter area  闁跨喐鏋婚幏锟�100~160)
+				// oter area  闂佽法鍠愰弸濠氬箯閿燂拷100~160)
 				x=94;//96;
 				y=16;
 				m=x;
@@ -1737,187 +1686,147 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 							disp_DrawColumn(x+3,y+1,17,1);
 						}					
 					}
-					else if(recApexValue>25){
+					else if(recApexValue>25)
+					{
 	//				disp_DrawColumn(x,y,20,0);
-							if(i+7==sys_param_un.device_param.ref_tine)//闁跨喕濞囬崠鈩冨闁跨喐鏋婚幏锟�
-							{
-								if(i<4)
-								{
-									disp_DrawColumn(x+1,y+1,18+20-i*6,1);
-									disp_DrawColumn(x+2,y,20+20-i*6,1);
-									disp_DrawColumn(x+3,y+1,18+20-i*6,1);
-								}
-								else
-								{
-									disp_DrawColumn(x+1,y+1,17,1);
-									disp_DrawColumn(x+2,y,19,1);
-									disp_DrawColumn(x+3,y+1,17,1);
-								}	
-							}
-							else 
-							{
-								if(i<4)
-								{
-									disp_DrawColumn(x+1,y+1,18+20-i*6,0);
-									disp_DrawColumn(x+2,y,20+20-i*6,0);
-									disp_DrawColumn(x+3,y+1,18+20-i*6,0);
-								}
-								else
-								{
-									disp_DrawColumn(x+1,y+1,17,0);
-									disp_DrawColumn(x+2,y,19,0);
-									disp_DrawColumn(x+3,y+1,17,0);
-								}									
-							}						
-					}
-					else
-					{		
-						j=((i+11)<recApexValue)?0:1;					
-						//disp_DrawColumn(x,y,20,0);
+					if(i+7==sys_param_un.device_param.ref_tine)//闂佽法鍠曟繛鍥礌閳╁啫顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
+					{
 						if(i<4)
 						{
-							disp_DrawColumn(x+1,y+1,18+20-i*6,j);
-							disp_DrawColumn(x+2,y,20+20-i*6,j);
-							disp_DrawColumn(x+3,y+1,18+20-i*6,j);
+							disp_DrawColumn(x+1,y+1,18+20-i*6,1);
+							disp_DrawColumn(x+2,y,20+20-i*6,1);
+							disp_DrawColumn(x+3,y+1,18+20-i*6,1);
 						}
 						else
 						{
-							disp_DrawColumn(x+1,y+1,17,j);
-							disp_DrawColumn(x+2,y,19,j);
-							disp_DrawColumn(x+3,y+1,17,j);
-						}					
-					}	
-				}				
-				if(apexValue<0)//闁跨喐鏋婚幏鐤熅闁跨喐鏋婚幏鐑芥晸閿燂拷
-				{					
-//					OLED_ShowString(110,40," -- ",24,1);
-				}
-				else if(apexValue<3)
-				{
-					OLED_ShowString(106,40,"OVER",24,1);//110,40,"OVER",24,1);
-				}
-				else if(apexValue>25)
-				{		
-						if(apex_flag==1)
-						{
-							OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
-							apex_flag=0;
-//							APEXIdleTimeManage(xTaskGetTickCount(),0);
+							disp_DrawColumn(x+1,y+1,17,1);
+							disp_DrawColumn(x+2,y,19,1);
+							disp_DrawColumn(x+3,y+1,17,1);
 						}	
-						else 
-						{	
-							OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
-							//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚规０鍕晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗
-//							if(APEXIdleTimeManage(xTaskGetTickCount(),5000))
-//							{
-//								OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
-//							}
-//							else
-//							{								
-//								apex_flag=2;
-//								if(recApexValue<sys_param_un.device_param.ref_tine+3) m=0;
-//								else m=recApexValue-sys_param_un.device_param.ref_tine-3;
-//								OLED_ShowChar(106,40,' ',24,1);//(110,40,' ',24,1);
-//								if(m<10)
-//								{
-//									if(recApexValue<sys_param_un.device_param.ref_tine+3)
-//									{
-//										OLED_ShowChar(118,40,'-',24,1);//(122,40,'-',24,1);
-//										OLED_ShowChar(130,40,'-',24,1);//(134,40,'-',24,1);				
-//									}
-//									else 
-//									{
-//										OLED_ShowChar(118,40,' ',24,1);//(122,40,' ',24,1);
-//										OLED_ShowNum(130,40,m,1,24,1);//(134,40,m,1,24,1);
-//									}					
-//								}
-//								else
-//								{
-//									OLED_ShowNum(118,40,m,2,24,1);//(122,40,m,2,24,1);
-//								}				
-//								OLED_ShowChar(142,40,' ',24,1);	//(146,40,' ',24,1);													
-//							}		
-						}							
+					}
+					else 
+					{
+						if(i<4)
+						{
+							disp_DrawColumn(x+1,y+1,18+20-i*6,0);
+							disp_DrawColumn(x+2,y,20+20-i*6,0);
+							disp_DrawColumn(x+3,y+1,18+20-i*6,0);
+						}
+						else
+						{
+							disp_DrawColumn(x+1,y+1,17,0);
+							disp_DrawColumn(x+2,y,19,0);
+							disp_DrawColumn(x+3,y+1,17,0);
+						}									
+					}						
 				}
 				else
-				{			
-					if(recApexValue<sys_param_un.device_param.ref_tine+3) m=0;
-					else m=recApexValue-sys_param_un.device_param.ref_tine-3;
-					OLED_ShowChar(106,40,' ',24,1);//(110,40,' ',24,1);
-					if(m<10)
+				{		
+					j=((i+11)<recApexValue)?0:1;					
+					//disp_DrawColumn(x,y,20,0);
+					if(i<4)
 					{
-						if(recApexValue<sys_param_un.device_param.ref_tine+3)
-						{
-							OLED_ShowChar(118,40,'-',24,1);//(122,40,'-',24,1);
-							OLED_ShowChar(130,40,'-',24,1);//(134,40,'-',24,1);				
-						}
-						else 
-						{
-							OLED_ShowChar(118,40,' ',24,1);//(122,40,' ',24,1);
-							OLED_ShowNum(130,40,m,1,24,1);//(134,40,m,1,24,1);
-						}					
+						disp_DrawColumn(x+1,y+1,18+20-i*6,j);
+						disp_DrawColumn(x+2,y,20+20-i*6,j);
+						disp_DrawColumn(x+3,y+1,18+20-i*6,j);
 					}
 					else
 					{
-						OLED_ShowNum(118,40,m,2,24,1);//(122,40,m,2,24,1);
-					}				
-					OLED_ShowChar(142,40,' ',24,1);//(146,40,' ',24,1);
-				}
-				xSemaphoreGive(xSemaphoreDispRfresh);			
-			}			
-	    blinkTimeMs++;		   
-			if(blinkTimeMs>50)//500ms
+						disp_DrawColumn(x+1,y+1,17,j);
+						disp_DrawColumn(x+2,y,19,j);
+						disp_DrawColumn(x+3,y+1,17,j);
+					}					
+				}	
+			}				
+			if(apexValue<0)//闂佽法鍠愰弸濠氬箯閻ゎ垳鐔呴梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁跨噦鎷�
+			{					
+//				OLED_ShowString(110,40," -- ",24,1);
+			}
+			else if(apexValue<3)
 			{
-				blinkTimeMs=0;
-				blink=(blink)?0:1;		
-				if(apexValue<0)//闁跨喐鏋婚幏鐤熅闁跨喐鏋婚幏鐑芥晸閿燂拷
+				OLED_ShowString(106,40,"OVER",24,1);//110,40,"OVER",24,1);
+			}
+			else if(apexValue>25)
+			{		
+				if(apex_flag==1)
 				{
-					if(blink==0)	OLED_ShowString(106,40,"    ",24,1);//(110,40,"    ",24,1);
-					else OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
+					OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
+					apex_flag=0;
+//					APEXIdleTimeManage(xTaskGetTickCount(),0);
+				}								
+			}
+			else
+			{			
+				if(recApexValue<sys_param_un.device_param.ref_tine+3) m=0;
+				else m=recApexValue-sys_param_un.device_param.ref_tine-3;
+				OLED_ShowChar(106,40,' ',24,1);//(110,40,' ',24,1);
+				if(m<10)
+				{
+					if(recApexValue<sys_param_un.device_param.ref_tine+3)
+					{
+						OLED_ShowChar(118,40,'-',24,1);//(122,40,'-',24,1);
+						OLED_ShowChar(130,40,'-',24,1);//(134,40,'-',24,1);				
+					}
+					else 
+					{
+						OLED_ShowChar(118,40,' ',24,1);//(122,40,' ',24,1);
+						OLED_ShowNum(130,40,m,1,24,1);//(134,40,m,1,24,1);
+					}					
 				}
 				else
 				{
-					if(recApexValue<26&&recApexValue>=0&&recApexValue!=sys_param_un.device_param.ref_tine+3)//闁跨喐鏋婚幏椋庡剨闁跨喐鏋婚幏锟�
+					OLED_ShowNum(118,40,m,2,24,1);//(122,40,m,2,24,1);
+				}				
+				OLED_ShowChar(142,40,' ',24,1);//(146,40,' ',24,1);
+			}
+			xSemaphoreGive(xSemaphoreDispRfresh);			
+		}			
+	    blinkTimeMs++;		   
+		if(blinkTimeMs>50)//500ms
+		{
+			blinkTimeMs=0;
+			blink=(blink)?0:1;		
+			if(apexValue<0)
+			{
+				if(blink==0)	OLED_ShowString(106,40,"    ",24,1);//(110,40,"    ",24,1);
+				else OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
+			}
+			else
+			{
+				if(recApexValue<26&&recApexValue>=0&&recApexValue!=sys_param_un.device_param.ref_tine+3)
+				{
+					if(sys_param_un.device_param.ref_tine<7)
 					{
-						if(sys_param_un.device_param.ref_tine<7)
-						{
-							x=50+sys_param_un.device_param.ref_tine*6;//52+sys_param_un.device_param.ref_tine*6;
-							y=16;
-							disp_DrawColumn(x+1,y+2,36,blink);
-							disp_DrawColumn(x+2,y+1,38,blink);
-							disp_DrawColumn(x+3,y,40,blink);
-							disp_DrawColumn(x+4,y+1,38,blink);
-							disp_DrawColumn(x+5,y+2,36,blink);
-						}
-						else if(sys_param_un.device_param.ref_tine<11)
-						{
-//						x=96+(sys_param_un.device_param.ref_tine-7)*4;
-							x=68+sys_param_un.device_param.ref_tine*4-2;
-							y=16;	
-							disp_DrawColumn(x+1,y+1,80-sys_param_un.device_param.ref_tine*6,blink);
-							disp_DrawColumn(x+2,y,82-sys_param_un.device_param.ref_tine*6,blink);
-							disp_DrawColumn(x+3,y+1,80-sys_param_un.device_param.ref_tine*6,blink);
-						}
-						else 
-						{							
-							x=68+sys_param_un.device_param.ref_tine*4-2;
-							y=16;		
-							disp_DrawColumn(x+1,y+1,17,blink);
-							disp_DrawColumn(x+2,y,19,blink);
-							disp_DrawColumn(x+3,y+1,17,blink);
-						}
+						x=50+sys_param_un.device_param.ref_tine*6;//52+sys_param_un.device_param.ref_tine*6;
+						y=16;
+						disp_DrawColumn(x+1,y+2,36,blink);
+						disp_DrawColumn(x+2,y+1,38,blink);
+						disp_DrawColumn(x+3,y,40,blink);
+						disp_DrawColumn(x+4,y+1,38,blink);
+						disp_DrawColumn(x+5,y+2,36,blink);
 					}
-//					if(APEXIdleTimeManage(xTaskGetTickCount(),5000)&&apex_flag==2)
-//					{//闁跨喐鍩呴棃鈺傚闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
-//							apex_flag=0;						
-//							if(sys_param_un.device_param.apexFunctionLoad==0||GC_depth_vlaue(0, 1)>25)//闁跨喕顫楅惂鍛婂闁跨喐鏋婚幏椋庡Ц閹線鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閸撹法顒查幏鐑芥晸閺傘倖瀚归柨鐔告緝閿濆繑瀚�//5闁跨喐鏋婚幏鐑芥晸閺傘倖瀚规い娲晸閻ㄥ棎鍊ч幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喍鑼庨敍顏庢嫹
-//							{
-//								OLED_ShowString(106,40,"APEX",24,1);//(110,40,"APEX",24,1);
-//							}
-//					}					
+					else if(sys_param_un.device_param.ref_tine<11)
+					{
+//						x=96+(sys_param_un.device_param.ref_tine-7)*4;
+						x=68+sys_param_un.device_param.ref_tine*4-2;
+						y=16;	
+						disp_DrawColumn(x+1,y+1,80-sys_param_un.device_param.ref_tine*6,blink);
+						disp_DrawColumn(x+2,y,82-sys_param_un.device_param.ref_tine*6,blink);
+						disp_DrawColumn(x+3,y+1,80-sys_param_un.device_param.ref_tine*6,blink);
+					}
+					else 
+					{							
+						x=68+sys_param_un.device_param.ref_tine*4-2;
+						y=16;		
+						disp_DrawColumn(x+1,y+1,17,blink);
+						disp_DrawColumn(x+2,y,19,blink);
+						disp_DrawColumn(x+3,y+1,17,blink);
+					}
 				}
+				
+			}
 		}
-		}
+	}
 	}
 	
 }
@@ -1929,7 +1838,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 	if(startFlag==0)//preparation work
 	{
 		recTimeMs=systemTimeMs;
-//	recApexValue=33;//<0 ,闁跨喐鏆€閹恒儻缍囬幏锟�<3闁跨喐鏋婚幏锟�23,4闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+//	recApexValue=33;//<0 ,闂佽法鍠愰弳鈧柟鎭掑劵缂嶅洭骞忛敓锟�<3闂佽法鍠愰弸濠氬箯閿燂拷23,4闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 		recApexValue=0;
 		temp=0;
 	}		
@@ -1950,7 +1859,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 			if(recApexValue!=temp)
 			{
 				if(temp>=30) recApexValue=30;//
-				if(temp==0) recApexValue=temp;//閸忋劑鏁撻弬銈嗗
+				if(temp==0) recApexValue=temp;//闁稿繈鍔戦弫鎾诲棘閵堝棗顏�
 				if(recApexValue>temp) 
 				{
 					if(recApexValue==1) recApexValue=0;					
@@ -1981,14 +1890,14 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 				{
 					x=m+i*6;
 //				disp_DrawColumn(x,y,40,0);
-					if(i==sys_param_un.device_param.ref_tine)//闁跨喕濞囬崠鈩冨闁跨喐鏋婚幏锟�
+					if(i==sys_param_un.device_param.ref_tine)//闂佽法鍠曟繛鍥礌閳╁啫顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 					{
 						disp_DrawColumn(x+1,y+2,36,1);
 						disp_DrawColumn(x+2,y+1,38,1);
 						disp_DrawColumn(x+3,y,40,1);
 						disp_DrawColumn(x+4,y+1,38,1);
 						disp_DrawColumn(x+5,y+2,36,1);						
-//						disp_DrawRow(x+3,y+41,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+//						disp_DrawRow(x+3,y+41,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //						disp_DrawRow(x+2,y+42,3,1);
 //						disp_DrawRow(x+1,y+43,5,1);
 					}
@@ -2001,7 +1910,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 						disp_DrawColumn(x+5,y+2,36,0);						
 					}	
 				}
-				// oter area  闁跨喐鏋婚幏锟�100~160)
+				// oter area  闂佽法鍠愰弸濠氬箯閿燂拷100~160)
 				x=94-16;//96;
 				y=16;
 				m=x;
@@ -2009,7 +1918,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 				{
 					x=m+i*4;
 	//				disp_DrawColumn(x,y,20,0);
-					if(i+7==sys_param_un.device_param.ref_tine)//闁跨喕濞囬崠鈩冨闁跨喐鏋婚幏锟�
+					if(i+7==sys_param_un.device_param.ref_tine)//闂佽法鍠曟繛鍥礌閳╁啫顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 					{
 						if(i<4)
 						{
@@ -2061,7 +1970,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 static void Disp_ApexPreForSet(u8 value)
 {
 	u8 i,x,y;
-//bat area  闁跨喐鏋婚幏锟�0~40闁跨喐鏋婚幏锟�
+//bat area  闂佽法鍠愰弸濠氬箯閿燂拷0~40闂佽法鍠愰弸濠氬箯閿燂拷
 	//P0 ,bat
 	
 	// over area (40~60)
@@ -2081,21 +1990,21 @@ static void Disp_ApexPreForSet(u8 value)
 			disp_DrawRow(x,y+i+3,40,1);
 		}			
 		OLED_ShowNum(x-2,0,0,1,8,1);
-		//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+		//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%7);//offset	max=3	
-//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		disp_DrawRow(x+sys_param_un.device_param.ref_tine*6,61,3,1);
 //		disp_DrawRow(x-1+sys_param_un.device_param.ref_tine*6,62,5,1);			
 		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%13);//offset	max=3	
 //		
-//		disp_DrawRow(x-1,60,59,0);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+//		disp_DrawRow(x-1,60,59,0);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		disp_DrawRow(x-1,61,59,0);
 //		disp_DrawRow(x-1,62,59,0);	
 		
-		disp_DrawRow(x+1+3*6,60,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+		disp_DrawRow(x+1+3*6,60,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 		disp_DrawRow(x+3*6,61,3,1);
 		disp_DrawRow(x-1+3*6,62,5,1);		
-	// other area 闁跨喐鏋婚幏锟�100~160闁跨喐鏋婚幏锟�
+	// other area 闂佽法鍠愰弸濠氬箯閿燂拷100~160闂佽法鍠愰弸濠氬箯閿燂拷
 		x=95-16;//97;//100-3;
 		y=8;
 		for(i=0;i<2;i++)
@@ -2124,7 +2033,7 @@ static void Disp_ApexPreForSet(u8 value)
 static void Disp_ApexPrepare(u8 value)
 {
 	u8 i,x,y;
-//bat area  闁跨喐鏋婚幏锟�0~40闁跨喐鏋婚幏锟�
+//bat area  闂佽法鍠愰弸濠氬箯閿燂拷0~40闂佽法鍠愰弸濠氬箯閿燂拷
 	//P0 ,bat
 	
 	// over area (40~60)
@@ -2144,21 +2053,21 @@ static void Disp_ApexPrepare(u8 value)
 			disp_DrawRow(x,y+i+3,40,1);
 		}			
 		OLED_ShowNum(x-2,0,0,1,8,1);
-		//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+		//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%7);//offset	max=3	
-//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		disp_DrawRow(x+sys_param_un.device_param.ref_tine*6,61,3,1);
 //		disp_DrawRow(x-1+sys_param_un.device_param.ref_tine*6,62,5,1);			
 		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%13);//offset	max=3	
 //		
-//		disp_DrawRow(x-1,60,59,0);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+//		disp_DrawRow(x-1,60,59,0);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //		disp_DrawRow(x-1,61,59,0);
 //		disp_DrawRow(x-1,62,59,0);	
 		
-		disp_DrawRow(x+1+3*6,60,1,1);//闁跨喐鏋婚幏鐑芥晸鐟欐帒鍤栭幏鐑芥晸閺傘倖瀚�
+		disp_DrawRow(x+1+3*6,60,1,1);//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆愬笒閸ゆ牠骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 		disp_DrawRow(x+3*6,61,3,1);
 		disp_DrawRow(x-1+3*6,62,5,1);		
-	// other area 闁跨喐鏋婚幏锟�100~160闁跨喐鏋婚幏锟�
+	// other area 闂佽法鍠愰弸濠氬箯閿燂拷100~160闂佽法鍠愰弸濠氬箯閿燂拷
 		x=95;//97;//100-3;
 		y=8;
 		for(i=0;i<2;i++)
@@ -2206,11 +2115,11 @@ static void FreshTorquePictureInApexAndMotorMode(u8 x,u8 y,unsigned short int to
 		}			
 //		temp=(torqueValue*6/torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum]);
 		if(temp>6) temp=6;
-		for(i=0;i<26;i++)//闁跨喐鏋婚幏鐑芥晸閿燂拷
+		for(i=0;i<26;i++)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柨鐕傛嫹
 		{
 			disp_DrawRow(x+3,y+3+i,26,0);
 		}
-		for(i=0;i<2+4*temp;i++)//闁跨喐鏋婚幏鐑芥晸閿燂拷
+		for(i=0;i<2+4*temp;i++)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柨鐕傛嫹
 		{
 			if(temp>5)
 			{
@@ -2374,30 +2283,30 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 {	
 	static 	unsigned char auto_flag_ap=null_signal;
 	static  unsigned int recTimeMs;
-	static unsigned char temp_mode_flag=0, motor_run_mode=0;//濡€崇础闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷;
+	static unsigned char temp_mode_flag=0, motor_run_mode=0;//婵☆垪鈧磭纭€闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�;
 	unsigned char sendSignal=null_signal;
 	if(recTimeMs>systemTimeMs) recTimeMs=systemTimeMs;
-	if(sys_param_un.device_param.apexFunctionLoad==1)//闁跨喕顫楅棃鈺傚闁跨喐鏋婚幏閿嬆佸锟�
+	if(sys_param_un.device_param.apexFunctionLoad==1)//闂佽法鍠曢～妤呮閳哄倸顏堕梺璺ㄥ枑閺嬪骞忛柨瀣嗕礁顕ｉ敓锟�
 	{
-		if(sys_param_un.device_param.use_p_num<10)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+		if(sys_param_un.device_param.use_p_num<10)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 		{
-			#ifdef  APEX_FUNCTION_EBABLE	// 闁跨喐鏋婚幏鐑芥晸閺傘倖瀚规稉鈧�
-			if(depth<27)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+			#ifdef  APEX_FUNCTION_EBABLE	// 闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氳绋夐埀锟�
+			if(depth<27)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 		 	{			 
-				if(depth<0)//闁跨喐鏋婚幏鐤熅闁跨喐鏋婚幏鐑芥晸閿燂拷
+				if(depth<0)//闂佽法鍠愰弸濠氬箯閻ゎ垳鐔呴梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁跨噦鎷�
 				{	
-					if(motor_status.status!=Status_STOP)//auto start ,in 闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐕傛嫹	)
+					if(motor_status.status!=Status_STOP)//auto start ,in 闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悤鍌涘	)
 					{	
-						if(sys_param_un.device_param.apical_action_flag!=0)			//闁跨喐鏋婚幏鐤熅闁跨喐鏋婚幏鐑芥晸閿燂拷
+						if(sys_param_un.device_param.apical_action_flag!=0)			//闂佽法鍠愰弸濠氬箯閻ゎ垳鐔呴梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁跨噦鎷�
 						{
 							App_MotorControl(MOTOR_MODE_STOP);
 						}		
 					}						
-					auto_flag_ap = motor_apex_run_signal;//閻樿埖鈧線鏁撻弬銈嗗闁跨喐鏋婚幏锟�					
+					auto_flag_ap = motor_apex_run_signal;//闁绘ǹ鍩栭埀顑跨窔閺佹捇寮妶鍡楊伓闂佽法鍠愰弸濠氬箯閿燂拷					
 				}
 				else if(depth<=3+sys_param_un.device_param.ref_tine)
-				{	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风柉鍨遍銈嗗闁跨噦鎷�
-					if(sys_param_un.device_param.apical_action_flag==1)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚� 闁跨喐鏋婚幏鐤祮
+				{	//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鏌夐崹閬嶎敍閵堝棗顏堕梺璺ㄥ櫐閹凤拷
+					if(sys_param_un.device_param.apical_action_flag==1)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷 闂佽法鍠愰弸濠氬箯閻ゎ垱绁�
 					{
 						if(temp_mode_flag==0)
 						{	
@@ -2408,33 +2317,33 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							{
 								if(motor_settings.forward_position > - motor_settings.reverse_position)
 								{
-									motor_settings.mode=EndoModeSpeedReverse;//闁跨喐鏋婚幏鐤祮
+									motor_settings.mode=EndoModeSpeedReverse;//闂佽法鍠愰弸濠氬箯閻ゎ垱绁�
 								}
 								else if(motor_settings.forward_position < - motor_settings.reverse_position)
 								{
-									motor_settings.mode=EndoModeSpeedForward;//闁跨喐鏋婚幏鐤祮
+									motor_settings.mode=EndoModeSpeedForward;//闂佽法鍠愰弸濠氬箯閻ゎ垱绁�
 								}
 							}
 							else  if(motor_run_mode==EndoModeSpeedForward)
 							{
-								motor_settings.mode=EndoModeSpeedReverse;//闁跨喐鏋婚幏鐤祮
+								motor_settings.mode=EndoModeSpeedReverse;//闂佽法鍠愰弸濠氬箯閻ゎ垱绁�
 							}
 							else  if(motor_run_mode==EndoModeSpeedReverse)
 							{
-								motor_settings.mode=EndoModeSpeedForward;//闁跨喐鏋婚幏鐤祮
+								motor_settings.mode=EndoModeSpeedForward;//闂佽法鍠愰弸濠氬箯閻ゎ垱绁�
 							}
 							App_MotorControl(MOTOR_SETTING_UPDATE);									
 							if(motor_status.status==Status_STOP)
 							{	
 								if(sys_param_un.device_param.auto_start_flag!=0&&auto_flag_ap != motor_apex_run_signal)
 								{
-									auto_flag_ap= motor_apex_run_signal;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷	
+									auto_flag_ap= motor_apex_run_signal;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�	
 								}									
 								App_MotorControl(MOTOR_MODE_START);
 							}		
 						}	
 					}
-					else if(sys_param_un.device_param.apical_action_flag==2)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚� stop
+					else if(sys_param_un.device_param.apical_action_flag==2)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷 stop
 					{	
 						if(temp_mode_flag==0)
 						{
@@ -2446,7 +2355,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							}			
 						}	            			 
 					}
-					if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)//闁跨喎褰ㄩ崠鈩冨闁跨喓瀚涢敐蹇斿闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+					if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)//闂佽法鍠庤ぐ銊╁礌閳╁啫顏堕梺璺ㄥ枔鐎氭盯鏁愯箛鏂款伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 					{
 						if(motor_status.status!=Status_STOP)
 						{
@@ -2524,7 +2433,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				}
 			    else if(depth<=(9+sys_param_un.device_param.ref_tine))
 			    {		
-					if(temp_mode_flag==0x55) { motor_settings.mode=motor_run_mode;		temp_mode_flag=0; App_MotorControl(MOTOR_SETTING_UPDATE);	}		//闁跨喕顢滈棃鈺傚				 
+					if(temp_mode_flag==0x55) { motor_settings.mode=motor_run_mode;		temp_mode_flag=0; App_MotorControl(MOTOR_SETTING_UPDATE);	}		//闂佽法鍠曢、婊堟閳哄倸顏�				 
 					if(motor_status.status!=Status_STOP)
 					{
 						if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)
@@ -2559,7 +2468,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 						motor_settings.reverse_speed=-motor_settings.forward_speed;
 						temp_mode_flag=0; 
 						App_MotorControl(MOTOR_SETTING_UPDATE);
-					}		//闁跨喕顢滈棃鈺傚			
+					}		//闂佽法鍠曢、婊堟閳哄倸顏�			
 					if(motor_status.status!=Status_STOP)
 					{
 						if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)
@@ -2584,16 +2493,16 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 						}
 					}	
 				}				
-				if(sys_param_un.device_param.auto_start_flag!=0)//auto start ,in 闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐕傛嫹	
+				if(sys_param_un.device_param.auto_start_flag!=0)//auto start ,in 闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悤鍌涘	
 				{
 					if(auto_flag_ap!=motor_apex_run_signal)
 					{
 						auto_flag_ap= motor_apex_run_signal;										
 						if(depth>=0)
 						{
-							if(motor_status.status==Status_STOP)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+							if(motor_status.status==Status_STOP)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 							{
-								App_MotorControl(MOTOR_MODE_START);//鐟曚線鏁撻弬銈嗗鐟曚線鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+								App_MotorControl(MOTOR_MODE_START);//閻熸洑绶氶弫鎾诲棘閵堝棗顏堕悷鏇氱窔閺佹捇寮妶鍡楊伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 							}											
 						}
 					}
@@ -2601,7 +2510,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 					{
 						if(motor_status.status==Status_STOP)
 						{	
-							if(depth>(8+sys_param_un.device_param.ref_tine))//闁跨喎澹欑粵瑙勫闁跨喐鏋婚幏鐑芥晸閺夌増浠棃鈺傚
+							if(depth>(8+sys_param_un.device_param.ref_tine))//闂佽法鍠庢竟娆戠驳鐟欏嫬顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄澧楁禒顕€妫冮埡鍌氼伓
 							{
 //							if(motor_status.status==Status_STOP)
 //							{
@@ -2614,7 +2523,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				}						
 			}	
 			else 
-			{// 闁跨喎澹欑粵瑙勫闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+			{// 闂佽法鍠庢竟娆戠驳鐟欏嫬顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 				if(temp_mode_flag==0x55) 
 				{
 					motor_settings.mode=motor_run_mode;		
@@ -2623,13 +2532,13 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 					motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
 					temp_mode_flag=0;	
 					App_MotorControl(MOTOR_SETTING_UPDATE);
-				}	 //闁跨喕顢滈棃鈺傚
+				}	 //闂佽法鍠曢、婊堟閳哄倸顏�
 				if(motor_settings.forward_speed!=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
 				{
 					motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					App_MotorControl(MOTOR_SETTING_UPDATE);	
-				} //闁跨喐鏋婚幏宄邦潗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+				} //闂佽法鍠愰弸濠氬箯瀹勯偊娼楅梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 				if(motor_settings.toggle_mode_speed!=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum])
 				{
 					motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
@@ -2644,17 +2553,17 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							 App_MotorControl(MOTOR_MODE_STOP);
 						}	
 						sendSignal=motor_apex_stop_signal;
-						xQueueSend(xQueueKeyMessage, &sendSignal, 0);//閸掔兘鏁撻弬銈嗗						
+						xQueueSend(xQueueKeyMessage, &sendSignal, 0);//闁告帞鍏橀弫鎾诲棘閵堝棗顏�						
 					}						
-					auto_flag_ap= motor_apex_stop_signal;//闁跨喕濡拠褎瀚归柨鐔告灮閹风兘鏁撻弬銈嗗						
+					auto_flag_ap= motor_apex_stop_signal;//闂佽法鍠曟俊顓犳嫚瑜庣€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏�						
 				}
 				if(motor_status.status==Status_STOP&&sys_param_un.device_param.apical_action_flag!=0) 
 				{
 					App_MotorControl(MOTOR_MODE_START);
 				}//restart
 			}
-			if(sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.apical_action_flag==0)//闁跨喓娼鹃棃鈺傚闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐕傛嫹
-			{	//閻樿埖鈧線鏁撻弬銈嗗闁跨喐鏋婚幏锟�
+			if(sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.apical_action_flag==0)//闂佽法鍠撳楣冩閳哄倸顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悤鍌涘
+			{	//闁绘ǹ鍩栭埀顑跨窔閺佹捇寮妶鍡楊伓闂佽法鍠愰弸濠氬箯閿燂拷
 				if(motor_status.status!=Status_STOP&&auto_flag_ap!=motor_apex_run_signal)	auto_flag_ap=motor_apex_run_signal;
 				if(motor_status.status==Status_STOP&&auto_flag_ap!=motor_apex_stop_signal)	auto_flag_ap=motor_apex_stop_signal;
 			}				
@@ -2709,20 +2618,20 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		{	
 			if(auto_flag_ap!=motor_apex_stop_signal)
 			{
-				auto_flag_ap= motor_apex_stop_signal;//闁跨喕濡拠褎瀚归柨鐔告灮閹风兘鏁撻弬銈嗗
-				if(sys_param_un.device_param.auto_stop_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.apical_action_flag!=0)//exit,闁跨喎澹欑粵瑙勫闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹峰嘲浠犲锟�,闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻崣顐嫹
+				auto_flag_ap= motor_apex_stop_signal;//闂佽法鍠曟俊顓犳嫚瑜庣€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏�
+				if(sys_param_un.device_param.auto_stop_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.apical_action_flag!=0)//exit,闂佽法鍠庢竟娆戠驳鐟欏嫬顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嘲鍢叉禒鐘差潰閿燂拷,闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲矗椤愵剚瀚�
 				{
-					xQueueSend(xQueueKeyMessage, &auto_flag_ap, 0);//妞ょ敻鏁撻弬銈嗗闁跨喎褰ㄦ导娆愬
+					xQueueSend(xQueueKeyMessage, &auto_flag_ap, 0);//濡炪倗鏁婚弫鎾诲棘閵堝棗顏堕梺璺ㄥ枎瑜般劍瀵煎▎鎰伓
 					App_MotorControl(MOTOR_MODE_STOP);
 				}					
 			}
 		}				
 	 }
-	else//闁跨喕濞囩粵瑙勫
+	else//闂佽法鍠曟繛鍥╃驳鐟欏嫬顏�
 	{		
 		if(auto_flag_ap!=motor_apex_stop_signal)
 		{
-			auto_flag_ap= motor_apex_stop_signal;//閻樿埖鈧線鏁撻弬銈嗗闁跨喐鏋婚幏锟�				
+			auto_flag_ap= motor_apex_stop_signal;//闁绘ǹ鍩栭埀顑跨窔閺佹捇寮妶鍡楊伓闂佽法鍠愰弸濠氬箯閿燂拷				
 		}	
 	}	
 }
@@ -2736,7 +2645,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 	unsigned short int sendBuff;
 	static unsigned short int overLoadCount;
 	static unsigned short int overdCount,beep_time_out;
-	if(realTorque>MAX_TORQUE_UUPER_THRESHOLD*1.05)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�10%(1.10==5.0N,1.08<=4.8)
+	if(realTorque>MAX_TORQUE_UUPER_THRESHOLD*1.05)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷10%(1.10==5.0N,1.08<=4.8)
 	{
 		overLoadCount++;
 		if(overLoadCount>20)//10)//10*10=100ms
@@ -2859,7 +2768,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 			}		 							
 			else
 			{	
-				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])//MAX_TORQUE_UUPER_THRESHOLD*0.95)//闁跨喐鏋婚幏宄颁簳鐏忓繘鏁撴慨鎰剁礉闁跨喐鏋婚幏锟�4.0娑撳搫鍣�
+				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])//MAX_TORQUE_UUPER_THRESHOLD*0.95)//闂佽法鍠愰弸濠氬箯瀹勯绨抽悘蹇撶箻閺佹挻鎱ㄩ幇鍓佺闂佽法鍠愰弸濠氬箯閿燂拷4.0濞戞挸鎼崳锟�
 				{		
 					if(motor_settings.mode ==EndoModePositionToggle)
 					{		
@@ -2882,7 +2791,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 					}				
 				}	
 				else if(realTorque<torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.6)//MAX_TORQUE_UUPER_THRESHOLD*0.6)//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum])
-				{//闁跨喕顢滈棃鈺傚							
+				{//闂佽法鍠曢、婊堟閳哄倸顏�							
 					if(motor_settings.mode !=EndoModePositionToggle)
 					{
 						overdCount++;
@@ -2901,11 +2810,11 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 						}								
 					}							 
 				} //beep
-				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.8)//MAX_TORQUE_UUPER_THRESHOLD*0.80)//姒涙﹢鏁撻弬銈嗗閸婏拷
+				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.8)//MAX_TORQUE_UUPER_THRESHOLD*0.80)//濮掓稒锕㈤弫鎾诲棘閵堝棗顏堕柛濠忔嫹
 				{
 					if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])
 					{
-						if(beep_time_out>10)//0.2S闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+						if(beep_time_out>10)//0.2S闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 						{
 							beep_time_out=0;
 						}	
@@ -2913,7 +2822,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 					else if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.90)
 					{
 						beep_time_out++;
-						if(beep_time_out>10)//0.4S闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+						if(beep_time_out>10)//0.4S闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 						{
 							beep_time_out=0;
 							sendBuff= BUZZER_MODE_MOTOR_REVERSE;		
@@ -3000,7 +2909,7 @@ void WorkPageFlash(unsigned char workingMode, unsigned int systemTimeMs)//pageID
 		{
 			if(DeviceOffTimeManage(xTaskGetTickCount(),MINUTE_IDLE_TICKS*3))//8))//8  minute no fresh
 			{
-				sendBuff=run_button_long_press_signal;//闁跨喐鏋婚幏鐑芥晸閸欘偄鍙ф导娆愬
+				sendBuff=run_button_long_press_signal;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柛娆樺亜閸櫻勫濞嗘劕顏�
 				xQueueSend(xQueueKeyMessage, &sendBuff, 0);		
 			}
 		}
@@ -3031,7 +2940,7 @@ void WorkPageFlash(unsigned char workingMode, unsigned int systemTimeMs)//pageID
 			if(realApex==30)//no action
 			{
 				timeout+=10;
-				if(timeout>MINUTE_IDLE_TICKS)//*3) 	//3闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔烘骄鐠佽瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喓顏幏鏃傤劜閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔峰缁涜瀚�	
+				if(timeout>MINUTE_IDLE_TICKS)//*3) 	//3闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鐑橀獎閻犱浇顫夌€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枔椤忣亪骞忛弮鍌ゅ姕闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢宄邦棡缂佹稖顫夌€氾拷	
 				{
 					timeout=0;
 					sendBuff=run_button_press_signal;
@@ -3100,7 +3009,7 @@ static void OLED_Display_CHARGING(unsigned short int batValue ,unsigned char sta
 	}
 	else 
 	{		
-		if(get_charge_state()==RESET)		//閺堫亪鏁撻弬銈嗗闁跨喐鏋婚幏锟�
+		if(get_charge_state()==RESET)		//闁哄牜浜弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 		{
 			blinkFlag =(blinkFlag==0)?1:0;	
 			Bat_ValueBlink(batValue,blinkFlag);				
@@ -3156,7 +3065,7 @@ static void MenuPageTurns(unsigned char pageID)
 	{	
 		OLED_Display_WORK(MENU_APEX_AND_MOTOR_PAGE,0);		
 	}
-	else if(pageID==MENU_MAX_PAGE_NUM)//闁跨喐鍩呮导娆愬閸撳秹鏁撻弬銈嗗缁€锟�
+	else if(pageID==MENU_MAX_PAGE_NUM)//闂佽法鍠愰崺鍛濞嗘劕顏堕柛鎾崇Ч閺佹捇寮妶鍡楊伓缂佲偓閿燂拷
 	{
 		OLED_Display_POWER_OFF(0);
 	}
@@ -3171,7 +3080,7 @@ void vAppMenuManageTask( void * pvParameters )
 { 
 	uint32_t rec_Signal=0;//
 	static uint8_t menuPage=MENU_LOGO_PAGE,motor_run_cmd=0,selectNum=0,submenuPageNum=0,motorOrApexSetFlag=0,exitApexFlag=1;
-	confirm_state  apexMotorStartFlag =TRUE;//apex闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏宄扮箶
+	confirm_state  apexMotorStartFlag =TRUE;//apex闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忓畡鎵
 	static unsigned 	short int  batDispValue;
 	void *pMalloc=NULL;
 	
@@ -3235,12 +3144,12 @@ void vAppMenuManageTask( void * pvParameters )
 			case MENU_HOME_PAGE:								
 				if(rec_Signal==run_button_press_signal)
 				{		
-					apexMotorStartFlag=FALSE;//闁跨喐鏋婚幏閿嬵剾闁跨喐鍩呴棃鈺傚闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+					apexMotorStartFlag=FALSE;//闂佽法鍠愰弸濠氬箯闁垮鍓鹃梺璺ㄥ枑閸╁懘妫冮埡鍌氼伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 					MenuMotorParamUpdate(sys_param_un.device_param.use_p_num);//save data							
 					if(selectNum==ADJUST_MOTOR_PARAM_PROGRAM_NUM)
 					{
 						if(sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.apical_action_flag==0)
-						{	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+						{	//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 							menuPage = MENU_MOTOR_WORK_PAGE;
 							if(motor_run_cmd==MOTOR_MODE_STOP) // motor control
 							{
@@ -3250,8 +3159,8 @@ void vAppMenuManageTask( void * pvParameters )
 						}
 						else
 						{
-							if(sys_param_un.device_param.apexFunctionLoad!=0)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨噦鎷�																						
-							{		//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚规稉鈧�							
+							if(sys_param_un.device_param.apexFunctionLoad!=0)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ櫐閹凤拷																						
+							{		//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氳绋夐埀锟�							
 								menuPage = MENU_APEX_AND_MOTOR_PAGE;
 //								if(sys_param_un.device_param.auto_stop_flag==0)
 //								{
@@ -3263,7 +3172,7 @@ void vAppMenuManageTask( void * pvParameters )
 //								}	
 //								else 
 //								{
-//									motor_run_cmd=MOTOR_MODE_STOP;//闁跨喐鏋婚幏鐑芥晸閻偄灏呴幏鐑芥晸閺傘倖瀚�
+//									motor_run_cmd=MOTOR_MODE_STOP;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柣顓у亜鐏忓懘骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷
 //								}											
 							}	
 							else 
@@ -3289,7 +3198,7 @@ void vAppMenuManageTask( void * pvParameters )
 					menuPage = MENU_SYSTEM_SET_PAGE;//to set 
 					submenuPageNum=0;			
 //					motorOrApexSetFlag%=2;	
-					motorOrApexSetFlag=0;	//姒涙﹢鏁撻弬銈嗗閸婄硴OTOR						
+					motorOrApexSetFlag=0;	//濮掓稒锕㈤弫鎾诲棘閵堝棗顏堕柛濠勭〈OTOR						
 					MenuPageTurns(menuPage);
 				}							
 				else 
@@ -3334,7 +3243,7 @@ void vAppMenuManageTask( void * pvParameters )
 								{
 									sys_param_un.device_param.use_p_num--;		
 									sys_param_un.device_param.use_p_num%=11;//apex
-									HomePageHandle(motor_setting_updata_signal,ADJUST_MOTOR_PARAM_PROGRAM_NUM);//闁跨喎褰ㄦ导娆愬闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�
+									HomePageHandle(motor_setting_updata_signal,ADJUST_MOTOR_PARAM_PROGRAM_NUM);//闂佽法鍠庤ぐ銊﹀濞嗘劕顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷
 								}	
 								#else 
 									sys_param_un.device_param.use_p_num--;		
@@ -3354,7 +3263,7 @@ void vAppMenuManageTask( void * pvParameters )
 										HomePageHandle(rec_Signal,selectNum);
 									}									
 								}	
-						if(rec_Signal==null_signal)//APEX闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风柉顩﹂柨鐔告灮閹风兘鏁撻柧鏉垮皡閹风兘鏁撻弬銈嗗
+						if(rec_Signal==null_signal)//APEX闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鏌夐々锕傛煥閻斿憡鐏柟椋庡厴閺佹捇鏌ч弶鍨殹闁归鍏橀弫鎾诲棘閵堝棗顏�
 						{	
 							if(MenuIdleTimeManage(xTaskGetTickCount(),HOME_PARAM_IDLE_TICKS))
 							{	
@@ -3372,9 +3281,9 @@ void vAppMenuManageTask( void * pvParameters )
 								{
 									if(GC_depth_vlaue(0, 1)<27)
 									{	
-										if(apexMotorStartFlag==TRUE)	//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗娑撯偓闁跨喐鏋婚幏锟�
+										if(apexMotorStartFlag==TRUE)	//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏跺☉鎾亾闂佽法鍠愰弸濠氬箯閿燂拷
 										{	
-//										apexMotorStartFlag=FALSE;//闁跨喐鏋婚幏閿嬵剾闁跨喐鍩呴棃鈺傚闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+//										apexMotorStartFlag=FALSE;//闂佽法鍠愰弸濠氬箯闁垮鍓鹃梺璺ㄥ枑閸╁懘妫冮埡鍌氼伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 											MenuMotorParamUpdate(sys_param_un.device_param.use_p_num);//save data	
 											if(GC_depth_vlaue(0, 1)>=0&&sys_param_un.device_param.apical_action_flag!=2)
 											{
@@ -3382,21 +3291,21 @@ void vAppMenuManageTask( void * pvParameters )
 												{
 														motor_run_cmd=MOTOR_MODE_START;
 												}	
-												App_MotorControl(motor_run_cmd);			//闁跨喐鏋婚幏鐑芥晸鐟欙絽濮╅柨鐔告灮閹凤拷
+												App_MotorControl(motor_run_cmd);			//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆欑到婵晠鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 											}														
-											menuPage = MENU_APEX_AND_MOTOR_PAGE;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+											menuPage = MENU_APEX_AND_MOTOR_PAGE;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 											MenuPageTurns(menuPage);
 										}
 									}	
                 					else 
 									{
-										apexMotorStartFlag=TRUE;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏锟�
+										apexMotorStartFlag=TRUE;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 									}												
 								}						
 							}									
 							else
 							{
-								apexMotorStartFlag=TRUE;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏锟�
+								apexMotorStartFlag=TRUE;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛敓锟�
 							}
 						}																	
 					}								
@@ -3441,7 +3350,7 @@ void vAppMenuManageTask( void * pvParameters )
 								submenuPageNum%=MAX_SUBMENU;
 							}								
 						}
-						else//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+						else//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 						{
 							if(submenuPageNum==SETTING_FOR)
 							{								
@@ -3500,9 +3409,9 @@ void vAppMenuManageTask( void * pvParameters )
 					MenuPageTurns(menuPage);
 				}							
 				WorkPageFlash(MENU_MOTOR_WORK_PAGE,xTaskGetTickCount());	
-				if(sys_param_un.device_param.apexFunctionLoad!=0)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨噦鎷�
+				if(sys_param_un.device_param.apexFunctionLoad!=0)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ櫐閹凤拷
 				{					
-					menuPage=MENU_APEX_AND_MOTOR_PAGE;	//闁跨喎褰ㄦ导娆愬闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐕傛嫹	
+					menuPage=MENU_APEX_AND_MOTOR_PAGE;	//闂佽法鍠庤ぐ銊﹀濞嗘劕顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悤鍌涘	
 					MenuPageTurns(menuPage);
 				}													
 				 break;
@@ -3532,9 +3441,9 @@ void vAppMenuManageTask( void * pvParameters )
 					WorkPageFlash(MENU_ONLY_APEX_PAGE,xTaskGetTickCount());	
 					if(sys_param_un.device_param.apexFunctionLoad!=0&&exitApexFlag!=0)
 					{
-						exitApexFlag=0;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归悩鑸碘偓锟�
+						exitApexFlag=0;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鎮╅懜纰樺亾閿燂拷
 					}
-					if(sys_param_un.device_param.apexFunctionLoad==0&&exitApexFlag==0)//闁跨喕濞囩粵瑙勫闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷,闁跨喎褰ㄦ导娆愬闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏宄拔涢杈彧閹风兘鏁撻幓顓濈串閹风兘鏁撻敓锟�
+					if(sys_param_un.device_param.apexFunctionLoad==0&&exitApexFlag==0)//闂佽法鍠曟繛鍥╃驳鐟欏嫬顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�,闂佽法鍠庤ぐ銊﹀濞嗘劕顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忓畡鎷旀盯顢栨潏顐ｅ涧闁归鍏橀弫鎾诲箵椤撴繄涓查柟椋庡厴閺佹捇鏁撻敓锟�
 					{
 						exitApexFlag=1;
 						//sys_param_un.device_param.use_p_num=0;
@@ -3546,7 +3455,7 @@ void vAppMenuManageTask( void * pvParameters )
 			case MENU_APEX_AND_MOTOR_PAGE:
 				if(rec_Signal==run_button_press_signal||rec_Signal==low_power_signal)
 				{	
-					apexMotorStartFlag=FALSE;//闁跨喐鏋婚幏閿嬵剾闁跨喐鍩呴棃鈺傚闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
+					apexMotorStartFlag=FALSE;//闂佽法鍠愰弸濠氬箯闁垮鍓鹃梺璺ㄥ枑閸╁懘妫冮埡鍌氼伓闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 					if(motor_run_cmd == MOTOR_MODE_START) //motor control
 					{						
 						motor_run_cmd=MOTOR_MODE_STOP;
@@ -3554,8 +3463,8 @@ void vAppMenuManageTask( void * pvParameters )
 					menuPage=MENU_HOME_PAGE;//page change					
 					MenuPageTurns(menuPage);
 					App_MotorControl(MOTOR_MODE_STOP);						
-				 	//if(rec_Signal==run_button_press_signal&&GC_depth_vlaue(0, 1)<=(3+sys_param_un.device_param.ref_tine)&&sys_param_un.device_param.apical_action_flag==2)//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归悩鑸碘偓锟�
-				//	{//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归崑婊勵剾闁跨喐鏋婚幏鐑芥晸閺傘倖瀚圭憰渚€鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閸撹法顒查幏锟�,闁跨喐鏋婚幏閿嬫闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗
+				 	//if(rec_Signal==run_button_press_signal&&GC_depth_vlaue(0, 1)<=(3+sys_param_un.device_param.ref_tine)&&sys_param_un.device_param.apical_action_flag==2)//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鎮╅懜纰樺亾閿燂拷
+				//	{//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊宕戝⿰鍕靛壘闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬湱鎲版笟鈧弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁告捁娉曢鏌ュ箯閿燂拷,闂佽法鍠愰弸濠氬箯闁垮顦ч梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏�
 //					if(motor_run_cmd==MOTOR_MODE_STOP)  //motor control
 //					{		
 //							motor_run_cmd=MOTOR_MODE_START;
@@ -3563,9 +3472,9 @@ void vAppMenuManageTask( void * pvParameters )
 //						App_MotorControl(motor_run_cmd);	
 				//	}
 				}	
-				else if(rec_Signal==motor_apex_stop_signal) //闁跨喐鏋婚幏鐑芥晸閸撹法顒查幏鐑芥晸閺傘倖瀚归柨鐔告灮閹凤拷
+				else if(rec_Signal==motor_apex_stop_signal) //闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柛鎾规硶椤掓煡骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁瑰嚖鎷�
 				{
-					apexMotorStartFlag=TRUE;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔烘畷鐠佽瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�	
+					apexMotorStartFlag=TRUE;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鐑樼暦閻犱浇顫夌€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷	
 					if(motor_run_cmd==MOTOR_MODE_START) //motor control
 					{						
 						motor_run_cmd=MOTOR_MODE_STOP;
@@ -3577,9 +3486,9 @@ void vAppMenuManageTask( void * pvParameters )
 				else
 				{							
 					WorkPageFlash(MENU_APEX_AND_MOTOR_PAGE,xTaskGetTickCount());
-					if(sys_param_un.device_param.apexFunctionLoad==0)//闁跨喕濞囩粵瑙勫闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔侯仾閿濆繑瀚归柨鐔峰缁涜瀚归柨鐔告灮閹风兘鏁撻弬銈嗗閻樿埖鈧拷
+					if(sys_param_un.device_param.apexFunctionLoad==0)//闂佽法鍠曟繛鍥╃驳鐟欏嫬顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢渚痪闁挎繂绻戠€氬綊鏌ㄩ悢宄邦棡缂佹稖顫夌€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕柣妯垮煐閳ь剨鎷�
 					{	
-						apexMotorStartFlag=TRUE;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔烘畷鐠佽瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�							
+						apexMotorStartFlag=TRUE;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鐑樼暦閻犱浇顫夌€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氾拷							
 						motor_run_cmd =	MOTOR_MODE_STOP;						
 						App_MotorControl(motor_run_cmd);							
 						menuPage=MENU_HOME_PAGE;							
@@ -3638,7 +3547,7 @@ void vAppMenuManageTask( void * pvParameters )
 			rec_Signal= null_signal;	
 			if(menuPage==MENU_SYSTEM_SET_PAGE||menuPage	==MENU_HOME_PAGE)
 			{
-				xSemaphoreGive(xSemaphoreDispRfresh); //闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻柧甯秶閹风兘鈧氨鐓￠崚鐑芥晸閺傘倖瀚�
+				xSemaphoreGive(xSemaphoreDispRfresh); //闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘煣鐢喚绉堕柟椋庡厴閳ь剚姘ㄩ悡锟犲礆閻戣姤鏅搁柡鍌樺€栫€氾拷
 			}	
 		}
 		else

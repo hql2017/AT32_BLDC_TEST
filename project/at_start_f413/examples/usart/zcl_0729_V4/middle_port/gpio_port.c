@@ -71,16 +71,16 @@ void user_gpio_init(void)
   gpio_bits_reset(LEDB_PORT,LEDB_IO);
 	
 	//led
-  crm_periph_clock_enable(LEDG_CLOCK, TRUE);
+  crm_periph_clock_enable(LEDY_CLOCK, TRUE);
   gpio_default_para_init(&gpio_init_struct);
   gpio_init_struct.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
   gpio_init_struct.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
   gpio_init_struct.gpio_mode = GPIO_MODE_OUTPUT;
-  gpio_init_struct.gpio_pins = LEDG_IO;
+  gpio_init_struct.gpio_pins = LEDY_IO;
   gpio_init_struct.gpio_pull = GPIO_PULL_UP;
-  gpio_init(LEDG_PORT, &gpio_init_struct);
+  gpio_init(LEDY_PORT, &gpio_init_struct);
 	//close
-  gpio_bits_reset(LEDG_PORT,LEDG_IO);
+  gpio_bits_reset(LEDY_PORT,LEDY_IO);
 	
 	
 #endif
@@ -187,9 +187,9 @@ void gpio_pins_toggle(gpio_type* gpio_x, unsigned short int gpio_pin)
 static void led_op(uint8_t num,uint8_t onoff)
 {	
   if(num==0){     		
-		if(onoff==LED_ON)    {  gpio_bits_set(LEDG_PORT,LEDG_IO); 	 }			
-		else if(onoff==LED_OFF)   {  gpio_bits_reset(LEDG_PORT,LEDG_IO);   }
-		else if(onoff==LED_BREATH)   {  gpio_pins_toggle(LEDG_PORT, LEDG_IO);  }
+		if(onoff==LED_ON)    {  gpio_bits_set(LEDY_PORT,LEDY_IO); 	 }			
+		else if(onoff==LED_OFF)   {  gpio_bits_reset(LEDY_PORT,LEDY_IO);   }
+		else if(onoff==LED_BREATH)   {  gpio_pins_toggle(LEDY_PORT, LEDY_IO);  }
 	}
 	else if(num==1){
 		if(onoff==LED_ON)   { gpio_bits_set(LEDB_PORT,LEDB_IO);	}			

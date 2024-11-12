@@ -219,14 +219,14 @@ static void DeviceParamCheck(void)
 }
 int main(void)
 {
-		SystemInit ();
-		system_clock_config();
-		extend_sram();
-		nvic_priority_group_config(NVIC_PRIORITY_GROUP_4);
+	SystemInit ();
+	system_clock_config();
+	extend_sram();
+	nvic_priority_group_config(NVIC_PRIORITY_GROUP_4);
 #ifndef RTOS_UNUSED
-		delay_init(configTICK_RATE_HZ);
-		NormalTimerInit(1,SYSTEM_CLOCK_FREQUENCY);
-		Suspend_RTOS_stick(); // stop  stick  before   RTOS   created
+	delay_init(configTICK_RATE_HZ);
+	NormalTimerInit(1,SYSTEM_CLOCK_FREQUENCY);//for delay1ms
+	Suspend_RTOS_stick(); // stop  stick  before   RTOS   created
 #else 
 		ConfigSys_Timer(SYSTEM_TIME_BASE_MS,SYSTEM_CLOCK_FREQUENCY);//配置系统计时TMR4时基为5ms	
 #endif		

@@ -10,7 +10,7 @@
 //#include "at32f413_tmr.h"
 
 static uint16_t apex_gc_frequence =10000;//>8kHz;//beep  highest vol  f=4000(4k~5K)(4k70db,5k 60db);middle vol  f=1000(60db);
-static int32_t gc_num_list[31] = {0};//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閹恒儳顒查幏鐑芥晸閺傘倖瀚�
+static int32_t gc_num_list[31] = {0};//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁规亽鍎抽鏌ュ箯閻戣姤鏅搁柡鍌樺€栫€氾拷
 
 extern union Param_Union  sys_param_un; 
 /**
@@ -24,61 +24,60 @@ void APEXInit(void)
 	uint16_t ch1_val = 0 ;//PWM value
 	uint16_t tmr_count_val = 390 ;//timer count value
 	tmr_output_config_type tmr_oc_init_structure;
-  gpio_init_type gpio_init_structurt;//gpio structure	
+	gpio_init_type gpio_init_structurt;//gpio structure	
 	
 	//insert check
 	crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
-  gpio_default_para_init(&gpio_init_structurt);
-  gpio_init_structurt.gpio_mode = GPIO_MODE_INPUT;
-  gpio_init_structurt.gpio_pins = GPIO_PINS_9;////GPIO_PINS_9;//tx
-  gpio_init_structurt.gpio_pull = GPIO_PULL_UP;
-  gpio_init(GPIOA, &gpio_init_structurt);		
+	gpio_default_para_init(&gpio_init_structurt);
+	gpio_init_structurt.gpio_mode = GPIO_MODE_INPUT;
+	gpio_init_structurt.gpio_pins = GPIO_PINS_9;////GPIO_PINS_9;//tx
+	gpio_init_structurt.gpio_pull = GPIO_PULL_UP;
+	gpio_init(GPIOA, &gpio_init_structurt);		
 
 	crm_periph_clock_enable(APEX_RELEY_CLOCK, TRUE);
-  gpio_default_para_init(&gpio_init_structurt);
-  gpio_init_structurt.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_init_structurt.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
-  gpio_init_structurt.gpio_mode = GPIO_MODE_OUTPUT;
-  gpio_init_structurt.gpio_pins = APEX_RELEY_IO;
-  gpio_init_structurt.gpio_pull = GPIO_PULL_UP;
-  gpio_init(APEX_RELEY_PORT, &gpio_init_structurt);			
-	
+	gpio_default_para_init(&gpio_init_structurt);
+	gpio_init_structurt.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_init_structurt.gpio_out_type  = GPIO_OUTPUT_PUSH_PULL;
+	gpio_init_structurt.gpio_mode = GPIO_MODE_OUTPUT;
+	gpio_init_structurt.gpio_pins = APEX_RELEY_IO;
+	gpio_init_structurt.gpio_pull = GPIO_PULL_UP;
+	gpio_init(APEX_RELEY_PORT, &gpio_init_structurt);			
+		
 	crm_periph_clock_enable(APEX_PWM_CLOCK,TRUE);
 
-  gpio_init_structurt.gpio_pins =APEX_PWM_IO;//PA0 timer2 cha1
-  gpio_init_structurt.gpio_mode =GPIO_MODE_MUX ;
+	gpio_init_structurt.gpio_pins =APEX_PWM_IO;//PA0 timer2 cha1
+	gpio_init_structurt.gpio_mode =GPIO_MODE_MUX ;
 	gpio_init_structurt.gpio_drive_strength= GPIO_DRIVE_STRENGTH_STRONGER ;
-  gpio_init_structurt.gpio_out_type =GPIO_OUTPUT_PUSH_PULL ;
+	gpio_init_structurt.gpio_out_type =GPIO_OUTPUT_PUSH_PULL ;
 	gpio_init_structurt.gpio_pull =GPIO_PULL_UP;
-  gpio_init(APEX_PWM_PORT,&gpio_init_structurt);
+	gpio_init(APEX_PWM_PORT,&gpio_init_structurt);
 	
 	gpio_bits_reset(APEX_PWM_PORT, APEX_PWM_IO);//close
 	
 	 /* compute the div value */
-  div_value = (uint16_t)((system_core_clock) / 1000000) - 1;// div
+  	div_value = (uint16_t)((system_core_clock) / 1000000) - 1;// div
 		
 	tmr_count_val=((system_core_clock/(div_value+1))/apex_gc_frequence)-1;//count frequency 4K
 	ch1_val=tmr_count_val/2;//duty ratio
 
   /* tmr2 time base configuration */
 	crm_periph_clock_enable(CRM_TMR2_PERIPH_CLOCK,TRUE);
-  tmr_base_init(TMR2, tmr_count_val, div_value);
-	
-  tmr_cnt_dir_set(TMR2, TMR_COUNT_UP);	
-	
-  tmr_clock_source_div_set(TMR2, TMR_CLOCK_DIV1);
+	tmr_base_init(TMR2, tmr_count_val, div_value);
+		
+	tmr_cnt_dir_set(TMR2, TMR_COUNT_UP);	
+		
+	tmr_clock_source_div_set(TMR2, TMR_CLOCK_DIV1);
 
-  tmr_output_default_para_init(&tmr_oc_init_structure);
-  tmr_oc_init_structure.oc_mode = TMR_OUTPUT_CONTROL_PWM_MODE_A;
-  tmr_oc_init_structure.oc_idle_state = FALSE;
-  tmr_oc_init_structure.oc_polarity = TMR_OUTPUT_ACTIVE_LOW;
-  tmr_oc_init_structure.oc_output_state = TRUE;
-  tmr_output_channel_config(TMR2, TMR_SELECT_CHANNEL_1, &tmr_oc_init_structure);
-  tmr_channel_value_set(TMR2, TMR_SELECT_CHANNEL_1, ch1_val);
-  tmr_output_channel_buffer_enable(TMR2, TMR_SELECT_CHANNEL_1, TRUE);
-	
-  tmr_period_buffer_enable(TMR2, TRUE);
-	
+	tmr_output_default_para_init(&tmr_oc_init_structure);
+	tmr_oc_init_structure.oc_mode = TMR_OUTPUT_CONTROL_PWM_MODE_A;
+	tmr_oc_init_structure.oc_idle_state = FALSE;
+	tmr_oc_init_structure.oc_polarity = TMR_OUTPUT_ACTIVE_LOW;
+	tmr_oc_init_structure.oc_output_state = TRUE;
+	tmr_output_channel_config(TMR2, TMR_SELECT_CHANNEL_1, &tmr_oc_init_structure);
+	tmr_channel_value_set(TMR2, TMR_SELECT_CHANNEL_1, ch1_val);
+	tmr_output_channel_buffer_enable(TMR2, TMR_SELECT_CHANNEL_1, TRUE);
+		
+	tmr_period_buffer_enable(TMR2, TRUE);		
 }
 
 	/**
@@ -145,7 +144,7 @@ void gc_in_or_exit(unsigned char inOrExit)
 //	double gc_rate_g = (double)(n0-n1)*0.15/3.0;	//gc_rate_b~=	gc_rate_g*3;	
 //	int32_t gc_val_h = (int32_t)((double)n1 + (gc_rate_g*1 ) + (gc_rate_b * 13));
 //	double gc_rate_l = (double)(n0-gc_val_h-10)/3.0;	
-	int32_t gc_val_l = n0-n1;//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹疯渹绠涢柨鐔告灮閹风兘鏁撶悰妤冾暜閹风兘鏁撴鐚存嫹0闁跨喐鏋婚幏閿嬬墡閸戝棝鏁撻弬銈嗗闁跨喐鏋婚幏宄扳偓锟�
+	int32_t gc_val_l = n0-n1;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊鏌ㄩ悢鍛婄伄闁圭柉娓圭粻娑㈡煥閻斿憡鐏柟椋庡厴閺佹挾鎮板Δ鍐炬殰闁归鍏橀弫鎾搭殰閻氬瓨瀚�0闂佽法鍠愰弸濠氬箯闁垮澧￠柛鎴濇閺佹捇寮妶鍡楊伓闂佽法鍠愰弸濠氬箯瀹勬壋鍋撻敓锟�
 	double gc_rate_g = (double)gc_val_l*0.076;
 	double gc_rate_b = (double)gc_val_l*0.034;
 	double temp=gc_rate_b*0.2;	
@@ -194,8 +193,8 @@ void gc_in_or_exit(unsigned char inOrExit)
 	gc_num_list[30] = (int32_t)((double)gc_num_list[27] + (gc_rate_l * 3));
 
 }
-//闁跨喐鏋婚幏鐑芥晸鐟欙絽浼愰柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喖銈虹涵閿嬪闁跨喐鏋婚幏锟�
-//rat_r 8k闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归崐锟� rat_c 400闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归崐锟�
+//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁悷娆欑到娴兼劙鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枛閵堣櫣娑甸柨瀣伓闂佽法鍠愰弸濠氬箯閿燂拷
+//rat_r 8k闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊宕愰敓锟� rat_c 400闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氬綊宕愰敓锟�
 static int32_t gc_calc_wl(int32_t rat_r, int32_t rat_c)
 {
 	volatile static int32_t rat;
@@ -205,15 +204,15 @@ static int32_t gc_calc_wl(int32_t rat_r, int32_t rat_c)
 	rat = rat_r * 1000 / rat_c;	
 
 	if((rat_r <= 200)&&(rat_c <= 200)) {
-		return(-7);//閺夆晜鏌ㄥú锟�
+		return(-7);//闁哄鏅滈弻銊ッ洪敓锟�
 	}	
 //		rat=gc_calc_cccc(rat_r,rat_c);
-	//400Hz閸樺鏁撻弬銈嗗闁跨喐鏋婚崚浼存晸閺傘倖瀚归崐濂告晸閺傘倖瀚归柨鐔兼應閿濆繑瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�	
+	//400Hz闁告ê顑夐弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪宕氭导瀛樻櫢闁哄倶鍊栫€氬綊宕愭總鍛婃櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍏兼噳闁挎繂绻戠€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷	
 //	if(rat_c< sys_param_un.device_param.apex_tine_400Value) 
-		if(rat_c+10< sys_param_un.device_param.apex_tine_400Value) //闁跨喐鏋婚幏鐑芥晸閺傘倖瀚�
-	//400Hz閸樺鏁撻弬銈嗗闁跨喐鏋婚崚浼存晸閺傘倖瀚归崐濂告晸閺傘倖瀚归柨鐔兼應閿濆繑瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻敓锟�	
+		if(rat_c+10< sys_param_un.device_param.apex_tine_400Value) //闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柡鍌樺€栫€氾拷
+	//400Hz闁告ê顑夐弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪宕氭导瀛樻櫢闁哄倶鍊栫€氬綊宕愭總鍛婃櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍏兼噳闁挎繂绻戠€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾诲棘閵堝棗顏堕梺璺ㄥ枑閺嬪骞忛悜鑺ユ櫢闁哄倶鍊栫€氬綊鏌ㄩ悢鍛婄伄闁归鍏橀弫鎾绘晸閿燂拷	
  {
-		//闁跨喐鏋婚幏鐑芥晸閺傘倖瀚归柨鐔告灮閹风兘鏁撻弬銈嗗闁跨喐鏋婚幏锟�
+
 		if(rat < gc_num_list[0]) {
 						result = 0;
 					}
@@ -326,14 +325,14 @@ static int32_t gc_calc_wl(int32_t rat_r, int32_t rat_c)
 //			if(result>history_result) 
 //			{
 //				if(rat>gc_num_list[result]+gc_rate_filter_b*0.35) history_result=result;
-//				else result=history_result;//闁跨喐鏋婚幏鐑芥晸閻偅鎷濋幏宄扳偓锟�
+//				else result=history_result;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柣顓у亝閹锋繈骞忓畡鎵冲亾閿燂拷
 //			} 
 //		 else if(result<history_result) 
 //			{
 //				if(rat<gc_num_list[result]+gc_rate_filter_b*0.45) history_result=result;
-//				else result=history_result;//闁跨喐鏋婚幏鐑芥晸閻偅鎷濋幏宄扳偓锟�
+//				else result=history_result;//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柣顓у亝閹锋繈骞忓畡鎵冲亾閿燂拷
 //			}  			
-//		}//闁跨喐鏋婚幏鐑芥晸閻偅鎷濋幏宄扳偓锟�
+//		}//闂佽法鍠愰弸濠氬箯閻戣姤鏅搁柣顓у亝閹锋繈骞忓畡鎵冲亾閿燂拷
 //	}
 //	else history_result=result;
 //	if (result>30) result=30;

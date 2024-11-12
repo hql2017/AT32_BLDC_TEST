@@ -119,12 +119,12 @@ void MotorParamInit(void)
 		else if(motor_param_un.system_motor_pattern[useNum].dir==EndoModePositionToggle)
 		{		
 			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].recTorqueThresholdNum]*0.10;
-			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;
+			motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;
 		}
 		else 
 		{					
 			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].torqueThresholdNum]*0.10;			
-			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;//60%		
+			motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;//60%		
 		}			
 		
 		update_settings(&motor_settings);	
