@@ -12,3 +12,5 @@
 *.json
 #忽略heml文件
 *.htm
+#忽略crf文件
+*.crf
