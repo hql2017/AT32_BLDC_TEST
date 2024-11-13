@@ -758,7 +758,7 @@ void vTaskStart( void * pvParameters )
 		xTaskCreate( vAppMotorControlTask, "motor control", MOTOR_CONTROL_STACK_DEPTH, NULL, MOTOR_CONTROL_TASK_PRIORITY, &motorControlTask_Handle );
 		xTaskCreate( vAppKeyTask, "key scan", KEY_SCAN_STACK_DEPTH, NULL, KEY_SCAN_TASK_PRIORITY, &keyScanTask_Handle );
 		xTaskCreate( vAppBeepTemporaryTask, "beep", SECONDARY_BEEP_STACK_DEPTH, NULL, SECONDARY_BEEP_TASK_PRIORITY, &beepTemporaryTask_Handle );
-		#if configUSE_TIMERS == 1//Èí¼þ¶¨Ê±Æ÷
+		#if configUSE_TIMERS == 1
 //	xTimer01=xTimerCreate("xTimer01",100,pdTRUE,&1,NULL);		
 		#endif		
 		xTaskCreate( vApexGC_Task, "APEX", APEX_GC_STACK_DEPTH, NULL, APEX_GC_TASK_PRIORITY, &ApexGC_Task_Handle );

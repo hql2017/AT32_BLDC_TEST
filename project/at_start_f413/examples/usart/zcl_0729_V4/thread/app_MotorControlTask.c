@@ -189,27 +189,27 @@ unsigned char App_MotorControl(unsigned char cmd)
 			}							
 			start();	
 			#ifdef LED_INDICATE_ENABLE		
-				LedFunctionSet(LED_B ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON);		
+			LedFunctionSet(LED_B ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON);		
 			#endif		
 			break;
 		case MOTOR_SETTING_UPDATE:		
-				update_settings(&motor_settings);	
+			update_settings(&motor_settings);	
 			break;	
 		case MOTOR_MODE_SEARCH_ANGLE:					
-				taskENTER_CRITICAL();
-//				err=MP6570_AutoThetaBias(0x00, 500,2000); //找初始角度
-					err=MP6570_AutoThetaBias(0x00, 300,2000); //找初始角度
-				#ifdef DEBUG_RTT
-				SEGGER_RTT_printf(0, "err%d\r\n", err);	
-				#endif		
-				taskEXIT_CRITICAL(); 
-				stop();	
-				foc_flag=0;
-				MotorStatusMonitor(0);	// status monitor 20ms periodic	
-				vTaskDelay(5);//20ms
-				tmr_counter_enable(TMR3, FALSE);	
+			taskENTER_CRITICAL();
+//			err=MP6570_AutoThetaBias(0x00, 500,2000); //找初始角度
+			err=MP6570_AutoThetaBias(0x00, 300,2000); //找初始角度
+			#ifdef DEBUG_RTT
+			SEGGER_RTT_printf(0, "err%d\r\n", err);	
+			#endif		
+			taskEXIT_CRITICAL(); 
+			stop();	
+			foc_flag=0;
+			MotorStatusMonitor(0);	// status monitor 20ms periodic	
+			vTaskDelay(5);//20ms
+			tmr_counter_enable(TMR3, FALSE);	
 			#ifdef LED_INDICATE_ENABLE
-				LedFunctionSet( LED_B ,500,LED_T_HIGH_PRIORITY,LED_OFF);
+			LedFunctionSet( LED_B ,500,LED_T_HIGH_PRIORITY,LED_OFF);
 			#endif	
 		break;
 		case MOTOR_MODE_RESTART:
@@ -243,7 +243,7 @@ unsigned char App_MotorControl(unsigned char cmd)
 		default:
 			stop();
 			foc_flag=0;
-			break;
+		break;
 	}
 	return err;	
 }
@@ -255,8 +255,7 @@ unsigned char App_MotorControl(unsigned char cmd)
 void vAppMotorControlTask( void * pvParameters )
 {	
 	unsigned int count;
-	for(;;)
-	
+	for(;;)	
 	{	
 		count++;
 		MotorStatusMonitor(5);	// status monitor 20ms periodic	

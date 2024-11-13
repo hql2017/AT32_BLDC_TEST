@@ -14,18 +14,18 @@ union Motor_Para_Union default_mt_un;
 void default_para_write_buff(void)
 {	
 	default_sys_param_un.device_param.W_flag=0xFFFF;//改变值用来比较
-  sys_param_un.device_param.W_flag=40722;//DataStr[4]*256+DataStr[5]; 
-  sys_param_un.device_param.use_hand=right_hand;  
-  sys_param_un.device_param.use_p_num=0;   
-  sys_param_un.device_param.apical_action_flag=1;//0单马达,1根尖自动反转，2，停止
-  sys_param_un.device_param.auto_start_flag=1; 
-  sys_param_un.device_param.auto_stop_flag=1; 
+	sys_param_un.device_param.W_flag=40722;//DataStr[4]*256+DataStr[5]; 
+	sys_param_un.device_param.use_hand=right_hand;  
+	sys_param_un.device_param.use_p_num=0;   
+	sys_param_un.device_param.apical_action_flag=1;//0单马达,1根尖自动反转，2，停止
+	sys_param_un.device_param.auto_start_flag=1; 
+	sys_param_un.device_param.auto_stop_flag=1; 
 	sys_param_un.device_param.motor_max_current=2800;
   	sys_param_un.device_param.ref_tine=0;//3;//3;	
 	sys_param_un.device_param.apexFunctionLoad=0;		
-	if(sys_param_un.device_param.apex_tine_400Value==0||sys_param_un.device_param.apex_tine_400Value==0xFFFF)//使用默认值
+	if(sys_param_un.device_param.apex_tine_400Value==0||sys_param_un.device_param.apex_tine_400Value==0xFFFF)//
 	{
-		sys_param_un.device_param.gc_ref_rate=480;//670;//使用默认值
+		sys_param_un.device_param.gc_ref_rate=480;//670;//
 		sys_param_un.device_param.empty_rate=720;//1000;//no care
 		sys_param_un.device_param.apex_tine_400Value=2400;
 	}

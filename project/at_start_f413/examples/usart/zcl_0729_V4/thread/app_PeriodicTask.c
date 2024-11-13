@@ -191,6 +191,7 @@ void vAppPeriodicTask( void * pvParameters )
 			{
 				OLED_Refresh(sys_param_un.device_param.use_hand);
 				vPortFree(pMalloc);
+				pMalloc=NULL;
 			}										
 			#ifdef DEBUG_RTT
 //		SEGGER_RTT_printf(0, "fresh time Ms %d\r\n", countPeriodicTimeMs);			
