@@ -488,7 +488,6 @@ unsigned char I2C_WaitAck(void) //测数据信号的电平
 
 void I2C_NoAck(void) //测数据信号的电平
 {
-	uint32_t ack,num;
 	IIC_SCL_Clr();
 	IIC_delay();
 	IIC_SCL_Set();
@@ -552,8 +551,7 @@ unsigned char Read_Byte(void)
 }
 //发送一个字节
 void IIC_WR_Byte(unsigned char addr, unsigned char data1, unsigned char data2)
-{
-	u8 byte1,byte2,byte3;
+{	
 	I2C_Start();
 	Send_Byte((0x12<<1));//设备地址
 	I2C_WaitAck();
@@ -590,96 +588,87 @@ u16 IIC_RD_Byte(unsigned char slave_addr, unsigned char reg_addr)
 void  MP6570_IICPortInit(void)
 {
 	gpio_init_type gpio_initstructure;
-  spi_init_type spi_init_struct;
-  
-  crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
-  crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);  
+	crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
+	crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE); 
   
 //  gpio_pin_remap_config(SWJTAG_GMUX_010, TRUE);
 //  gpio_pin_remap_config(SPI1_MUX_01, TRUE);//Remap	
 //	
 	 /* mp6750_EN*/
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_EN;
-  gpio_init(GPIOB, &gpio_initstructure);
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_EN;
+	gpio_init(GPIOB, &gpio_initstructure);
   
-  /* software cs, pB15 as a general io to control flash cs */
-	  
-  
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
-  gpio_initstructure.gpio_pull           = GPIO_PULL_UP;  
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_CS;
-  gpio_init(GPIOB, &gpio_initstructure);
-  	
+  /* software cs, pB15 as a general io to control flash cs */  
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_UP;  
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_CS;
+	gpio_init(GPIOB, &gpio_initstructure);  	
 	
-	  /* sck */ 
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;//GPIO_OUTPUT_PUSH_PULL;
-  gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;//GPIO_PULL_UP;
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_SCK;
-  gpio_init(GPIOA, &gpio_initstructure);
+	/* sck */ 
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;//GPIO_OUTPUT_PUSH_PULL;
+	gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;//GPIO_PULL_UP;
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_SCK;
+	gpio_init(GPIOA, &gpio_initstructure);
     
   /* miso */
 	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_OPEN_DRAIN;//GPIO_OUTPUT_PUSH_PULL;
-  gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;  
 	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;//SLAVE
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_MISO;
-  gpio_init(GPIOA, &gpio_initstructure);
-	
-	gpio_bits_set(GPIOB, GPIO_MP6570_EN);	
-  
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_MISO;
+	gpio_init(GPIOA, &gpio_initstructure);
+
+	gpio_bits_set(GPIOB, GPIO_MP6570_EN);	  
 }
 
 #endif
-
 unsigned short int  MP6570_PortInit(void)
 {
 	unsigned short int  err;
-
 	gpio_init_type gpio_initstructure;
-  spi_init_type spi_init_struct;
-  
-  crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
-  crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);  
-	crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
-//	
+	spi_init_type spi_init_struct;
+	
+	crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
+	crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE);  
+	crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);	
 	 /* mp6750_EN*/
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_EN;
-  gpio_init(GPIOB, &gpio_initstructure);
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_EN;
+	gpio_init(GPIOB, &gpio_initstructure);
   
-  /* software cs, pB15 as a general io to control flash cs */	  
+  	/* software cs, pB15 as a general io to control flash cs */	  
   
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
-  gpio_initstructure.gpio_pull           = GPIO_PULL_UP;  
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_CS;
-  gpio_init(GPIOB, &gpio_initstructure);
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_UP;  
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_CS;
+	gpio_init(GPIOB, &gpio_initstructure);
   
-  /* sck */ 
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
-  gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_SCK;
-  gpio_init(GPIOA, &gpio_initstructure);
+	/* sck */ 
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
+	gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_SCK;
+	gpio_init(GPIOA, &gpio_initstructure);
   
-  /* miso */
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
+ 	/* miso */
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;  
 	gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;//SLAVE
 	gpio_initstructure.gpio_mode           = GPIO_MODE_INPUT;  //MASTER
-  gpio_initstructure.gpio_pins           = GPIO_MP6570_MISO;
-  gpio_init(GPIOA, &gpio_initstructure);
+	gpio_initstructure.gpio_pins           = GPIO_MP6570_MISO;
+	gpio_init(GPIOA, &gpio_initstructure);
   
   /* mosi */ 
 	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
@@ -708,7 +697,7 @@ unsigned short int  MP6570_PortInit(void)
 }
 void  MP6570_SetModeToSPI(void)
 {	
-	unsigned short int  err;
+//	unsigned short int  err;
 	/***to IIC***/
  //to IIC， 	
 		MP6570_IICPortInit();

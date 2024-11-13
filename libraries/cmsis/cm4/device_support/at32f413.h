@@ -109,7 +109,7 @@ extern "C" {
 #define __MPU_PRESENT             1        /*!< mpu present                                  */
 #define __NVIC_PRIO_BITS          4        /*!< at32 uses 4 bits for the priority levels     */
 #define __Vendor_SysTickConfig    0        /*!< set to 1 if different systick config is used */
-#define __FPU_PRESENT             1U       /*!< fpu present                                  */
+#define __FPU_PRESENT             1U      /*!< fpu present                                  */
 
 /**
   * @brief at32f413 interrupt number definition, according to the selected device

@@ -44,8 +44,8 @@ extern SemaphoreHandle_t xSemaphoreApexAutoCalibration;
 #define MINIMUM_CW_CCW_ANGLE_GAP          80//minimum routor angle in  " motor_settings.mode=EndoModePositionToggle "	
 	
 #ifdef ZHX
-#define MAX_MOTOR_SPEED   2200//2000//闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濞炬櫆閸嬫牠鎮楀☉娅亪顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閺佹捇鏁撻敓锟�(max 2450*6=14700)
-#define MAX_TORQUE_UUPER_THRESHOLD   50//42//闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濞炬櫆閸嬫牠鎮楀☉娅亪顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閺佹捇鏁撻敓锟�(46.281g.cm/A~~0.454N.cm/A)(18.41mN.m or 1.841N.cm  1g.cm=0.00981N.cm=0.0981mN.m=0.0000981N.m)(闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ妶搴＄仭缂佷緡鍣ｅ铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐4.0A闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶姊洪崹顕呭剰妞ゃ儱顦靛铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欐櫢闁跨噦鎷�187.71 g.cm=1.841N.cm=18.41mN.m=0.1841N.m)
+#define MAX_MOTOR_SPEED   2200//2000//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电偟鍋撳▍鍡涙煕鐎ｎ偆澧甸柟顔筋殔閳藉鈻嶉褌閭い銏℃瀹曞ジ寮撮悢鍙夊闂佽崵濮垫禍浠嬪礉瀹€鍕嚑闁硅揪闄勯悡娑㈡倵閿濆簼鎲鹃柣鎾冲悑椤ㄣ儵鎮欓懠顒傤啋闂佽桨鐒﹂幑鍥极閹剧粯鏅搁柨鐕傛嫹(max 2450*6=14700)
+#define MAX_TORQUE_UUPER_THRESHOLD   50//42//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电偟鍋撳▍鍡涙煕鐎ｎ偆澧甸柟顔筋殔閳藉鈻嶉褌閭い銏℃瀹曞ジ寮撮悢鍙夊闂佽崵濮垫禍浠嬪礉瀹€鍕嚑闁硅揪闄勯悡娑㈡倵閿濆簼鎲鹃柣鎾冲悑椤ㄣ儵鎮欓懠顒傤啋闂佽桨鐒﹂幑鍥极閹剧粯鏅搁柨鐕傛嫹(46.281g.cm/A~~0.454N.cm/A)(18.41mN.m or 1.841N.cm  1g.cm=0.00981N.cm=0.0981mN.m=0.0000981N.m)(闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶娢ч幖杈剧磿娴狀厾绱撴担椋庤窗闁革綇绲介～蹇涙惞鐟欏嫬纾梺闈浨归崕鏌ユ倵妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑樷槈濞嗗繆鍋撴繝姘厾闁诡厽甯掗崝婊勭箾閸涱偄鐏叉慨濠冩そ瀹曨偊宕熼鐔蜂壕闁割偅娲栫壕褰掓煛瀹ュ骸浜愰柛瀣尭椤繈鎮欓鈧锟�4.0A闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄨ泛顫忓ú顏勫瀭妞ゆ洖鎳庨崜鏉款渻閵堝啫鍔氭い锕傛涧椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺闁告繂瀚烽崕蹇斻亜椤撶姴鍘撮柣娑卞枦缁犳稑鈽夊▎鎰仧闂備浇娉曢崳锕傚箯閿燂拷187.71 g.cm=1.841N.cm=18.41mN.m=0.1841N.m)
 #define HALF_MAX_TORQUE_UUPER_THRESHOLD   MAX_TORQUE_UUPER_THRESHOLD/2
 #define MINIMUM_ROTOR_ANGLE          10//minimum routor angle in  " motor_settings.mode=EndoModePositionToggle "
 
@@ -56,10 +56,10 @@ short int speed_list[20]={100,150,200,250,300,350,400,450,500,550,600,800,1000,1
 //	short int speed_list[20]={100,150,200,250,300,350,400,450,500,550,600,800,1000,1200,1500,1800,MAX_MOTOR_SPEED,2200,2500};	
 	//7V
 //unsigned short int torque_limit[22]={torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque65_Ncm ,\
-//	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque50_Ncm ,torque45_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque05_Ncm  ,torque05_Ncm  ,torque05_Ncm,torque05_Ncm,torque05_Ncm};//unit mN.m闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш鐎规洘绮岄濂稿醇閻旀亽鍋栭梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煟閹达絽袚闁哄懏鎮傞弻锟犲磼濡　鍋撻弽顐熷亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼紒妯烘畻濠殿喗菧閸庨亶鍩€椤戭剙娲ょ粻顖炴煟閹达絽袚闁哄懏鎮傞弻銊╂偆閸屾稑顏�
+//	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque50_Ncm ,torque45_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque05_Ncm  ,torque05_Ncm  ,torque05_Ncm,torque05_Ncm,torque05_Ncm};//unit mN.m闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂倵鐟欏嫭绀冪紒顔肩焸椤㈡ɑ绺界粙鍧楀敹闂佺粯姊规禍浠嬪磻閺嶎厽鈷掗柛灞剧懄缁佺増绻涙径瀣鐎规洑鍗抽獮鍥级閸喖娈ゅ┑鐘垫暩婵敻鎳濋崜褏涓嶆い鏍仦閻撶喖鏌熸潏鍓у埌鐞氭岸姊洪崫鍕櫤闁诡喖鍊垮濠氭晸閻樿尙锛滃┑鈽嗗灥閵嗏偓闁稿鎹囧浠嬵敃閻旇渹澹曞┑顔斤供閸撴稓绮斿ú顏呯厸閻忕偠顕ф慨鍌炴煙椤斿搫鐏茬€规洏鍔嶇换婵嬪礋椤忓棛锛熼梻鍌氬€风粈浣虹礊婵犲泚澶愬箻鐠囪尙顦у┑顔姐仜閸嬫挾鈧鍣崑濠囩嵁濡偐纾兼俊顖滃劋閻ｇ粯绻濆▓鍨灍閼垦囨煕鎼淬劋鎲鹃柛鈹惧亾濡炪倖鍩堥崜娆徝洪妶鍥╀笉妞ゆ牜鍋為悡鐔兼煙鏉堝墽鍒扮悮姘舵⒑閸濆嫭鍣洪柟顔煎€垮濠氬Ω閳哄倸浜為梺绋挎湰缁嬫垿顢旈敓锟�
 //8V
 unsigned short int torque_limit[22]={torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque70_Ncm ,torque65_Ncm ,\
-	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque60_Ncm ,torque60_Ncm  ,torque50_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque08_Ncm  ,torque06_Ncm,torque06_Ncm,torque06_Ncm};//unit mN.m闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш鐎规洘绮岄濂稿醇閻旀亽鍋栭梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煟閹达絽袚闁哄懏鎮傞弻锟犲磼濡　鍋撻弽顐熷亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼紒妯烘畻濠殿喗菧閸庨亶鍩€椤戭剙娲ょ粻顖炴煟閹达絽袚闁哄懏鎮傞弻銊╂偆閸屾稑顏�
+	torque65_Ncm ,torque65_Ncm ,torque60_Ncm ,torque60_Ncm ,torque60_Ncm  ,torque50_Ncm  ,torque35_Ncm  ,torque20_Ncm  ,torque08_Ncm  ,torque06_Ncm,torque06_Ncm,torque06_Ncm};//unit mN.m闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂倵鐟欏嫭绀冪紒顔肩焸椤㈡ɑ绺界粙鍧楀敹闂佺粯姊规禍浠嬪磻閺嶎厽鈷掗柛灞剧懄缁佺増绻涙径瀣鐎规洑鍗抽獮鍥级閸喖娈ゅ┑鐘垫暩婵敻鎳濋崜褏涓嶆い鏍仦閻撶喖鏌熸潏鍓у埌鐞氭岸姊洪崫鍕櫤闁诡喖鍊垮濠氭晸閻樿尙锛滃┑鈽嗗灥閵嗏偓闁稿鎹囧浠嬵敃閻旇渹澹曞┑顔斤供閸撴稓绮斿ú顏呯厸閻忕偠顕ф慨鍌炴煙椤斿搫鐏茬€规洏鍔嶇换婵嬪礋椤忓棛锛熼梻鍌氬€风粈浣虹礊婵犲泚澶愬箻鐠囪尙顦у┑顔姐仜閸嬫挾鈧鍣崑濠囩嵁濡偐纾兼俊顖滃劋閻ｇ粯绻濆▓鍨灍閼垦囨煕鎼淬劋鎲鹃柛鈹惧亾濡炪倖鍩堥崜娆徝洪妶鍥╀笉妞ゆ牜鍋為悡鐔兼煙鏉堝墽鍒扮悮姘舵⒑閸濆嫭鍣洪柟顔煎€垮濠氬Ω閳哄倸浜為梺绋挎湰缁嬫垿顢旈敓锟�
 	
 	#else 
 #define MAX_MOTOR_SPEED    2450//moons =3000
@@ -109,30 +109,8 @@ static unsigned short TorqueRangeCheck (unsigned short value)
 	if(temp>MAX_TORQUE_UUPER_THRESHOLD) temp=MAX_TORQUE_UUPER_THRESHOLD;
 	return temp;
 }
-/**
-  * @brief 	APEXIdleTimeManage
-  * @param  systemTime
-  * @retval none
-  */
-static error_status  APEXIdleTimeManage(unsigned int systemTime,unsigned int targetTime)
-{	
-	error_status err;	
-	static  unsigned int recTicks;
-	err=ERROR;
-	if(targetTime==0||recTicks>systemTime) 
-	{
-		recTicks=systemTime;		
-	}	
-	else
-	{		
-		if(systemTime>targetTime+recTicks)
-		{
-			//recTicks=systemTime;
-			err=SUCCESS;
-		}		
-	}	
-	return err;
-}
+
+
 /**
   * @brief 	MenuIdleTimeManage
   * @param  systemTime
@@ -278,7 +256,7 @@ void MenuDevicePowerOff(unsigned char feedDogFlag)
 		while(1) 
 		{			
 //			if(feedDogFlag!=0)
-//			{//闂傚倷娴囧▔鏇㈠窗閺嶎厼围闁绘垶蓱缂嶅洭鏌ｉ幇闈涘妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺绯曟櫅閹冲繒鈧數鍘ч埢搴ㄥ箛椤掑绱﹂梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煟閹达絽袚闁哄懏鎮傞弻銊╂偆閸屾稑顏�
+//			{//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌″搴″箹閸ユ挳姊虹紒妯虹仸閽冭京绱撳鍛枠闁哄矉缍侀獮鍥濞戞﹩娼绘俊鐐€曠换鎰版偉閻撳寒娼栭柧蹇氼潐瀹曞鏌曟繛鍨姕闁诲酣绠栧铏瑰寲閺囩喐鐝旈梺鐟板暱缁绘帡鍩€椤掑倹鏆╅柛妯犲洤鐓濋幖娣妼缁犳稒銇勯幒鎴Х缂佹唻绠撳濠氬磼濞嗘劗銈板┑鐐差槹濞茬喎鐣锋导鏉戠疀闁哄鐏濋崵鎴炵節閻㈤潧校闁肩懓澧界划濠氼敍閻愬鍘介梺纭呮彧缁插€燁暱闂備礁鎼幊蹇涘箖閸岀偛钃熼柕濞炬櫆閸嬪棝鏌涚仦鍓р槈妞ゅ骏鎷�
 				#ifdef WDT_ENABLE
 					xEventGroupSetBits(WDTEventGroup,MENU_TASK_EVENT_BIT);
 				#endif
@@ -527,7 +505,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 		}
 		else
 		{			
-			motor_settings.mode=motor_param_un.system_motor_pattern[programNum].dir;	
+			motor_settings.mode =(enum EndoMode) motor_param_un.system_motor_pattern[programNum].dir;	
 		}	
 		motor_settings.forward_position=motor_param_un.system_motor_pattern[programNum].forwardPosition;
 		motor_settings.reverse_position=motor_param_un.system_motor_pattern[programNum].reversePosition;
@@ -538,7 +516,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 				motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
 			}				
 			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;			
-			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//闂備浇顫夐鏍矗閸愵喖鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖奸弻鈥愁吋娴ｆ彃浜鹃柛鎰级閻濐垶姊绘担鑺ョ《闁哥姵鍔欏鍛婄節濮橆剛顔嗛梺缁樺灱婵倝寮查幖浣圭厸闁稿本锚閳ь剚鐗滈埀顒佽壘缂嶅﹪寮婚妸鈺傚亜闁告稑锕︽导鍕⒑瑜版帩妫戦柛蹇旓耿瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閼稿吀绻嗘い鏍ㄣ仜閸嬫挸鐣烽崶鈺婃敤濠电偠鎻徊钘夘焽閿熺姴鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ骏鎷� int  param=5闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘5闂備胶枪椤戝懐鎹㈠鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈敓锟�5 闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘-5 闂備胶枪椤戝懐鎹㈠鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈敓锟�5闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘
+			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  param=5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�5闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5 闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�-5 闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
 			if(motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum>torque20_Ncm)
 			{
 				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.10;
@@ -546,8 +524,8 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 		}
 		else if(motor_param_un.system_motor_pattern[programNum].dir==EndoModePositionToggle)
 		{
-			motor_settings.upper_threshold=MAX_TORQUE_UUPER_THRESHOLD*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//motor_param_un.system_motor_pattern[programNum].torqueThreshold*0.16;
-			motor_settings.lower_threshold=MAX_TORQUE_UUPER_THRESHOLD*0.06;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//闂備浇顫夐鏍矗閸愵喖鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖奸弻鈥愁吋娴ｆ彃浜鹃柛鎰级閻濐垶姊绘担鑺ョ《闁哥姵鍔欏鍛婄節濮橆剛顔嗛梺缁樺灱婵倝寮查幖浣圭厸闁稿本锚閳ь剚鐗滈埀顒佽壘缂嶅﹪寮婚妸鈺傚亜闁告稑锕︽导鍕⒑瑜版帩妫戦柛蹇旓耿瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閼稿吀绻嗘い鏍ㄣ仜閸嬫挸鐣烽崶鈺婃敤濠电偠鎻徊钘夘焽閿熺姴鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ骏鎷� int  par
+			motor_settings.upper_threshold=MAX_TORQUE_UUPER_THRESHOLD/10;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//motor_param_un.system_motor_pattern[programNum].torqueThreshold*0.16;
+			motor_settings.lower_threshold=MAX_TORQUE_UUPER_THRESHOLD*3/5;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  par
 		}
 		else 
 		{
@@ -743,9 +721,9 @@ static void OLED_Display_MAIN(unsigned short int programNum ,uint8_t select)
 		}	
 		else //if(programNum>5)//p7~P10
 		{
-			OLED_ShowString(32,0,"    ",16,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻缂佹ɑ娅㈤梺璺ㄥ櫐閹凤拷
+			OLED_ShowString(32,0,"    ",16,1);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻鑽ょ磽娴ｈ偂鎴濃枍閵忋倖鈷戦悹鎭掑妼濞呮劙鏌熼崙銈嗗
 			OLED_ShowChar(64,0,'P',16,1);	
-			OLED_ShowNum(72,0,programNum-5,1,16,1);//闂備礁鎼€氼剚鏅舵禒瀣︽慨婵撴嫹1-P4
+			OLED_ShowNum(72,0,programNum-5,1,16,1);//闂傚倸鍊风粈渚€骞栭銈傚亾濮樼厧澧柡鍛板煐缁傛帞鈧綆鈧叏闄勯幈銊モ攽閹炬潙顏�1-P4
 			//OLED_ShowChar(22,4,' ',16,1);
 			OLED_ShowString(80,0,"    ",16,1);
 			OLED_ShowString(72,24,"rpm",16,1);			
@@ -1450,7 +1428,7 @@ static void TorqueProgressBarFlash(unsigned int systemTimeMs,unsigned char start
 			}						
 			if(motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].dir!=EndoModeTorqueATC)
 			{
-//				if(torqueNum>torqueReference)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉墮缁€宀勬煃閳轰礁鏆欐い蹇撶埣濮婅櫣鎹勯妸銉︾€鹃梺鍝勵儏椤兘鐛箛鏃戞Ч閹煎瓨绋愮划锟�
+//				if(torqueNum>torqueReference)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ椤旂厧顫╃紓浣插亾鐎光偓閸曨剛鍘撻梺瀹犳〃缁€渚€寮冲▎鎰╀簻闊洦鎸鹃崺锝嗘叏婵犲懏顏犻柟鐟板婵℃悂濡烽敂閿亾妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑㈠籍閹寸倫褔鏌熼悡搴ｆ憼缂佸鍔楅崚鎺楁晸閿燂拷
 //				{
 //					torqueNum=torqueReference;
 //			}		
@@ -1543,14 +1521,12 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 {
 	static unsigned int recTimeMs,blinkTimeMs;
 	static unsigned short blink,recApexValue,temp,apex_flag=1;
-	unsigned char i,j,x,y,m,sendBuff;	
+	unsigned char i,j,x,y,m;	
 	if(startFlag==0)//preparation work
 	{
 		recTimeMs=systemTimeMs;
-//	recApexValue=33;//<0 ,闂傚倷娴囧▔鏇㈠窗閹版澘姹查柍褜鍓熼弻鐔煎箒閹烘垵濮风紓鍌氱Т濞差參鐛箛娑欐櫢闁跨噦鎷�<3闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘23,4闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻缂佹ɑ娅㈤梺璺ㄥ櫐閹凤拷
 		recApexValue=0;
 		temp=0;
-//	OLED_ShowString(110,40,"APEX",24,1);
 	}		
 	else
 	{	
@@ -1559,8 +1535,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 		{	
 			recTimeMs=systemTimeMs;			
 			if(apexValue<1)
-			{			
-//				if(temp!=0)
+			{	
 				recApexValue=33;
 				temp=0;
 			}
@@ -1662,7 +1637,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 						disp_DrawColumn(x+5,y+2,36,j);			
 					}		
 				}
-				// oter area  闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘100~160)
+				// oter area  闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�100~160)
 				x=94;//96;
 				y=16;
 				m=x;
@@ -1688,7 +1663,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 					else if(recApexValue>25)
 					{
 	//				disp_DrawColumn(x,y,20,0);
-					if(i+7==sys_param_un.device_param.ref_tine)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉墮缁€宀勬煃閳轰礁鏆欐い蹇撶埣濮婅櫣鎹勯妸銉︾€鹃梺鍝勵儏椤兘鐛箛娑欐櫢闁跨噦鎷�
+					if(i+7==sys_param_un.device_param.ref_tine)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ椤旂厧顫╃紓浣插亾鐎光偓閸曨剛鍘撻梺瀹犳〃缁€渚€寮冲▎鎰╀簻闊洦鎸鹃崺锝嗘叏婵犲懏顏犻柟鐟板婵℃悂濡烽敂閿亾妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑樷槈濞嗘劖顏熼梻浣芥硶閸ｏ箓骞忛敓锟�
 					{
 						if(i<4)
 						{
@@ -1737,7 +1712,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 					}					
 				}	
 			}				
-			if(apexValue<0)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ妶搴＄仯闁绘柨鎳樺铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊虹捄銊ユ珢闁瑰嚖鎷�
+			if(apexValue<0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶娢ч幖杈剧磿娴狀垶姊虹紒妯荤叆闁硅櫕锚椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺闁告繂瀚烽崕蹇斻亜椤撶姴鍘撮柣娑卞枦缁犳稑鈽夊▎蹇婂亾婵犳碍鐓犻柟顓熷笒閸旀粍绻涢崨顐㈢伈婵﹨娅ｉ幑鍕Ω閵夛妇褰氶梻浣烘嚀閸ゆ牠骞忛敓锟�
 			{					
 //				OLED_ShowString(110,40," -- ",24,1);
 			}
@@ -1792,7 +1767,7 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 			}
 			else
 			{
-				if(recApexValue<26&&recApexValue>=0&&recApexValue!=sys_param_un.device_param.ref_tine+3)
+				if(recApexValue<26&&recApexValue!=sys_param_un.device_param.ref_tine+3)
 				{
 					if(sys_param_un.device_param.ref_tine<7)
 					{
@@ -1831,13 +1806,12 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 }
 static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag, short int apexValue)
 {
-	static unsigned int recTimeMs,blinkTimeMs;
+	static unsigned int recTimeMs;
 	static unsigned short recApexValue,temp;
-	unsigned char i,j,x,y,m,sendBuff;	
+	unsigned char i,x,y,m;	
 	if(startFlag==0)//preparation work
 	{
 		recTimeMs=systemTimeMs;
-//	recApexValue=33;//<0 ,闂傚倷娴囧▔鏇㈠窗閹版澘姹查柍褜鍓熼弻鐔煎箒閹烘垵濮风紓鍌氱Т濞差參鐛箛娑欐櫢闁跨噦鎷�<3闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘23,4闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻缂佹ɑ娅㈤梺璺ㄥ櫐閹凤拷
 		recApexValue=0;
 		temp=0;
 	}		
@@ -1858,7 +1832,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 			if(recApexValue!=temp)
 			{
 				if(temp>=30) recApexValue=30;//
-				if(temp==0) recApexValue=temp;//闂備胶枪缁诲牓宕濋幋锕€鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ骏鎷�
+				if(temp==0) recApexValue=temp;//闂傚倸鍊烽懗鑸电仚缂備浇顕ч悧鎾崇暦濠靛绠ｉ柨鏇楀亾闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懘鐛滈柟鍑ゆ嫹
 				if(recApexValue>temp) 
 				{
 					if(recApexValue==1) recApexValue=0;					
@@ -1889,14 +1863,14 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 				{
 					x=m+i*6;
 //				disp_DrawColumn(x,y,40,0);
-					if(i==sys_param_un.device_param.ref_tine)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉墮缁€宀勬煃閳轰礁鏆欐い蹇撶埣濮婅櫣鎹勯妸銉︾€鹃梺鍝勵儏椤兘鐛箛娑欐櫢闁跨噦鎷�
+					if(i==sys_param_un.device_param.ref_tine)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ椤旂厧顫╃紓浣插亾鐎光偓閸曨剛鍘撻梺瀹犳〃缁€渚€寮冲▎鎰╀簻闊洦鎸鹃崺锝嗘叏婵犲懏顏犻柟鐟板婵℃悂濡烽敂閿亾妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑樷槈濞嗘劖顏熼梻浣芥硶閸ｏ箓骞忛敓锟�
 					{
 						disp_DrawColumn(x+1,y+2,36,1);
 						disp_DrawColumn(x+2,y+1,38,1);
 						disp_DrawColumn(x+3,y,40,1);
 						disp_DrawColumn(x+4,y+1,38,1);
 						disp_DrawColumn(x+5,y+2,36,1);						
-//						disp_DrawRow(x+3,y+41,1,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+//						disp_DrawRow(x+3,y+41,1,1);
 //						disp_DrawRow(x+2,y+42,3,1);
 //						disp_DrawRow(x+1,y+43,5,1);
 					}
@@ -1909,7 +1883,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 						disp_DrawColumn(x+5,y+2,36,0);						
 					}	
 				}
-				// oter area  闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘100~160)
+				// oter area  
 				x=94-16;//96;
 				y=16;
 				m=x;
@@ -1917,7 +1891,7 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 				{
 					x=m+i*4;
 	//				disp_DrawColumn(x,y,20,0);
-					if(i+7==sys_param_un.device_param.ref_tine)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉墮缁€宀勬煃閳轰礁鏆欐い蹇撶埣濮婅櫣鎹勯妸銉︾€鹃梺鍝勵儏椤兘鐛箛娑欐櫢闁跨噦鎷�
+					if(i+7==sys_param_un.device_param.ref_tine)
 					{
 						if(i<4)
 						{
@@ -1949,17 +1923,10 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 					}			
 				}			
 				OLED_ShowString(92,40,"APEX",24,1);//(110,40,"APEX",24,1);
-//				blinkTimeMs++;
-//				if(blinkTimeMs>50)//500
-//				{
-//					blinkTimeMs=0;
-					xSemaphoreGive(xSemaphoreDispRfresh);
-//				}
-				
+				xSemaphoreGive(xSemaphoreDispRfresh);
 			}			
 		}
-	}
-	
+	}	
 }
 /**
   * @brief 	disp_ApexPrepare
@@ -1969,9 +1936,8 @@ static void ApexBarFlashForSet(unsigned int systemTimeMs,unsigned char startFlag
 static void Disp_ApexPreForSet(u8 value)
 {
 	u8 i,x,y;
-//bat area  闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘0~40闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘
-	//P0 ,bat
-	
+//bat area  
+	//P0 ,bat	
 	// over area (40~60)
 	x=34-16;//36;//40-4;
 	y=8;	
@@ -1989,21 +1955,21 @@ static void Disp_ApexPreForSet(u8 value)
 			disp_DrawRow(x,y+i+3,40,1);
 		}			
 		OLED_ShowNum(x-2,0,0,1,8,1);
-		//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+		//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%7);//offset	max=3	
-//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		disp_DrawRow(x+sys_param_un.device_param.ref_tine*6,61,3,1);
 //		disp_DrawRow(x-1+sys_param_un.device_param.ref_tine*6,62,5,1);			
 		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%13);//offset	max=3	
 //		
-//		disp_DrawRow(x-1,60,59,0);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+//		disp_DrawRow(x-1,60,59,0);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		disp_DrawRow(x-1,61,59,0);
 //		disp_DrawRow(x-1,62,59,0);	
 		
-		disp_DrawRow(x+1+3*6,60,1,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+		disp_DrawRow(x+1+3*6,60,1,1);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 		disp_DrawRow(x+3*6,61,3,1);
 		disp_DrawRow(x-1+3*6,62,5,1);		
-	// other area 闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘100~160闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘
+	// other area 闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�100~160闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
 		x=95-16;//97;//100-3;
 		y=8;
 		for(i=0;i<2;i++)
@@ -2032,7 +1998,7 @@ static void Disp_ApexPreForSet(u8 value)
 static void Disp_ApexPrepare(u8 value)
 {
 	u8 i,x,y;
-//bat area  闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘0~40闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘
+//bat area  闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�0~40闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
 	//P0 ,bat
 	
 	// over area (40~60)
@@ -2052,21 +2018,21 @@ static void Disp_ApexPrepare(u8 value)
 			disp_DrawRow(x,y+i+3,40,1);
 		}			
 		OLED_ShowNum(x-2,0,0,1,8,1);
-		//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+		//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%7);//offset	max=3	
-//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+//		disp_DrawRow(x+1+sys_param_un.device_param.ref_tine*6,60,1,1);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		disp_DrawRow(x+sys_param_un.device_param.ref_tine*6,61,3,1);
 //		disp_DrawRow(x-1+sys_param_un.device_param.ref_tine*6,62,5,1);			
 		sys_param_un.device_param.ref_tine=(sys_param_un.device_param.ref_tine%13);//offset	max=3	
 //		
-//		disp_DrawRow(x-1,60,59,0);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+//		disp_DrawRow(x-1,60,59,0);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 //		disp_DrawRow(x-1,61,59,0);
 //		disp_DrawRow(x-1,62,59,0);	
 		
-		disp_DrawRow(x+1+3*6,60,1,1);//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庨幇顒傜懆闂佹悶鍊栭悧鐘荤嵁韫囨稒鍊婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳鐐
+		disp_DrawRow(x+1+3*6,60,1,1);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查叄楠炲洭顢楅崒婊勫櫙闂傚倷鐒﹂幃鍫曞磹閺嶎厽鍋嬮柣妯垮吹瀹撲線鐓崶銊р姇闁稿﹤顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈鎮欓鈧锟�
 		disp_DrawRow(x+3*6,61,3,1);
 		disp_DrawRow(x-1+3*6,62,5,1);		
-	// other area 闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘100~160闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ㄩ悤鍌涘
+	// other area 闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�100~160闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
 		x=95;//97;//100-3;
 		y=8;
 		for(i=0;i<2;i++)
@@ -2114,11 +2080,11 @@ static void FreshTorquePictureInApexAndMotorMode(u8 x,u8 y,unsigned short int to
 		}			
 //		temp=(torqueValue*6/torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].torqueThresholdNum]);
 		if(temp>6) temp=6;
-		for(i=0;i<26;i++)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺屻劑鎮ら崒娑橆伓
+		for(i=0;i<26;i++)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛鐏炶濮傞柟顔哄€濆畷鎺戔槈濮楀棔绱�
 		{
 			disp_DrawRow(x+3,y+3+i,26,0);
 		}
-		for(i=0;i<2+4*temp;i++)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺屻劑鎮ら崒娑橆伓
+		for(i=0;i<2+4*temp;i++)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛鐏炶濮傞柟顔哄€濆畷鎺戔槈濮楀棔绱�
 		{
 			if(temp>5)
 			{
@@ -2139,8 +2105,6 @@ static void FreshTorquePictureInApexAndMotorMode(u8 x,u8 y,unsigned short int to
   */
 static void Disp_TorquePictureInApexAndMotorMode(u8 x,u8 y,unsigned short int torqueValue)
 {
-	unsigned short int temp;
-	u8 i;		
 	disp_DrawRow(x,y,32,1);
 	disp_DrawRow(x,y+31,32,1);
 	disp_DrawColumn(x,y,32,1);
@@ -2287,7 +2251,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 {	
 	static 	unsigned char auto_flag_ap=null_signal;
 	static  unsigned int recTimeMs;
-	static unsigned char temp_mode_flag=0, motor_run_mode=0;
+	static enum EndoMode  motor_run_mode=Max_endoMode;
 	unsigned char sendSignal=null_signal;
 	if(recTimeMs>systemTimeMs) recTimeMs=systemTimeMs;
 	if(sys_param_un.device_param.apexFunctionLoad==1)
@@ -2312,9 +2276,8 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				{	//
 					if(sys_param_un.device_param.apical_action_flag==1)//
 					{
-						if(temp_mode_flag==0)
+						if(motor_run_mode==Max_endoMode)
 						{	
-							temp_mode_flag=0x55;	
 							motor_run_mode=	motor_settings.mode;	
 							App_MotorControl(MOTOR_MODE_STOP);
 							if(motor_run_mode==EndoModePositionToggle)
@@ -2349,9 +2312,8 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 					}
 					else if(sys_param_un.device_param.apical_action_flag==2)
 					{	
-						if(temp_mode_flag==0)
+						if(motor_run_mode==Max_endoMode)
 						{
-							temp_mode_flag=0x55;
 							motor_run_mode =	motor_settings.mode;
 							if(motor_status.status!=Status_STOP)
 							{													
@@ -2359,7 +2321,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							}			
 						}	            			 
 					}
-					if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)//闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濞炬櫅缁€宀勬煃閳轰礁鏆欐い蹇撶埣濮婅櫣鎹勯妸銉︾亖闁诲孩纰嶉惄顖炲极閹邦垳鐤€闁哄倹顑欐导鎾绘⒒娴ｈ姤纭堕柛鐘冲姍瀵憡绻濆顒傤唵闂佺粯鍨兼慨銈夊疾閹间焦鐓涢柛灞久埀顒佺墱閳ь剚鐔幏锟�
+					if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电偟鍋撳▍鍛磼閳ь剙鐣濋崟顒傚帗闂佸疇妗ㄧ粈渚€寮冲▎鎰╀簻闊洦鎸鹃崺锝嗘叏婵犲懏顏犻柟鐟板婵℃悂濡烽敂鍙ョ按闂備浇顕х€涒晝鍠婂澶嬪剮妞ゆ牜鍋涢弸渚€鏌熼柇锕€鐏ｉ柣銈傚亾闂備礁鎼崐褰掝敄濞嗘劕顕遍柟鍓х帛閳锋帒霉閿濆牆袚缁绢厼鐖奸弻娑㈡偐閸愭彃顫掗悗娈垮枛閹诧紕鎹㈠┑鍡╂僵妞ゆ帒鍋嗛崬鐢告⒒娴ｈ櫣甯涢柛銊ュ悑閹便劑濡舵径濠勬煣闂佸綊妫块悞锕傛偂濞戙垺鐓曢悘鐐扮畽椤忓牆鐒垫い鎺嶈兌婢ч亶鏌嶈閸撴岸鎮㈤鍕闁跨噦鎷�
 					{
 						if(motor_status.status!=Status_STOP)
 						{
@@ -2437,7 +2399,12 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				}
 			    else if(depth<=(9+sys_param_un.device_param.ref_tine))
 			    {		
-					if(temp_mode_flag==0x55) { motor_settings.mode=motor_run_mode;		temp_mode_flag=0; App_MotorControl(MOTOR_SETTING_UPDATE);	}		//闂傚倷娴囧▔鏇㈠窗閺団偓鈧礁饪伴崼鐕佹闂佸啿鎼崐鎼侇敂閿燂拷				 
+					if(motor_run_mode!=Max_endoMode) 
+					{ 
+						motor_settings.mode=motor_run_mode;		
+						motor_run_mode=Max_endoMode; 
+						App_MotorControl(MOTOR_SETTING_UPDATE);	
+					}						 
 					if(motor_status.status!=Status_STOP)
 					{
 						if(sys_param_un.device_param.apical_action_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.auto_stop_flag!=0)
@@ -2464,13 +2431,13 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				}
 				else
 				{
-					if(temp_mode_flag==0x55)
+					if(motor_run_mode!=Max_endoMode)
 					{
 						motor_settings.mode=motor_run_mode ;	
+						motor_run_mode=Max_endoMode;
 						motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
 						motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
-						motor_settings.reverse_speed=-motor_settings.forward_speed;
-						temp_mode_flag=0; 
+						motor_settings.reverse_speed=-motor_settings.forward_speed;						
 						App_MotorControl(MOTOR_SETTING_UPDATE);
 					}				
 					if(motor_status.status!=Status_STOP)
@@ -2510,39 +2477,25 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							}											
 						}
 					}
-					else
-					{
-						if(motor_status.status==Status_STOP)
-						{	
-							if(depth>(8+sys_param_un.device_param.ref_tine))
-							{
-//							if(motor_status.status==Status_STOP)
-//							{
-//								App_MotorControl(MOTOR_MODE_START);
-//							}
-							}	
-						}		
-					}
-					
 				}						
 			}	
 			else 
 			{
-				if(temp_mode_flag==0x55) 
+				if(motor_run_mode!=Max_endoMode) 
 				{
-					motor_settings.mode=motor_run_mode;		
+					motor_settings.mode=motor_run_mode;	
+					motor_run_mode=Max_endoMode;	
 					motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
-					temp_mode_flag=0;	
 					App_MotorControl(MOTOR_SETTING_UPDATE);
-				}	 //闂傚倷娴囧▔鏇㈠窗閺団偓鈧礁饪伴崼鐕佹闂佸啿鎼崐鎼侇敂閿燂拷
+				}	 
 				if(motor_settings.forward_speed!=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum])
 				{
 					motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 					App_MotorControl(MOTOR_SETTING_UPDATE);	
-				} //闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垳鈧懓瀚伴崑濠傤焽濡ゅ懏鈷戦悹鎭掑妼閺嬫垿鏌＄€ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸ゆ牠骞忛敓锟�
+				} 
 				if(motor_settings.toggle_mode_speed!=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum])
 				{
 					motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
@@ -2557,17 +2510,17 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							 App_MotorControl(MOTOR_MODE_STOP);
 						}	
 						sendSignal=motor_apex_stop_signal;
-						xQueueSend(xQueueKeyMessage, &sendSignal, 0);//闂備礁鎲＄敮鐐哄礂濮椻偓瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閿燂拷						
+						xQueueSend(xQueueKeyMessage, &sendSignal, 0);					
 					}						
-					auto_flag_ap= motor_apex_stop_signal;//闂傚倷娴囧▔鏇㈠窗閺囩喍绻嗘い鎾跺У鐎氭氨鎲告惔锝傚亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閿燂拷						
+					auto_flag_ap= motor_apex_stop_signal;						
 				}
 				if(motor_status.status==Status_STOP&&sys_param_un.device_param.apical_action_flag!=0) 
 				{
 					App_MotorControl(MOTOR_MODE_START);
 				}//restart
 			}
-			if(sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.apical_action_flag==0)//闂傚倷娴囧▔鏇㈠窗閹炬剚鐒藉Δ锝呭暞椤ュ牓鏌嶉崫鍕偓鎼侇敂閸洘鈷戦悹鎭掑妼閺嬫垿鏌＄€ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銈夊磼濞戞﹩浼�
-			{	//闂備胶绮灙闁糕晜鐗犻崺鈧い鎴ｆ硶缁愭棃鏌℃担瑙勫磳鐎殿噮鍓熸俊鍫曞幢濡ゅ﹣绱﹂梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煥閻曞倹瀚�
+			if(sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.apical_action_flag==0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悙顒€澧柣鎺曟铻栭柨婵嗘噹閺嗙偞銇勯妷銉уⅵ闁哄苯绉瑰畷顐﹀礋椤愮喎浜鹃柟闂寸贰閺佸倿鏌涢锝嗙闁抽攱鍨块幃褰掑箒閹烘垵顬堥梺鍝勵儐閸ㄥ潡寮婚敍鍕ㄥ亾閿濆簼鎲鹃柣鎾冲悑椤ㄣ儵鎮欓懠顒傤啋闂佽鍠楃划鎾诲箠閻愬搫唯闁挎梻鐡旀禒褔姊婚崒娆戭槮闁圭⒈鍋婂畷鎰板醇閺囩偟锛欓梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐Χ婢跺﹦锛滃┑鐐村灦閿曗晜瀵奸敓锟�
+			{	
 				if(motor_status.status!=Status_STOP&&auto_flag_ap!=motor_apex_run_signal)	auto_flag_ap=motor_apex_run_signal;
 				if(motor_status.status==Status_STOP&&auto_flag_ap!=motor_apex_stop_signal)	auto_flag_ap=motor_apex_stop_signal;
 			}	
@@ -2609,7 +2562,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		}		
 		else if(depth<(16+sys_param_un.device_param.ref_tine))
 		{
-			 if(systemTimeMs-recTimeMs>800)
+			if(systemTimeMs-recTimeMs>800)
 			{
 				recTimeMs=systemTimeMs;
 				 sendSignal=BUZZER_MODE_GC_APEX;
@@ -2620,20 +2573,20 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		{	
 			if(auto_flag_ap!=motor_apex_stop_signal)
 			{
-				auto_flag_ap= motor_apex_stop_signal;//闂傚倷娴囧▔鏇㈠窗閺囩喍绻嗘い鎾跺У鐎氭氨鎲告惔锝傚亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閿燂拷
-				if(sys_param_un.device_param.auto_stop_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.apical_action_flag!=0)//exit,闂傚倷娴囧▔鏇㈠窗鎼淬垻鐝舵繛鍡樺灩妞规娊鎮峰▎蹇擃仼妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸㈡煡宕查崣澶岊浄闁绘ê妯婂浼存煥閻曞倹瀚�,闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囪尙鐓戝銈嗗姦閸撴氨鈧熬鎷�
+				auto_flag_ap= motor_apex_stop_signal;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹瀺缂佽妫欓妵鍕箻鐠虹洅锝夋倵濮橆厽鐨戦柟鎻掓啞閹棃鏁愰崒姘濠殿喗锕╅崜娑氱矓濞差亝鐓涢悘鐐额嚙婵倿鏌熼鍝勭伈鐎规洏鍔嶇换婵嬪礋椤忓棛锛熼梻鍌氬€风粈浣虹礊婵犲泚澶愬箻鐠囪尙顦у┑顔姐仜閸嬫挾鈧鍣崑濠囩嵁濡吋瀚氶柛娆忣樈濡喖姊绘笟鈧褔鎮ч崱妞㈡稑螖閸滀焦鏅滈梺璺ㄥ櫐閹凤拷
+				if(sys_param_un.device_param.auto_stop_flag!=0||sys_param_un.device_param.auto_start_flag!=0||sys_param_un.device_param.apical_action_flag!=0)//exit,闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鐏柣婵婂煐缁绘盯宕卞Ο铏逛患婵＄偠顫夋繛濠囧箖瀹勬壋鏋庨煫鍥ㄦ惄娴犵厧顪冮妶鍛闁绘牜鍘ч～蹇涙惞鐟欏嫬纾梺闈浨归崕鏌ユ倵妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑樷槈濞嗗繆鍋撴繝姘厾闁诡厽甯掗崝婊勭箾閸涱偄鐏叉慨濠冩そ瀹曨偊宕熼鐔蜂壕闁割偅娲栫壕褰掓煛瀹ュ骸浜愰柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絿鍎ら崵鈧梺鎼炲灪閻撯€崇暦閺屻儱鐭楀璺虹焾濞村嫰姊虹紒妯忣亜螣婵犲偆鐒藉ù鐓庣摠閻撱儵鏌ｉ弴鐐测偓鍦偓姘炬嫹,闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸ヮ亜鐨洪柣鎾村灥椤啴濡堕崱妤€袝闂佸憡鎸诲銊╁焵椤掍胶鍟查柟鍑ゆ嫹
 				{
-					xQueueSend(xQueueKeyMessage, &auto_flag_ap, 0);//濠碉紕鍋戦崐妤呭极婵犳艾鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖煎铏规崉閵娿儲鐎婚悷婊嗗焽閸斿秶鈧數鍘ч埢搴ㄥ箛椤掑绱�
+					xQueueSend(xQueueKeyMessage, &auto_flag_ap, 0);//濠电姷顣槐鏇㈠磻閹达箑纾规俊銈呮噹閺嬩礁鈹戦悩瀹犲闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍帶椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁繝姘仭婵犲﹤妫楅悞浠嬫煕閺傝法肖闁逞屽墰閺佹悂宕㈣閸┿垺鎯旈妸銉х杸濡炪倖甯掗ˇ顔炬閿燂拷
 					App_MotorControl(MOTOR_MODE_STOP);
 				}					
 			}
 		}				
 	 }
-	else//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉㈡櫇妞规娊鎮峰▎蹇擃仼妞ゅ骏鎷�
+	else//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ閵忊剝鐝栨俊鐐额潐婵炲﹪骞冨畡鎵虫瀻闊洦鎼╂禒鐓庮渻閵堝懘鐛滈柟鍑ゆ嫹
 	{		
 		if(auto_flag_ap!=motor_apex_stop_signal)
 		{
-			auto_flag_ap= motor_apex_stop_signal;//闂備胶绮灙闁糕晜鐗犻崺鈧い鎴ｆ硶缁愭棃鏌℃担瑙勫磳鐎殿噮鍓熸俊鍫曞幢濡ゅ﹣绱﹂梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煥閻曞倹瀚�				
+			auto_flag_ap= motor_apex_stop_signal;//闂傚倸鍊烽懗鍓佸垝椤栨稓浠氶梻浣虹《閺呮粓鎮ч悩璇叉槬闁逞屽墯閵囧嫰骞嬮敐鍡欍€婄紓浣瑰姈濡啴寮婚埄鍐╁閻熸瑥瀚壕鎶芥倵濞堝灝娅橀柛鎾跺枑娣囧﹪宕奸弴鐐茶€垮┑掳鍊曢敃锝囨閿曞倹鈷掗柛灞剧懄缁佺増绻涙径瀣鐎规洑鍗抽獮鍥级閸喖娈ゅ┑鐘垫暩婵敻鎳濋崜褏涓嶆い鏍仦閻撱儵鏌ｉ弴鐐测偓鍦偓姘炬嫹				
 		}	
 	}	
 }
@@ -2647,7 +2600,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 	unsigned short int sendBuff;
 	static unsigned short int overLoadCount;
 	static unsigned short int overdCount,beep_time_out;
-	if(realTorque>MAX_TORQUE_UUPER_THRESHOLD*1.05)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳鐐10%(1.10==5.0N,1.08<=4.8)
+	if(realTorque>MAX_TORQUE_UUPER_THRESHOLD*1.05)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬫倷椤掆偓椤忥拷10%(1.10==5.0N,1.08<=4.8)
 	{
 		overLoadCount++;
 		if(overLoadCount>20)//10)//10*10=100ms
@@ -2707,7 +2660,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 							motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];								
 							motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10;
-							motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
+							motor_settings.lower_threshold= motor_settings.upper_threshold*3/5;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
 							motor_settings.forward_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition;
 							motor_settings.reverse_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition;
 //							App_MotorControl(MOTOR_SETTING_UPDATE);
@@ -2770,7 +2723,7 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 			}		 							
 			else
 			{	
-				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])//MAX_TORQUE_UUPER_THRESHOLD*0.95)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垳鈧懓瀚伴。锔捐姳閹惰姤鍊堕煫鍥ㄦ尵缁犲鏌℃担瑙勫鞍闁逛究鍔戦獮鍥礈娴ｄ警妲烽梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煥閻曞倹瀚�4.0濠电偞鍨堕幐鎼佸箹椤愶箑闂柨鐕傛嫹
+				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])//MAX_TORQUE_UUPER_THRESHOLD*0.95)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄦ娊鍩€椤掑倹鍤€閻庢矮鍗抽妴鍌炴晜閹规劕小闂佽鍎兼慨銈夊磹閸洜鍙撻柛銉ｅ妽鐏忕數绱掗悩宸吋闁哄备鍓濋幏鍛喆閸曨偊鐎洪梻渚€鈧稓鈹掗柛鏃€鍨块悰顕€宕堕鈧粈鍫澝归敐鍕劅婵¤尙鍏樺濠氬磼濞嗘劗銈板┑鐐差槹濞茬喎鐣锋导鏉戠疀闁哄鐏濋崵鎴炵節閻㈤潧校闁肩懓澧界划濠氼敍閻愬鍙嗛梺缁樻礀閸婂湱鈧熬鎷�4.0濠电姷鏁搁崑鐐哄垂閸洖绠伴柟闂寸缁犺銇勯幇鍓佺暠闂傚偆鍨堕弻銊╂偆閸屾稑顏�
 				{		
 					if(motor_settings.mode ==EndoModePositionToggle)
 					{		
@@ -2805,14 +2758,14 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 							motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
 							motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//torque_list[torque40_Ncm]*0.10;
-							motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
+							motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
 							motor_settings.forward_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition;
 							motor_settings.reverse_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition;
 							App_MotorControl(MOTOR_MODE_RESTART);	
 						}								
 					}							 
 				} //beep
-				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.8)//MAX_TORQUE_UUPER_THRESHOLD*0.80)//濠殿喗甯楃粙鎺楁晝閵忋倕鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖奸弻娑欑節韫囨柨顏�
+				if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.8)//MAX_TORQUE_UUPER_THRESHOLD*0.80)//濠电姵顔栭崰妤冩暜濡ゅ啰鐭欓柟鐑橆殕閺呮繈鏌曡箛瀣偓鏇㈠几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛闁绘牕銈稿璇测槈濞嗘垹鐦堥棅顐㈡处閺屻劑顢旈敓锟�
 				{
 					if(realTorque>torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum])
 					{
@@ -2932,7 +2885,7 @@ void WorkPageFlash(unsigned char workingMode, unsigned int systemTimeMs)//pageID
 	}			
 	else if(workingMode==MENU_APEX_AND_MOTOR_PAGE)
 	{
-		if(systemTimeMs>10+recTimeMs)
+		if(10+recTimeMs<systemTimeMs)
 		{				
 			recTimeMs=systemTimeMs;
 			realTorque=GetRealTorque();
@@ -3011,7 +2964,7 @@ static void OLED_Display_CHARGING(unsigned short int batValue ,unsigned char sta
 	}
 	else 
 	{		
-		if(get_charge_state()==RESET)		//闂備礁鎼悧婊勭椤忓牆鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欐櫢闁跨噦鎷�
+		if(get_charge_state()==RESET)		//闂傚倸鍊风粈渚€骞栭锔藉亱婵犲﹤瀚々鍙夈亜韫囨挾澧曢柡瀣╃窔閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛闁绘牜鍘ч～蹇涙惞鐟欏嫬纾梺闈浨归崕鏌ユ倵妤ｅ啯鈷戦柛婵嗗閸庡繑銇勯鐘插幋闁绘侗鍠涚粻娑樷槈濞嗘劖顏熼梻浣芥硶閸ｏ箓骞忛敓锟�
 		{
 			blinkFlag =(blinkFlag==0)?1:0;	
 			Bat_ValueBlink(batValue,blinkFlag);				
@@ -3067,7 +3020,7 @@ static void MenuPageTurns(unsigned char pageID)
 	{	
 		OLED_Display_WORK(MENU_APEX_AND_MOTOR_PAGE,0);		
 	}
-	else if(pageID==MENU_MAX_PAGE_NUM)//闂傚倷娴囧▔鏇㈠窗閹版澘鏄ラ柛娑卞枛椤曡鲸绻涢崱妯哄妞ゅ繐鐖奸弻娑㈠箻瀹曞泦褔鏌℃担瑙勫磳鐎殿噮鍓熸俊鍫曞幢濡ゅ﹣绱︾紓鍌欒閸嬫捇鏌ㄩ悤鍌涘
+	else if(pageID==MENU_MAX_PAGE_NUM)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁哄嫨鍎甸弻娑樷槈閸楃偞鐏堝銈嗘礉妞村摜鎹㈠☉銏犲耿婵☆垰鎼～灞筋渻閵堝懐绠伴柣鏍с偢瀵鈽夐姀鐘殿啋閻庤娲栧▔锕侇樄闁哄备鍓濋幏鍛喆閸曨偆锛撻柣搴㈩問閸ｎ噣宕滈悢闀愮箚闁割偅娲栭獮銏′繆閵堝拑姊楃紒鎲嬪缁辨捇宕掑▎鎺濆敼闂佺ǹ顑嗛幑鍥蓟閵娾晜鍋嗛柛灞剧☉椤忥拷
 	{
 		OLED_Display_POWER_OFF(0);
 	}
@@ -3080,9 +3033,10 @@ static void MenuPageTurns(unsigned char pageID)
 
 void vAppMenuManageTask( void * pvParameters )
 { 
-	uint32_t rec_Signal=0;//
-	static uint8_t menuPage=MENU_LOGO_PAGE,motor_run_cmd=0,selectNum=0,submenuPageNum=0,motorOrApexSetFlag=0,exitApexFlag=1;
-	confirm_state  apexMotorStartFlag =TRUE;//apex闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箰閻ｏ繝骞嶉缁㈠晙
+	task_notify_enum rec_Signal=null_signal;//
+	SCREEN_SETTING_ENUM selectNum=SETTING_FOR,submenuPageNum=SETTING_FOR;
+	static uint8_t menuPage=MENU_LOGO_PAGE,motor_run_cmd=0,motorOrApexSetFlag=0,exitApexFlag=1;
+	confirm_state  apexMotorStartFlag =TRUE;//apex
 	static unsigned 	short int  batDispValue;
 	void *pMalloc=NULL;
 	
@@ -3146,12 +3100,12 @@ void vAppMenuManageTask( void * pvParameters )
 			case MENU_HOME_PAGE:								
 				if(rec_Signal==run_button_press_signal)
 				{		
-					apexMotorStartFlag=FALSE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶姊洪崹顕呭剾闁告捇绠栧铏规崉閵娿儲鐎鹃梺绯曟櫅閹虫ê螞閸愵喖鐓涢柛灞惧嚬娴兼捇姊绘担鑺ョ《闁哥姵鍔欏鍛婄節濮橆剛顔嗛梺缁樺灱婵倝寮查幖浣圭厸闁稿本锚閳ь剚鐗滈埀顒佺啲閹凤拷
+					apexMotorStartFlag=FALSE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄨ泛顫忓ú顏勫瀭妞ゆ洖鎳庨崜楣冩⒑閸涘﹥宕岀紒鐘崇墪椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺缂侇垱娲樺▍鍛存煙閾忣個顏囩亱闂佸憡鍔﹂崰鏍偂濞戙垺鐓曢悘鐐村劤閸ゎ剙霉閸忓吋宕屾慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊鑳堕崯鏌ユ煙閸戙倖瀚�
 					MenuMotorParamUpdate(sys_param_un.device_param.use_p_num);//save data							
 					if(selectNum==ADJUST_MOTOR_PARAM_PROGRAM_NUM)
 					{
 						if(sys_param_un.device_param.auto_stop_flag==0&&sys_param_un.device_param.auto_start_flag==0&&sys_param_un.device_param.apical_action_flag==0)
-						{	//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸ゆ牠骞忛敓锟�
+						{	//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絿鍎ら崵鈧梺鎼炲€栭悧鐘荤嵁韫囨稒鏅搁柨鐕傛嫹
 							menuPage = MENU_MOTOR_WORK_PAGE;
 							if(motor_run_cmd==MOTOR_MODE_STOP) // motor control
 							{
@@ -3161,8 +3115,8 @@ void vAppMenuManageTask( void * pvParameters )
 						}
 						else
 						{
-							if(sys_param_un.device_param.apexFunctionLoad!=0)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔屽▍鎰版煙閸戙倖瀚�																						
-							{		//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳鎰佹綈缂佸顦甸崺鈧柨鐕傛嫹							
+							if(sys_param_un.device_param.apexFunctionLoad!=0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂胯嫰閳诲秹骞囬悧鍫㈠幍闂佸憡鍨崐鏍偓姘炬嫹																						
+							{		//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬪箛娴ｅ湱绉风紓鍌欑椤戝懘藝閻㈢ǹ鏄ラ柍褜鍓熼弻銊╂偆閸屾稑顏�							
 								menuPage = MENU_APEX_AND_MOTOR_PAGE;
 //								if(sys_param_un.device_param.auto_stop_flag==0)
 //								{
@@ -3174,7 +3128,7 @@ void vAppMenuManageTask( void * pvParameters )
 //								}	
 //								else 
 //								{
-//									motor_run_cmd=MOTOR_MODE_STOP;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋綁顢樿娴滄粓鎮樿箛鎾村殗妤犵偛绻橀幃婊堟嚍閵夛附顏熼梻浣告惈閸婂爼宕愰弽顐熷亾濮樼偓瀚�
+//									motor_run_cmd=MOTOR_MODE_STOP;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣М妞ゃ垺枪椤︽彃霉濠婂嫮鐭掗柟顔角圭粻娑㈠箻閺夋垶鐣绘俊銈囧Х閸嬫稓鎹㈠鈧獮鍐ㄢ堪閸喎娈熼梺闈涱檧闂勫嫰顢旈悢鍏尖拻濞达絽鎲￠幆鍫ユ煕婵犲倻鍩ｇ€规洘鍔欏浠嬵敃閻旇渹澹曞┑顔筋焽閸嬫挾鈧熬鎷�
 //								}											
 							}	
 							else 
@@ -3200,7 +3154,7 @@ void vAppMenuManageTask( void * pvParameters )
 					menuPage = MENU_SYSTEM_SET_PAGE;//to set 
 					submenuPageNum=0;			
 //					motorOrApexSetFlag%=2;	
-					motorOrApexSetFlag=0;	//濠殿喗甯楃粙鎺楁晝閵忋倕鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖奸弻娑欑節閸曨厹鈧湦TOR						
+					motorOrApexSetFlag=0;	//濠电姵顔栭崰妤冩暜濡ゅ啰鐭欓柟鐑橆殕閺呮繈鏌曡箛瀣偓鏇㈠几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛闁绘牕銈稿璇测槈濞嗘垹鐦堥梺鍛婃处閸樺綊鍩€椤掆偓濠€顨篛R						
 					MenuPageTurns(menuPage);
 				}							
 				else 
@@ -3245,7 +3199,7 @@ void vAppMenuManageTask( void * pvParameters )
 								{
 									sys_param_un.device_param.use_p_num--;		
 									sys_param_un.device_param.use_p_num%=11;//apex
-									HomePageHandle(motor_setting_updata_signal,ADJUST_MOTOR_PARAM_PROGRAM_NUM);//闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濠忕畱椤曡鲸绻涢崱妯哄妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻缂佹ɑ娅㈤梺璺ㄥ櫐閹凤拷
+									HomePageHandle(motor_setting_updata_signal,ADJUST_MOTOR_PARAM_PROGRAM_NUM);//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电姴绻掗悾杈ㄣ亜閺囷繝鍝虹紒缁樼洴瀹曞崬螣閸濆嫷娼撴俊鐐€曠换鎰版偉閻撳寒娼栭柧蹇氼潐瀹曞鏌曟繛鍨姕闁诲酣绠栧娲传閸曢潧鍓板銈庡幘閸忔﹢鎮伴璺ㄧ杸婵炴垶鐟ラ埀顒€顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻鑽ょ磽娴ｈ偂鎴濃枍閵忋倖鈷戦悹鎭掑妼濞呮劙鏌熼崙銈嗗
 								}	
 								#else 
 									sys_param_un.device_param.use_p_num--;		
@@ -3265,7 +3219,7 @@ void vAppMenuManageTask( void * pvParameters )
 								HomePageHandle(rec_Signal,selectNum);
 							}									
 						}	
-						if(rec_Signal==null_signal)//APEX闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇寮绘径鎰┾偓鍛存晝閸屾稓鍙嗛梺缁樻煥閹诧繝鎮橀鈧弻鐔割槹鎼粹€冲箣闂佽桨鐒﹂幑鍥蓟瑜斿鍫曞垂椤旂偓顔愰梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈敓锟�
+						if(rec_Signal==null_signal)//APEX闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€殿喚绮鍕箛閳规儳浜鹃柛娑樼摠閺呮繈鏌涚仦鍓с€掗柛娆忔濮婅櫣绱掑Ο鑽ゅ弳闂佺顕滅换婵嬪箖濮椻偓椤㈡岸鍩€椤掑嫬钃熼柣鏂垮濡插綊骞栫划鍏夊亾閸愯尙顓洪梻鍌欐祰濡椼劑鎮為敃鍌氱闁搞儺鍓欓拑鐔烘喐閺傛鍤曢柛顐ｆ礀閸ㄥ倹銇勯弮鍌氫壕妞ゆ梹鍔欏缁樻媴閸濄儳楔濡炪們鍎查幑鍥х暦濡も偓椤粓鍩€椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫熸櫢闁跨噦鎷�
 						{	
 							if(MenuIdleTimeManage(xTaskGetTickCount(),HOME_PARAM_IDLE_TICKS))
 							{	
@@ -3283,9 +3237,9 @@ void vAppMenuManageTask( void * pvParameters )
 								{
 									if(GC_depth_vlaue(0, 1)<27)
 									{	
-										if(apexMotorStartFlag==TRUE)	//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旂捄琛℃闁圭虎鍨版禍楣冩⒒娴ｈ姤纭堕柛鐘冲姍瀵憡绻濆顒傤唵闂佽法鍣﹂幏锟�
+										if(apexMotorStartFlag==TRUE)	//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍌涘磯閻炴稈鍓濋～宥夋⒑閸︻叀妾搁柛銊у缁傚秵銈ｉ崘鈹炬嫽婵炶揪缍€婵倗娑甸崼鏇熺厱闁绘ê鍟挎慨宥団偓娈垮枛閹诧紕鎹㈠┑鍡╂僵妞ゆ帒鍋嗛崬鐢告⒒娴ｈ姤纭堕柛锝忕畵楠炲繘鏁撻敓锟�
 										{	
-//										apexMotorStartFlag=FALSE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶姊洪崹顕呭剾闁告捇绠栧铏规崉閵娿儲鐎鹃梺绯曟櫅閹虫ê螞閸愵喖鐓涢柛灞惧嚬娴兼捇姊绘担鑺ョ《闁哥姵鍔欏鍛婄節濮橆剛顔嗛梺缁樺灱婵倝寮查幖浣圭厸闁稿本锚閳ь剚鐗滈埀顒佺啲閹凤拷
+//										apexMotorStartFlag=FALSE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄨ泛顫忓ú顏勫瀭妞ゆ洖鎳庨崜楣冩⒑閸涘﹥宕岀紒鐘崇墪椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺缂侇垱娲樺▍鍛存煙閾忣個顏囩亱闂佸憡鍔﹂崰鏍偂濞戙垺鐓曢悘鐐村劤閸ゎ剙霉閸忓吋宕屾慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊鑳堕崯鏌ユ煙閸戙倖瀚�
 											MenuMotorParamUpdate(sys_param_un.device_param.use_p_num);//save data	
 											if(GC_depth_vlaue(0, 1)>=0&&sys_param_un.device_param.apical_action_flag!=2)
 											{
@@ -3293,21 +3247,21 @@ void vAppMenuManageTask( void * pvParameters )
 												{
 														motor_run_cmd=MOTOR_MODE_START;
 												}	
-												App_MotorControl(motor_run_cmd);			//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閹嘲鈻庡▎鎴濆煂婵犳鍠掗弲鐘诲蓟閵娾晜鍋勯柛娑橈功娴煎嫰姊洪悷鏉挎闁瑰嚖鎷�
+												App_MotorControl(motor_run_cmd);			//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煙椤旂厧妲婚柍璇查閳诲酣骞嬪┑鍡欏帓婵犵數濮甸鏍窗閹烘鐤鹃柣妯款嚙閽冪喖鏌曟繛鐐珕闁稿瀚伴弻娑樷槈濮楀牆濮涙繛瀵稿帶鐎氭澘顫忓ú顏呭仭闁哄瀵ч鈧梻浣烘嚀閸ゆ牠骞忛敓锟�
 											}														
-											menuPage = MENU_APEX_AND_MOTOR_PAGE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸ゆ牠骞忛敓锟�
+											menuPage = MENU_APEX_AND_MOTOR_PAGE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絿鍎ら崵鈧梺鎼炲€栭悧鐘荤嵁韫囨稒鏅搁柨鐕傛嫹
 											MenuPageTurns(menuPage);
 										}
 									}	
                 					else 
 									{
-										apexMotorStartFlag=TRUE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閺佹捇鏁撻敓锟�
+										apexMotorStartFlag=TRUE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌℃担瑙勫磳闁轰焦鎹囬弫鎾绘晸閿燂拷
 									}												
 								}						
 							}									
 							else
 							{
-								apexMotorStartFlag=TRUE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閺佹捇鏁撻敓锟�
+								apexMotorStartFlag=TRUE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌℃担瑙勫磳闁轰焦鎹囬弫鎾绘晸閿燂拷
 							}
 						}																	
 					}								
@@ -3352,7 +3306,7 @@ void vAppMenuManageTask( void * pvParameters )
 								submenuPageNum%=MAX_SUBMENU;
 							}								
 						}
-						else//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳鐐
+						else//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬫倷椤掆偓椤忥拷
 						{
 							if(submenuPageNum==SETTING_FOR)
 							{								
@@ -3411,9 +3365,9 @@ void vAppMenuManageTask( void * pvParameters )
 					MenuPageTurns(menuPage);
 				}							
 				WorkPageFlash(MENU_MOTOR_WORK_PAGE,xTaskGetTickCount());	
-				if(sys_param_un.device_param.apexFunctionLoad!=0)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔屽▍鎰版煙閸戙倖瀚�
+				if(sys_param_un.device_param.apexFunctionLoad!=0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂胯嫰閳诲秹骞囬悧鍫㈠幍闂佸憡鍨崐鏍偓姘炬嫹
 				{					
-					menuPage=MENU_APEX_AND_MOTOR_PAGE;	//闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濠忕畱椤曡鲸绻涢崱妯哄妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銈夊磼濞戞﹩浼�	
+					menuPage=MENU_APEX_AND_MOTOR_PAGE;	//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电姴绻掗悾杈ㄣ亜閺囷繝鍝虹紒缁樼洴瀹曞崬螣閸濆嫷娼撴俊鐐€曠换鎰版偉閻撳寒娼栭柧蹇氼潐瀹曞鏌曟繛鍨姕闁诲酣绠栧娲传閸曢潧鍓板銈庡幘閸忔﹢鎮伴璺ㄧ杸婵炴垶鐟ラ埀顒€顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐Χ婢跺﹦锛滃┑鐐村灦閿曗晜瀵奸敓锟�	
 					MenuPageTurns(menuPage);
 				}													
 				 break;
@@ -3443,9 +3397,9 @@ void vAppMenuManageTask( void * pvParameters )
 					WorkPageFlash(MENU_ONLY_APEX_PAGE,xTaskGetTickCount());	
 					if(sys_param_un.device_param.apexFunctionLoad!=0&&exitApexFlag!=0)
 					{
-						exitApexFlag=0;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁诡喒鏅犻幊婊呭枈濡桨澹曢梺璺ㄥ櫐閹凤拷
+						exitApexFlag=0;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑鐠団€虫灀闁哄懐濞€楠炲﹤饪伴崨顓熺€冲┑鈽嗗灥濡椼劍绔熼弴銏♀拺閻犳亽鍔屽▍鎰版煙閸戙倖瀚�
 					}
-					if(sys_param_un.device_param.apexFunctionLoad==0&&exitApexFlag==0)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉㈡櫇妞规娊鎮峰▎蹇擃仼妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸ゆ牠骞忛敓锟�,闂傚倷娴囧▔鏇㈠窗鎼淬們浜归柕濠忕畱椤曡鲸绻涢崱妯哄妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箰閻ｏ繝骞忛弮鈧惄顖炪€侀弽銊︾秶妞ゆ劧绲藉☉褔姊鸿ぐ鎺濇闁稿繑锕㈠顐﹀箻鐠囪尙顔屽銈嗘尰缁诲嫭绋夐弻銉︾厵濡炲楠搁崢鎾煛娴ｈ宕岄柡浣规崌閺佹捇鏁撻敓锟�
+					if(sys_param_un.device_param.apexFunctionLoad==0&&exitApexFlag==0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ閵忊剝鐝栨俊鐐额潐婵炲﹪骞冨畡鎵虫瀻闊洦鎼╂禒鐓庮渻閵堝懐绠伴柣鏍帶椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺闁告繂瀚烽崕蹇斻亜椤撶姴鍘撮柣娑卞枦缁犳稑鈽夊▎蹇婂亾婵犳碍鐓犻柟顓熷笒閸旀粍绻涢崨顐㈢伈婵﹥妞藉畷顐﹀礋椤愮喎浜鹃柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絿鍎ら崵鈧梺鎼炲€栭悧鐘荤嵁韫囨稒鏅搁柨鐕傛嫹,闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭骞栧ǎ顒€鈧垶绂嶈ぐ鎺撶厪濠电姴绻掗悾杈ㄣ亜閺囷繝鍝虹紒缁樼洴瀹曞崬螣閸濆嫷娼撴俊鐐€曠换鎰版偉閻撳寒娼栭柧蹇氼潐瀹曞鏌曟繛鍨姕闁诲酣绠栧娲传閸曢潧鍓板銈庡幘閸忔﹢鎮伴璺ㄧ杸婵炴垶鐟ラ埀顒€顭烽弻銈夊箒閹烘垵濮曞┑鐐叉噷閸ㄨ棄顫忓ú顏勪紶闁告洦鍋€閸嬫捇宕奸弴鐐碉紮闂佸搫绋侀崑鈧柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犱即鏌ｉ敐蹇曠瘈妤犵偛绻樺顕€鍩€椤掑嫭鍎庢い鏍亼閳ь兛绶氬浠嬪Ω閿斿墽肖婵＄偑鍊栭崝褏寰婇挊澶嗘鐟滄柨顫忔ウ瑁や汗闁圭儤绻冮ˉ鏍⒑缁嬭法绠查柨鏇樺灩椤曪綁顢曢敃鈧粻濠氭偣閸ヮ亜鐨烘い鏂胯嫰椤啴濡堕崱妯洪瀺缂備浇顕х€氼厾绮欐径鎰摕闁靛濡囬崢鍨繆閻愬樊鍎忓Δ鐘虫倐瀹曘垽骞橀鐣屽幐婵炶揪缍€椤鐣峰畝鍕厸濞达綀顫夊畷宀勬煛娴ｈ宕岄柡浣规崌閺佹捇鏁撻敓锟�
 					{
 						exitApexFlag=1;
 						//sys_param_un.device_param.use_p_num=0;
@@ -3457,7 +3411,7 @@ void vAppMenuManageTask( void * pvParameters )
 			case MENU_APEX_AND_MOTOR_PAGE:
 				if(rec_Signal==run_button_press_signal||rec_Signal==low_power_signal)
 				{	
-					apexMotorStartFlag=FALSE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶姊洪崹顕呭剾闁告捇绠栧铏规崉閵娿儲鐎鹃梺绯曟櫅閹虫ê螞閸愵喖鐓涢柛灞惧嚬娴兼捇姊绘担鑺ョ《闁哥姵鍔欏鍛婄節濮橆剛顔嗛梺缁樺灱婵倝寮查幖浣圭厸闁稿本锚閳ь剚鐗滈埀顒佺啲閹凤拷
+					apexMotorStartFlag=FALSE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄨ泛顫忓ú顏勫瀭妞ゆ洖鎳庨崜楣冩⒑閸涘﹥宕岀紒鐘崇墪椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺缂侇垱娲樺▍鍛存煙閾忣個顏囩亱闂佸憡鍔﹂崰鏍偂濞戙垺鐓曢悘鐐村劤閸ゎ剙霉閸忓吋宕屾慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊鑳堕崯鏌ユ煙閸戙倖瀚�
 					if(motor_run_cmd == MOTOR_MODE_START) //motor control
 					{						
 						motor_run_cmd=MOTOR_MODE_STOP;
@@ -3465,8 +3419,8 @@ void vAppMenuManageTask( void * pvParameters )
 					menuPage=MENU_HOME_PAGE;//page change					
 					MenuPageTurns(menuPage);
 					App_MotorControl(MOTOR_MODE_STOP);						
-				 	//if(rec_Signal==run_button_press_signal&&GC_depth_vlaue(0, 1)<=(3+sys_param_un.device_param.ref_tine)&&sys_param_un.device_param.apical_action_flag==2)//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁诡喒鏅犻幊婊呭枈濡桨澹曢梺璺ㄥ櫐閹凤拷
-				//	{//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш鐎规洘鍨甸オ浼村礋闂堟稑顥濋梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煟閹达絽袚闁哄懏鎮傞弻锟犲磼濡　鍋撻弽顐熷亾濮橆剚璐￠柟鑼缁楃喖鍩€椤掑嫬鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熲拺閻犳亽鍔岄弸鎴︽煛鐎ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎲￠幑浣糕枖閺囥埄鏁嗛柡灞诲劚缁狀垶鏌ㄩ悤鍌涘,闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶姊洪崹顕呭剱妞は佸洦鈷戦悹鎭掑妼閺嬫垿鏌＄€ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈敓锟�
+				 	//if(rec_Signal==run_button_press_signal&&GC_depth_vlaue(0, 1)<=(3+sys_param_un.device_param.ref_tine)&&sys_param_un.device_param.apical_action_flag==2)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑鐠団€虫灀闁哄懐濞€楠炲﹤饪伴崨顓熺€冲┑鈽嗗灥濡椼劍绔熼弴銏♀拺閻犳亽鍔屽▍鎰版煙閸戙倖瀚�
+				//	{//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂倵鐟欏嫭绀冮柛銊ф暬閵堫亝瀵奸弶鎴狀槹闂傚倸鐗婄粙鎴λ夊┑瀣拻闁稿本鐟︾粊鐗堢箾婢跺绀嬬€规洑鍗抽獮鍥级閸喖娈ゅ┑鐘垫暩婵敻鎳濋崜褏涓嶆い鏍仦閻撶喖鏌熸潏鍓у埌鐞氭岸姊洪崫鍕櫤闁诡喖鍊垮濠氭晸閻樿尙锛滃┑鈽嗗灥閵嗏偓闁稿鎹囧浠嬵敃閻旇渹澹曞┑顔斤供閸撴氨鎷归敓鐘崇厵闁肩⒈鍓欓。鑲╃磼濡ゅ啫鏋涢柛鈹惧亾濡炪倖甯掔€氼剟寮告笟鈧弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍帶椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺闁告繂瀚烽崕蹇斻亜椤撶姴鍘撮柣娑卞枦缁犳稑鈽夊▎蹇婂亾婵犳碍鐓犻柟顓熷笒閸旀粍绻涢崨顐㈢伈婵﹥妞藉畷顐﹀礋椤愮喎浜鹃柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍟块幏娲煟閻樺厖鑸柛鏂跨焸瀵悂骞嬮敂鐣屽幐闁诲函缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞夐敓鐘茬濞达絿纭堕弸鏍煛閸ャ儱鐒洪柡浣告閺岋紕浠︾拠鎻掑缂備胶濯崹鍫曞蓟閵娾晜鍋嗛柛灞剧☉椤忥拷,闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄨ泛顫忓ú顏勫瀭妞ゆ洖鎳庨崜鍗烆渻閵囶垯绀佸ú锕傚煕閹达附鍋ｉ柟顓熷笒婵″ジ鏌＄€ｎ偄鐏撮柡宀嬬磿閳ь剨缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫熸櫢闁跨噦鎷�
 //					if(motor_run_cmd==MOTOR_MODE_STOP)  //motor control
 //					{		
 //							motor_run_cmd=MOTOR_MODE_START;
@@ -3474,9 +3428,9 @@ void vAppMenuManageTask( void * pvParameters )
 //						App_MotorControl(motor_run_cmd);	
 				//	}
 				}	
-				else if(rec_Signal==motor_apex_stop_signal) //闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺屾盯骞樼憴鍕€婂銈嗗笚閻擄繝鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣烘嚀閸ゆ牠骞忛敓锟�
+				else if(rec_Signal==motor_apex_stop_signal) //闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛鐏炲墽娲存鐐搭焽閹叉挳宕熼婧惧亾婵犲偆娓婚柕鍫濇缁楁岸鏌ｉ幙鍕瘈闁绘侗鍠涚粻娑樷槈濞嗗繆鍋撴繝姘厾闁诡厽甯掗崝婊勭箾閸涱偄鐏叉慨濠冩そ瀹曨偊宕熼鐔蜂壕闁割偅娲栫壕褰掓煛瀹ュ骸浜愰柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絿鍎ら崵鈧梺鎼炲€栭悧鐘荤嵁韫囨稒鏅搁柨鐕傛嫹
 				{
-					apexMotorStartFlag=TRUE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゆ倻濡吋娈鹃梺鑽ゅС濞村洭锝炴径灞稿亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閸洘鈷戦悹鎭掑妼閺嬫垿鏌＄€ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳鐐	
+					apexMotorStartFlag=TRUE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝棗鈧粯淇婇姘倯婵炲牓绠栧娲嚒閵堝憛鈩冪箾閺夋垶鍠橀柨婵堝仦瀵板嫮浠︾粙澶稿濠殿喗锕╅崜娑氱矓濞差亝鐓涢悘鐐额嚙婵倿鏌熼鍝勭伈鐎规洏鍔嶇换婵嬪礋椤忓棛锛熼梻鍌氬€风粈浣虹礊婵犲泚澶愬箻鐠囪尙顦у┑顔姐仜閸嬫挾鈧鍣崑濠囩嵁濡吋瀚氶柛娆忣樈濡喖姊绘笟鈧褔鎮ч崱妞㈡稑螖閸滀焦鏅滈梺鍓插亝濞叉﹢鍩涢幋锔藉仯闁诡厽甯掓俊濂告煛鐎ｎ偄鐏撮柡宀嬬磿閳ь剨缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬫倷椤掆偓椤忥拷	
 					if(motor_run_cmd==MOTOR_MODE_START) //motor control
 					{						
 						motor_run_cmd=MOTOR_MODE_STOP;
@@ -3488,9 +3442,9 @@ void vAppMenuManageTask( void * pvParameters )
 				else
 				{							
 					WorkPageFlash(MENU_APEX_AND_MOTOR_PAGE,xTaskGetTickCount());
-					if(sys_param_un.device_param.apexFunctionLoad==0)//闂傚倷娴囧▔鏇㈠窗閺囩喓绠鹃柛銉㈡櫇妞规娊鎮峰▎蹇擃仼妞ゅ繐鐖煎铏规崉閵娿儲鐎鹃梺鍝勵儏椤兘鐛箛娑欏€婚柤鎭掑劜濞呫垽姊洪崫鍕偓鍫曞磹閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏＄瑹椤栨瑧妫梻浣瑰缁诲倻鎹㈤幋鐘亾濮橆剛绉洪柡灞诲姂閹垹鐣￠柇锔斤紒缂傚倷鐒︾粙鏍綖婢跺备鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻鐠囧弶顥濋梺闈涚墕濡顢旈崼鏇熺厽婵☆垰鐏濋悡鎰版煃瑜滈崜銊╁箯閿燂拷
+					if(sys_param_un.device_param.apexFunctionLoad==0)//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌￠崶鈺佹灁缂佺娀绠栭弻娑㈠Ψ閵忊剝鐝栨俊鐐额潐婵炲﹪骞冨畡鎵虫瀻闊洦鎼╂禒鐓庮渻閵堝懐绠伴柣鏍帶椤繘鎼圭憴鍕／闂侀潧枪閸庢煡鎮楁ィ鍐┾拺闁告繂瀚烽崕蹇斻亜椤撶姴鍘撮柣娑卞枦缁犳稑鈽夊▎蹇婂亾婵犳碍鐓犻柟顓熷笒閸旀粍绻涢崨顐㈢伈婵﹥妞藉畷顐﹀礋椤愮喎浜鹃柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閿涘嫮鎳濆銈嗙墬閻熝兾涢鐐粹拻濞达絿鎳撻婊呯磼鐠囨彃鈧骞戦姀銈呯闁绘﹩鍋勬禍鐐叏濮楀棗澧扮紒澶嬫そ閺岋紕浠︾拠鎻掝潎闂佽鍠撻崹褰掓偩閿熺姵鐒介柨鏃€鏋荤槐鎺旂磽閸屾艾鈧兘鎮為敂鍓х煓闁哄稁鍙忕紞鏍ь熆鐠哄搫顦柛瀣尭椤繈顢楅崒婧炪劑姊洪崫鍕潶闁告梹鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻濠氭偣閸パ冪骇妞ゃ儲绻堝娲濞戞艾顣哄┑鈽嗗亝椤ㄥ﹪銆侀弮鍫濋唶闁哄洨鍠撻崢钘夆攽閳藉棗鐏犻柣蹇旂箞閹繝骞囬悧鍫㈠帗閻熸粍绮撳畷婊堝Ω閳轰胶顔嗛梺璺ㄥ櫐閹凤拷
 					{	
-						apexMotorStartFlag=TRUE;//闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゆ倻濡吋娈鹃梺鑽ゅС濞村洭锝炴径灞稿亾濮橆剛绉洪柡灞诲姂閹垽宕ㄦ繝鍕磿闂備礁缍婇ˉ鎾诲礂濮椻偓瀵偊骞樼拠鍙夘棟闂侀潧鐗嗗Λ妤咁敂閸洘鈷戦悹鎭掑妼閺嬫垿鏌＄€ｎ亶鐓兼鐐茬箻閹粓鎳為妷锔筋仧闂備礁鎼崐鍫曞磹閺嶎偀鍋撳鐐							
+						apexMotorStartFlag=TRUE;//闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝棗鈧粯淇婇姘倯婵炲牓绠栧娲嚒閵堝憛鈩冪箾閺夋垶鍠橀柨婵堝仦瀵板嫮浠︾粙澶稿濠殿喗锕╅崜娑氱矓濞差亝鐓涢悘鐐额嚙婵倿鏌熼鍝勭伈鐎规洏鍔嶇换婵嬪礋椤忓棛锛熼梻鍌氬€风粈浣虹礊婵犲泚澶愬箻鐠囪尙顦у┑顔姐仜閸嬫挾鈧鍣崑濠囩嵁濡吋瀚氶柛娆忣樈濡喖姊绘笟鈧褔鎮ч崱妞㈡稑螖閸滀焦鏅滈梺鍓插亝濞叉﹢鍩涢幋锔藉仯闁诡厽甯掓俊濂告煛鐎ｎ偄鐏撮柡宀嬬磿閳ь剨缍嗘禍鍫曟偂閸忕⒈娈介柣鎰皺缁犲鏌熼鐣岀煉闁瑰磭鍋ゆ俊鐑芥晜缁涘鎴烽梻鍌氬€风粈渚€骞栭锕€纾归柛顐ｆ礀绾惧綊鏌″搴′簮闁稿鎸搁～婵嬫倷椤掆偓椤忥拷							
 						motor_run_cmd =	MOTOR_MODE_STOP;						
 						App_MotorControl(motor_run_cmd);							
 						menuPage=MENU_HOME_PAGE;							
@@ -3549,7 +3503,7 @@ void vAppMenuManageTask( void * pvParameters )
 			rec_Signal= null_signal;	
 			if(menuPage==MENU_SYSTEM_SET_PAGE||menuPage	==MENU_HOME_PAGE)
 			{
-				xSemaphoreGive(xSemaphoreDispRfresh); //闂傚倷娴囧▔鏇㈠窗閹版澘鍑犲┑鐘宠壘缁狀垶鏌ｉ幋锝呅撻柡鍛倐閺岋繝宕掑Ο琛″亾閺嶎偀鍋撳顒傜Ш闁哄被鍔戦幃銏ゅ川婵犲嫪绱曢梻浣哥秺椤ユ捇宕楀鈧顐﹀箻缂佹鍙勯柣銏╁灱閸犳氨绮旈崼鏇熺厵濡炲楠搁崢鎾煃瑜滈崜姘潩閵娾晜鍋傞柨鐔哄Т缁€鍡涙煟閹达絽袚闁哄懏鎮傞弻锟犲磼濡　鍋撻弽顐熷亾濮樼偓瀚�
+				xSemaphoreGive(xSemaphoreDispRfresh); //闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚敐澶婄闁挎繂鎲涢幘缁樼厸闁告侗鍠楅崐鎰版煛瀹€瀣瘈鐎规洘甯掕灒閻炴稈鈧厖澹曢梺鍝勭▉閸嬧偓闁稿鎸搁～婵嬵敆閸屾簽銊╂⒑閸濆嫯顫﹂柛鏃€鍨块獮鍐閵堝懎绐涙繝鐢靛Т鐎氼亞妲愰弴銏♀拻濞达絽鎽滅粔鐑樸亜閵夛附宕岀€规洘顨呴～婊堝焵椤掆偓椤曪綁顢曢敃鈧粻鑽ょ磽娴ｈ鐒介柛娆忓閺岋綁濮€閳轰胶浼囬梺鍝ュУ濮樸劎鍒掗弮鍫濋唶闁哄洨鍠撻崢鍨繆閻愬樊鍎忓Δ鐘虫倐瀹曘垽骞橀鐣屽帗閻熸粍绮撳畷婊冾潩椤掑鍍甸梺闈浥堥弲婊堝磻閸岀偞鐓ラ柣鏂挎惈瀛濈紓浣插亾闁糕剝绋掗悡鐔兼煙鏉堝墽鍒扮悮姘舵⒑閸濆嫭鍣洪柟顔煎€垮濠氭晸閻樿尙锛滃┑鈽嗗灥閵嗏偓闁稿鎹囧浠嬵敃閻旇渹澹曞┑顔筋焽閸嬫挾鈧熬鎷�
 			}	
 		}
 		else

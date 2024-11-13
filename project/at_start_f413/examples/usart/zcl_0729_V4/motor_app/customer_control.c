@@ -87,10 +87,10 @@ void stop()
 *****************************************************************************************/
 void set_torque_limit(float upper_limit, float lower_limit)
 {
-	if(lower_limit<0.4)		lower_limit = 0.4;
+	if(lower_limit<0.4)  lower_limit=0.4;	
 	#ifdef ZHX
-		upper_threshold = upper_limit *90;//up5%93;//略高
-		lower_threshold = lower_limit *90;//93;//	up5%93;//略高
+		upper_threshold = upper_limit *90;//略高
+		lower_threshold = lower_limit *90;//93;//up5%;//略高
 	#else
 		upper_threshold = upper_limit *130;//鸣志
 		lower_threshold = lower_limit *130;//	

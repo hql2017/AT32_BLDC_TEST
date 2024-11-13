@@ -52,36 +52,35 @@ uint8_t spi2_tx_dma_status=0;
   * @param  none
   * @retval none
   */
-static void spi_DMA_config(void)
-{
- 
- dma_init_type dma_init_struct;
+// /*static void spi_DMA_config(void)*/
+// {	
+// 	dma_init_type dma_init_struct;
+// 	/* enable dma1 clock */
+// 	crm_periph_clock_enable(CRM_DMA2_PERIPH_CLOCK, TRUE);
+// 	/* dma1 channel2 for spi2 tx configuration */
+// 	dma_reset(DMA2_CHANNEL2);
+// 	dma_default_para_init(&dma_init_struct);
+// 	dma_init_struct.buffer_size = 80;//(PIXEL_MAX_COLUMN_NUM>>1);//一个像素点半字节
+// 	dma_init_struct.direction = DMA_DIR_MEMORY_TO_PERIPHERAL;
+// 	dma_init_struct.memory_base_addr = (uint32_t)SPI_sendBuff;
+// 	dma_init_struct.memory_data_width = DMA_MEMORY_DATA_WIDTH_BYTE;
+// 	dma_init_struct.memory_inc_enable = TRUE;
+// 	dma_init_struct.peripheral_base_addr = (uint32_t)&SPI2->dt;
+// 	dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
+// 	dma_init_struct.peripheral_inc_enable = FALSE;
+// 	dma_init_struct.priority = DMA_PRIORITY_MEDIUM;
+// 	dma_init_struct.loop_mode_enable = FALSE;
+// 	dma_init(DMA2_CHANNEL2, &dma_init_struct);
 
-  /* enable dma1 clock */
-  crm_periph_clock_enable(CRM_DMA2_PERIPH_CLOCK, TRUE);
-  /* dma1 channel2 for spi2 tx configuration */
-  dma_reset(DMA2_CHANNEL2);
-  dma_default_para_init(&dma_init_struct);
-  dma_init_struct.buffer_size = 80;//(PIXEL_MAX_COLUMN_NUM>>1);//一个像素点半字节
-  dma_init_struct.direction = DMA_DIR_MEMORY_TO_PERIPHERAL;
-  dma_init_struct.memory_base_addr = (uint32_t)SPI_sendBuff;
-  dma_init_struct.memory_data_width = DMA_MEMORY_DATA_WIDTH_BYTE;
-  dma_init_struct.memory_inc_enable = TRUE;
-  dma_init_struct.peripheral_base_addr = (uint32_t)&SPI2->dt;
-  dma_init_struct.peripheral_data_width = DMA_PERIPHERAL_DATA_WIDTH_BYTE;
-  dma_init_struct.peripheral_inc_enable = FALSE;
-  dma_init_struct.priority = DMA_PRIORITY_MEDIUM;
-  dma_init_struct.loop_mode_enable = FALSE;
-  dma_init(DMA2_CHANNEL2, &dma_init_struct);
+// 	/* config flexible dma for spi2tx */
+// 	spi_i2s_dma_transmitter_enable(LCDSPI,TRUE);//DMA，spi2 TX开发送DMA
 
-  /* config flexible dma for spi2tx */
-	spi_i2s_dma_transmitter_enable(LCDSPI,TRUE);//DMA，spi2 TX开发送DMA
+// 	dma_flexible_config(DMA2, FLEX_CHANNEL2, DMA_FLEXIBLE_SPI2_TX);
+// 	dma_channel_enable(DMA2_CHANNEL2, TRUE); /* usart1 tx begin dma transmitting */	
+// 	dma_interrupt_enable(DMA2_CHANNEL2,DMA_FDT_INT,TRUE);
+// 	nvic_irq_enable(DMA2_Channel2_IRQn, 0, 0);
+// }
 
-  dma_flexible_config(DMA2, FLEX_CHANNEL2, DMA_FLEXIBLE_SPI2_TX);
-  dma_channel_enable(DMA2_CHANNEL2, TRUE); /* usart1 tx begin dma transmitting */	
-	dma_interrupt_enable(DMA2_CHANNEL2,DMA_FDT_INT,TRUE);
-	nvic_irq_enable(DMA2_Channel2_IRQn, 0, 0);
-}
 /**
   * @brief  spi for oled
   * @param  none
@@ -89,31 +88,31 @@ static void spi_DMA_config(void)
   */
 static void spi_lcd_init(void)
 {
-  gpio_init_type gpio_initstructure;
+  	gpio_init_type gpio_initstructure;
 	spi_init_type spi_init_struct;  
  
-  crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE); 
+	crm_periph_clock_enable(CRM_GPIOB_PERIPH_CLOCK, TRUE); 
 	crm_periph_clock_enable(CRM_GPIOC_PERIPH_CLOCK, TRUE);	
-  crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
-  gpio_pin_remap_config(SWJTAG_GMUX_010, TRUE);
-  gpio_pin_remap_config(SPI2_GMUX_0001, TRUE);
+	crm_periph_clock_enable(CRM_IOMUX_PERIPH_CLOCK, TRUE);
+	gpio_pin_remap_config(SWJTAG_GMUX_010, TRUE);
+	gpio_pin_remap_config(SPI2_GMUX_0001, TRUE);
  
 	gpio_default_para_init(&gpio_initstructure);
   /* software cs, pa15 as a general io to control flash cs */
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
-  gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;  
-  gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = LCD_CS_IO;
-  gpio_init(LCD_CS_PORT, &gpio_initstructure);
-  
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;  
+	gpio_initstructure.gpio_pull           = GPIO_PULL_NONE;  
+	gpio_initstructure.gpio_mode           = GPIO_MODE_OUTPUT;  
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = LCD_CS_IO;
+	gpio_init(LCD_CS_PORT, &gpio_initstructure);
+	
   /* sck */ 
-  gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
-  gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
-  gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
-  gpio_initstructure.gpio_pins           = LCD_CLK_IO;
-  gpio_init(LCD_CLK_PORT, &gpio_initstructure);
+	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
+	gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
+	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
+	gpio_initstructure.gpio_pins           = LCD_CLK_IO;
+	gpio_init(LCD_CLK_PORT, &gpio_initstructure);
   
   /* miso */
 //  gpio_initstructure.gpio_pull           = GPIO_PULL_UP;  
@@ -124,26 +123,26 @@ static void spi_lcd_init(void)
   /* mosi */ 
 	gpio_initstructure.gpio_drive_strength = GPIO_DRIVE_STRENGTH_STRONGER;
 	gpio_initstructure.gpio_out_type       = GPIO_OUTPUT_PUSH_PULL;
-  gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
-  gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
-  gpio_initstructure.gpio_pins           = LCD_MOSI_IO;
-  gpio_init(LCD_MOSI_PORT, &gpio_initstructure);
-	  
-  crm_periph_clock_enable(LCDSPI_CLOCK, TRUE);
+	gpio_initstructure.gpio_pull           = GPIO_PULL_DOWN;
+	gpio_initstructure.gpio_mode           = GPIO_MODE_MUX;
+	gpio_initstructure.gpio_pins           = LCD_MOSI_IO;
+	gpio_init(LCD_MOSI_PORT, &gpio_initstructure);
 		
-  spi_default_para_init(&spi_init_struct);
-  spi_init_struct.transmission_mode = SPI_TRANSMIT_HALF_DUPLEX_TX;
-  spi_init_struct.master_slave_mode = SPI_MODE_MASTER;
-  spi_init_struct.mclk_freq_division =SPI_MCLK_DIV_4;//25M
-  spi_init_struct.first_bit_transmission = SPI_FIRST_BIT_MSB;
-  spi_init_struct.frame_bit_num = SPI_FRAME_8BIT;
-  spi_init_struct.clock_polarity = SPI_CLOCK_POLARITY_HIGH;
-  spi_init_struct.clock_phase = SPI_CLOCK_PHASE_2EDGE;
-  spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;  
-  spi_init(LCDSPI, &spi_init_struct);
-	
-//	spi_DMA_config();
-  spi_enable(LCDSPI, TRUE);
+	crm_periph_clock_enable(LCDSPI_CLOCK, TRUE);
+			
+	spi_default_para_init(&spi_init_struct);
+	spi_init_struct.transmission_mode = SPI_TRANSMIT_HALF_DUPLEX_TX;
+	spi_init_struct.master_slave_mode = SPI_MODE_MASTER;
+	spi_init_struct.mclk_freq_division =SPI_MCLK_DIV_4;//25M
+	spi_init_struct.first_bit_transmission = SPI_FIRST_BIT_MSB;
+	spi_init_struct.frame_bit_num = SPI_FRAME_8BIT;
+	spi_init_struct.clock_polarity = SPI_CLOCK_POLARITY_HIGH;
+	spi_init_struct.clock_phase = SPI_CLOCK_PHASE_2EDGE;
+	spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;  
+	spi_init(LCDSPI, &spi_init_struct);
+		
+	//	spi_DMA_config();
+	spi_enable(LCDSPI, TRUE);
  
 }
 //反显函数
@@ -157,7 +156,7 @@ static void spi_lcd_init(void)
 //	{
 //		OLED_WR_Byte(0xA7,OLED_CMD);//反色显示
 //	}
-//}
+//}        
 
 static void OLED_WR_Byte(u8 dat,u8 cmd)
 {	
@@ -187,9 +186,8 @@ static void OLED_WR_Data_Bytes(u8 *pDat,uint8_t len)
 		while(spi_i2s_flag_get(SPI2, SPI_I2S_TDBE_FLAG) == RESET){;}	//等待发送区为空
 		spi_i2s_data_transmit(SPI2,pDat[i]);		//发送一个字节的数据
 	}
-	while(spi_i2s_flag_get(SPI2, SPI_I2S_BF_FLAG));	//等待发送结束	
-	
-//	//	//dma
+	while(spi_i2s_flag_get(SPI2, SPI_I2S_BF_FLAG));	//等待发送结束		
+//	dma
 //	while(spi_i2s_flag_get(SPI2, SPI_I2S_TDBE_FLAG) == RESET){;} //
 //	spi2_tx_dma_status=0;
 //  dma_channel_enable(DMA2_CHANNEL2, FALSE); 	 	 
@@ -810,8 +808,7 @@ void logo_disppaly(void)
 	OLED_ShowPicture(72,8,16,48,asc_4816[0],1);//LOGO,O
 	OLED_ShowPicture(88,16,16,32,asc2_3216[4],1);//LOGO,A
 	OLED_ShowPicture(104,16,16,32,asc2_3216[5],1);//LOGO,R
-	OLED_ShowPicture(120,16,16,32,asc2_3216[6],1);//LOGO,T	
-	
+	OLED_ShowPicture(120,16,16,32,asc2_3216[6],1);//LOGO,T		
 }
 
  void disp_batValue(u8 x,u8 y, unsigned short int  batValue)

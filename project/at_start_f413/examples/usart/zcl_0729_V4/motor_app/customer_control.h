@@ -17,13 +17,13 @@ enum AutoReverseMode
 };
 enum EndoMode
 {
-		EndoModePositionToggle,     //Two position toggle mode
-		EndoModeSpeedForward,       //Keep Forward	
-		EndoModeSpeedReverse,       //Keep Reverse	
-		EndoModeTorqueATC,  //扭力自适应
-		Max_endoMode,
-		EndoModeKeepForward,       //Keep Forward	
-		EndoModeKeepReverse,       //Keep Reverse	
+	EndoModePositionToggle,     //Two position toggle mode
+	EndoModeSpeedForward,       //Keep Forward	
+	EndoModeSpeedReverse,       //Keep Reverse	
+	EndoModeTorqueATC,  //扭力自适应
+	Max_endoMode,
+	EndoModeKeepForward,       //Keep Forward	
+	EndoModeKeepReverse,       //Keep Reverse	
 };
 
 typedef enum

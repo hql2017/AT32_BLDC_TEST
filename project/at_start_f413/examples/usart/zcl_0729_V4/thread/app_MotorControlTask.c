@@ -119,12 +119,12 @@ void MotorParamInit(void)
 		else if(motor_param_un.system_motor_pattern[useNum].dir==EndoModePositionToggle)
 		{		
 			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].recTorqueThresholdNum]*0.10;
-			motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;
+			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;
 		}
 		else 
 		{					
 			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].torqueThresholdNum]*0.10;			
-			motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;//60%		
+			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;//60%		
 		}			
 		
 		update_settings(&motor_settings);	
@@ -144,7 +144,7 @@ static void MotorStatusMonitor(unsigned short int perTimeMs)
 	{
 		motorErrHeatBeat=0;
 		App_MotorControl(MOTOR_SETTING_ERR);//err
-//	gpio_bits_reset(GPIOB,GPIO_PINS_14);//...mp6570_disable()	
+//		gpio_bits_reset(GPIOB,GPIO_PINS_14);//...mp6570_disable()	
 	}	
   if(status_mp6570 !=04&&foc_flag	!=0)//malfunction
 	{		

@@ -34,8 +34,8 @@ union  Param_Union//所有参数均按照16位定义
 };
 
 typedef struct {
-	unsigned short int pNum;	//apexEnable;//没用,后期再增加
-	unsigned short int dir;
+	unsigned short int pNum;	//apexEnable;//没用,后期再增加				
+	unsigned short int  dir;
 	unsigned short int motorSpeedNum; 
 	unsigned short int torqueThresholdNum;		//torgue_list num ,iq upper threshold  ,((unit mN.m )=10*(unit N.cm) ) use mN.m
 	unsigned short int atcTorqueThresholdNum;
@@ -52,56 +52,56 @@ union  Motor_Para_Union//所有参数均按照16位定义 10个记忆模式
   uint16_t pattern_buff[99];
 };
 typedef enum { 
-			spd100_Rpm_num=0,
-			spd150_Rpm_num,//1
-			spd200_Rpm_num,
-			spd250_Rpm_num,
-			spd300_Rpm_num,
-			spd350_Rpm_num,
-			spd400_Rpm_num,
-			spd450_Rpm_num,
-			spd500_Rpm_num,
-			spd550_Rpm_num,
-			spd600_Rpm_num,
-			spd800_Rpm_num,
-//			MAX_spd_Rpm_num,//max=1000rpm;
-			spd1000_Rpm_num,			
-			spd1200_Rpm_num,	
-			spd1500_Rpm_num,	
-			spd1800_Rpm_num,
-			spd2000_Rpm_num,
-			MAX_spd_Rpm_num,//max=2200rpm;				
-			spd2200_Rpm_num,
-			spd2500_Rpm_num,					
-	}speed_list_num_enum; 
+	spd100_Rpm_num=0,
+	spd150_Rpm_num,//1
+	spd200_Rpm_num,
+	spd250_Rpm_num,
+	spd300_Rpm_num,
+	spd350_Rpm_num,
+	spd400_Rpm_num,
+	spd450_Rpm_num,
+	spd500_Rpm_num,
+	spd550_Rpm_num,
+	spd600_Rpm_num,
+	spd800_Rpm_num,
+//	MAX_spd_Rpm_num,//max=1000rpm;
+	spd1000_Rpm_num,			
+	spd1200_Rpm_num,	
+	spd1500_Rpm_num,	
+	spd1800_Rpm_num,
+	spd2000_Rpm_num,
+	MAX_spd_Rpm_num,//max=2200rpm;				
+	spd2200_Rpm_num,
+	spd2500_Rpm_num,					
+}speed_list_num_enum; 
 
 typedef enum { 
-			torque06_Ncm=0,//6mN.m=0.6N.cm;
-			torque08_Ncm,//1
-			torque10_Ncm,
-			torque12_Ncm,
-			torque14_Ncm,
-			torque16_Ncm,
-			torque18_Ncm,
-			torque20_Ncm,
-			torque22_Ncm,
-			torque24_Ncm,
-			torque26_Ncm,
-			torque28_Ncm,
-			torque30_Ncm,
-			torque32_Ncm,
-			torque35_Ncm,
-			torque40_Ncm,
-			//	MAX_torque_42_Ncm,//13	
-			torque42_Ncm,
-			torque45_Ncm,
-		    MAX_torque_42_Ncm,//13
-			torque50_Ncm,
-			torque55_Ncm,
-			torque60_Ncm,
-			torque65_Ncm,
-			torque70_Ncm,
-	}torque_list_num_enum; 
+	torque06_Ncm=0,//6mN.m=0.6N.cm;
+	torque08_Ncm,//1
+	torque10_Ncm,
+	torque12_Ncm,
+	torque14_Ncm,
+	torque16_Ncm,
+	torque18_Ncm,
+	torque20_Ncm,
+	torque22_Ncm,
+	torque24_Ncm,
+	torque26_Ncm,
+	torque28_Ncm,
+	torque30_Ncm,
+	torque32_Ncm,
+	torque35_Ncm,
+	torque40_Ncm,
+	//	MAX_torque_42_Ncm,//13	
+	torque42_Ncm,
+	torque45_Ncm,
+	MAX_torque_42_Ncm,//13
+	torque50_Ncm,
+	torque55_Ncm,
+	torque60_Ncm,
+	torque65_Ncm,
+	torque70_Ncm,
+}torque_list_num_enum; 
 
 typedef enum { 
 			null_signal=0,
