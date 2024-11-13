@@ -503,11 +503,10 @@ static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char
   * @retval none
   */
 static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
-{		
-	
+{	
 	error_status err;
 	err=ERROR;
-  if(programNum<10) //==10 only apex mode
+    if(programNum<10) //==10 only apex mode
 	{
 		if(motor_param_un.system_motor_pattern[programNum].pNum!=programNum) //first
 		{
@@ -1569,8 +1568,8 @@ static void ApexProgressBarFlash(unsigned int systemTimeMs,unsigned char startFl
 			// over area (40~60)
 			if(recApexValue!=temp)
 			{
-				if(temp>=30) recApexValue=30;//
-				if(temp==0) recApexValue=temp;//闂備胶枪缁诲牓宕濋幋锕€鏋侀柟鎹愵嚙濡﹢鏌曢崼婵囶棞妞ゅ骏鎷�
+				if(temp>=30) recApexValue=30;
+				if(temp==0) recApexValue=temp;
 				if(recApexValue>temp) 
 				{
 					if(recApexValue==1) recApexValue=0;					
@@ -2302,7 +2301,8 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 				{	
 					if(motor_status.status!=Status_STOP)//auto start ,in
 					{	
-						if(sys_param_un.device_param.apical_action_flag!=0)		
+						if(sys_param_un.device_param.apical_action_flag!=0)
+						{		
 							App_MotorControl(MOTOR_MODE_STOP);
 						}		
 					}						
@@ -2382,7 +2382,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 							}							
 						}	
 					}
-			 }
+			    }
 				else if(depth<=(7+sys_param_un.device_param.ref_tine))//0.67//250rpm
 				{	
 					if(motor_status.status!=Status_STOP)
@@ -2498,6 +2498,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 					}	
 				}				
 				if(sys_param_un.device_param.auto_start_flag!=0)//auto start ,in 
+				{
 					if(auto_flag_ap!=motor_apex_run_signal)
 					{
 						auto_flag_ap= motor_apex_run_signal;										
@@ -2569,9 +2570,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 			{	//闂備胶绮灙闁糕晜鐗犻崺鈧い鎴ｆ硶缁愭棃鏌℃担瑙勫磳鐎殿噮鍓熸俊鍫曞幢濡ゅ﹣绱﹂梻鍌欐祰濞夋洟宕伴幇鏉垮嚑濠电姵鑹剧粻顖炴煥閻曞倹瀚�
 				if(motor_status.status!=Status_STOP&&auto_flag_ap!=motor_apex_run_signal)	auto_flag_ap=motor_apex_run_signal;
 				if(motor_status.status==Status_STOP&&auto_flag_ap!=motor_apex_stop_signal)	auto_flag_ap=motor_apex_stop_signal;
-			}				
-			#else        
-			//only motor from usart
+			}	
 			#endif		
 		}
 		else
