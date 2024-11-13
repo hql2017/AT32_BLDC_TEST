@@ -15,7 +15,7 @@ enum AutoReverseMode
     AutoReverseMode2, //达到转矩反转，泄力后停止
     AutoReverseStop,  //达到转矩就停止
 };
-enum EndoMode
+typedef enum EndoMode
 {
 	EndoModePositionToggle,     //Two position toggle mode
 	EndoModeSpeedForward,       //Keep Forward	
@@ -24,7 +24,7 @@ enum EndoMode
 	Max_endoMode,
 	EndoModeKeepForward,       //Keep Forward	
 	EndoModeKeepReverse,       //Keep Reverse	
-};
+}eEndoMode;
 
 typedef enum
 { 

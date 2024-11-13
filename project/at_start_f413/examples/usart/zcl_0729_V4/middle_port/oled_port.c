@@ -141,7 +141,7 @@ static void spi_lcd_init(void)
 	spi_init_struct.cs_mode_selection = SPI_CS_SOFTWARE_MODE;  
 	spi_init(LCDSPI, &spi_init_struct);
 		
-	//	spi_DMA_config();
+	//spi_DMA_config();
 	spi_enable(LCDSPI, TRUE);
  
 }

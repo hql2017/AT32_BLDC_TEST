@@ -72,14 +72,14 @@ short int speed_list[20]={100,150,200,250,300,350,400,450,500,550,600,800,1000,1
 unsigned short int torque_list[13]={5,8,10,12,15,18,20,22,25,30,35,40,MAX_TORQUE_UUPER_THRESHOLD};//unit mN.m
 #endif
 
-enum {
+typedef enum {
 		ADJUST_MOTOR_PARAM_PROGRAM_NUM = 0,
 		ADJUST_MOTOR_PARAM_SPEED,          
 		ADJUST_MOTOR_PARAM_TORQUE, 
 		ADJUST_MOTOR_PARAM_DIRECTION,	
 		ADJUST_MOTOR_PARAM_ANGLE_FORWARD , 
 		ADJUST_MOTOR_PARAM_ANGLE_RESERVE , 
-};
+}ADJUST_select_NUM;
 
 #define MENU_PARAM_ADD           0
 #define MENU_PARAM_SUB          1
@@ -270,7 +270,7 @@ void MenuDevicePowerOff(unsigned char feedDogFlag)
   * @retval none
   */
 
-static error_status  MenuConfigMotorParam(unsigned char programNum,unsigned char selectNum,unsigned char addOrSub)
+static error_status  MenuConfigMotorParam(unsigned char programNum,ADJUST_select_NUM selectNum,unsigned char addOrSub)
 {		
 	error_status err;
 	err=ERROR;
@@ -484,7 +484,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 {	
 	error_status err;
 	err=ERROR;
-    if(programNum<10) //==10 only apex mode
+  	if(programNum<10) //==10 only apex mode
 	{
 		if(motor_param_un.system_motor_pattern[programNum].pNum!=programNum) //first
 		{
@@ -505,7 +505,7 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 		}
 		else
 		{			
-			motor_settings.mode =(enum EndoMode) motor_param_un.system_motor_pattern[programNum].dir;	
+			motor_settings.mode =(eEndoMode) motor_param_un.system_motor_pattern[programNum].dir;	
 		}	
 		motor_settings.forward_position=motor_param_un.system_motor_pattern[programNum].forwardPosition;
 		motor_settings.reverse_position=motor_param_un.system_motor_pattern[programNum].reversePosition;
@@ -515,22 +515,22 @@ static  error_status  MenuMotorParamUpdate(unsigned short int programNum)
 			{
 				motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum=torque_limit[motor_param_un.system_motor_pattern[programNum].motorSpeedNum];
 			}				
-			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;			
-			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  param=5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�5闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5 闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�-5 闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
+			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10f;//MAX_TORQUE_UUPER_THRESHOLD*0.10;			
+			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum]*0.10f;//torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  param=5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�5闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5 闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�-5 闂傚倸鍊烽懗鑸电仚濡炪倖鍨甸幊鎰板箲閵忕媭娼ㄩ柍褜鍓欓锝夘敃閿曗偓缁犲鎮归崶褍绾фい銉︾箞濮婃椽妫冨☉姘暫濠碘槅鍋呴〃濠囥€侀弮鍫熸櫢闁跨噦鎷�5闂傚倸鍊搁崐宄懊归崶褉鏋栭柡鍥ュ灩缁愭鏌熼悧鍫熺凡闁告垹濮撮埞鎴︽偐鐎圭姴顥濈紓浣哄閸ㄥ爼寮婚妸鈺傚亞闁稿本绋戦锟�
 			if(motor_param_un.system_motor_pattern[programNum].atcTorqueThresholdNum>torque20_Ncm)
 			{
-				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.10;
+				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.10f;
 			}
 		}
 		else if(motor_param_un.system_motor_pattern[programNum].dir==EndoModePositionToggle)
 		{
-			motor_settings.upper_threshold=MAX_TORQUE_UUPER_THRESHOLD/10;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//motor_param_un.system_motor_pattern[programNum].torqueThreshold*0.16;
-			motor_settings.lower_threshold=MAX_TORQUE_UUPER_THRESHOLD*3/5;//torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  par
+			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.1f;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//motor_param_un.system_motor_pattern[programNum].torqueThreshold*0.16;
+			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].recTorqueThresholdNum]*0.06f;//MAX_TORQUE_UUPER_THRESHOLD*0.06;//闂傚倸鍊峰ù鍥綖婢舵劦鏁婇柡宥庡幖閻鏌涢幇闈涙灈闁哄绶氶弻鐔煎箲閹伴潧娈┑鈽嗗亝閿曘垽寮婚弴銏犻唶婵犻潧娴傚Λ鐐差渻閵堝懐绠伴柣鏍с偢瀵鍨鹃幇浣告倯婵炶揪绲捐ぐ鍐╃妤ｅ啯鐓曢柟閭﹀墮缁狙囨煟濠垫劕鐏︽慨濠勭帛閹峰懘鎳為妷褋鈧﹪姊洪崫銉バｉ柛鏃€鐟ラ锝夊川婵犲嫮鐦堝┑顔斤供閸撴盯顢欓崱娑欌拺缂備焦锚閻忓崬鈹戦鍝勨偓婵嗩嚕閺屻儱绠瑰ù锝呮贡閸樻悂姊虹粙鎸庢拱闁挎岸鏌嶈閸撴岸鎮у⿰鍫濈劦妞ゆ帊娴囨竟妯肩磽瀹ュ拑韬€殿喖顭锋俊鎼佸煛閸屾矮绨婚梻浣告啞缁嬫垿鏁冮敂钘夘嚤闁告洦鍨遍埛鎴犳喐閻楀牆淇俊顐ｅ灴閺屾稖绠涢弮鎾光偓璺ㄢ偓娈垮櫘閸嬪﹪鐛Ο鍏煎珰闁告瑥顦藉Λ鐔兼⒒娓氣偓濞佳囨偋閸℃あ娑樜旈崪浣规櫆闂佽偐枪閸氣偓缂佽妫欓妵鍕冀閵婏絼绮堕梺绋款儐閹告悂鎮鹃悜钘夌倞闁冲搫锕ラ弫銈嗙節閻㈤潧浠╅柟娲讳簽瀵板﹪鎸婃径妯煎姺闂佽法鍠撴慨鎾几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛寸崪闁瑰嚖鎷� int  par
 		}
 		else 
 		{
-			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10;
-			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.06;//60%		
+			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.10f;
+			motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[programNum].torqueThresholdNum]*0.06f;//60%		
 		}				
 		if(motor_param_un.system_motor_pattern[programNum].toggleSpeedNum>spd600_Rpm_num)
 		{
@@ -568,7 +568,7 @@ static void OLED_Display_motorDirection(unsigned short int dir)
   * @param   programNum ,uint8_t select
   * @retval none
   */
-static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,unsigned char selectNum )
+static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,ADJUST_select_NUM selectNum )
 {
 	uint32_t temp,temp2;	
 	if(motorParam->dir==EndoModePositionToggle)
@@ -578,12 +578,12 @@ static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,unsigned char s
 	else temp=speed_list[motorParam->motorSpeedNum];	
 	if(temp<1000)	
 	{	
-		OLED_ShowNum(40,24,temp,3,16,(selectNum!=1));	
-		OLED_ShowChar(32,24,' ',16,(selectNum!=1));	
+		OLED_ShowNum(40,24,temp,3,16,(selectNum!=ADJUST_MOTOR_PARAM_SPEED));	
+		OLED_ShowChar(32,24,' ',16,(selectNum!=ADJUST_MOTOR_PARAM_SPEED));	
 	}
 	else
 	{
-		OLED_ShowNum(32,24,temp,4,16,(selectNum!=1));	
+		OLED_ShowNum(32,24,temp,4,16,(selectNum!=ADJUST_MOTOR_PARAM_SPEED));	
 	}	
 	temp=torque_list[motorParam->torqueThresholdNum];		
 	if(motorParam->dir==EndoModePositionToggle)
@@ -595,76 +595,76 @@ static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,unsigned char s
 		temp=torque_list[motorParam->atcTorqueThresholdNum];	
 	}	
 	temp2=(temp/10);
-	OLED_ShowNum(40,48,temp2,1,16,(selectNum!=2));//int
-	OLED_ShowChar(48,48,'.',16,(selectNum!=2));
+	OLED_ShowNum(40,48,temp2,1,16,(selectNum!=ADJUST_MOTOR_PARAM_TORQUE));//int
+	OLED_ShowChar(48,48,'.',16,(selectNum!=ADJUST_MOTOR_PARAM_TORQUE));
 	temp2=temp%10;
-	OLED_ShowNum(52,48,temp2,1,16,(selectNum!=2));	
+	OLED_ShowNum(52,48,temp2,1,16,(selectNum!=ADJUST_MOTOR_PARAM_TORQUE));	
 	if(motorParam->dir==EndoModePositionToggle)
 	{
-		OLED_ShowString(116,0,"REC",16,(selectNum!=3));
+		OLED_ShowString(116,0,"REC",16,(selectNum!=ADJUST_MOTOR_PARAM_DIRECTION));
 		//OLED_ShowString(48,44," REC ",16,(selectNum!=3));
 		temp=abs(motorParam->reversePosition);		
 		if(temp<100)
 		{
-			//OLED_ShowString(104,48,"  -",8,(selectNum!=4));
-			OLED_ShowString(96,56,"   ",8,(selectNum!=4));
-			OLED_ShowNum(114,56,temp,2,8,(selectNum!=4));
+			//OLED_ShowString(104,48,"  -",8,(selectNum!=5));
+			OLED_ShowString(96,56,"   ",8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowNum(114,56,temp,2,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
 		}
 		else
 		{
-			//OLED_ShowChar(110,48,'-',8,(selectNum!=4));
-			OLED_ShowChar(102,56,' ',8,(selectNum!=4));
-			OLED_ShowNum(108,56,temp,3,8,(selectNum!=4));
+			//OLED_ShowChar(110,48,'-',8,(selectNum!=5));
+			OLED_ShowChar(102,56,' ',8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowNum(108,56,temp,3,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
 		}
 		OLED_ShowChar(126,56,'/',8,1);
 		temp=abs(motorParam->forwardPosition);	// angle
 		if(temp<100)
 		{			
-			OLED_ShowNum(132,56,temp,2,8,(selectNum!=4));
-			OLED_ShowChar(144,56,' ',8,(selectNum!=4));
+			OLED_ShowNum(132,56,temp,2,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
+			OLED_ShowChar(144,56,' ',8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
 		}
 		else
 		{
-			OLED_ShowNum(132,56,temp,3,8,(selectNum!=5));
+			OLED_ShowNum(132,56,temp,3,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
 		}			
 	}
 	else if(motorParam->dir==EndoModeTorqueATC){//ATC		
-		OLED_ShowString(116,0,"ATC",16,(selectNum!=3));		
+		OLED_ShowString(116,0,"ATC",16,(selectNum!=ADJUST_MOTOR_PARAM_DIRECTION));		
 		temp=abs(motorParam->reversePosition);	// angle
 		if(temp<100)
 		{
-//			OLED_ShowString(104,48,"  -",8,(selectNum!=4));
-			OLED_ShowString(96,56,"   ",8,(selectNum!=4));
-			OLED_ShowNum(114,56,temp,2,8,(selectNum!=4));
+//			OLED_ShowString(104,48,"  -",8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowString(96,56,"   ",8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowNum(114,56,temp,2,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
 		}
 		else
 		{
-//		OLED_ShowChar(110,48,'-',8,(selectNum!=4));
-			OLED_ShowChar(102,56,' ',8,(selectNum!=4));
-			OLED_ShowNum(108,56,temp,3,8,(selectNum!=4));
+//		OLED_ShowChar(110,48,'-',8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowChar(102,56,' ',8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
+			OLED_ShowNum(108,56,temp,3,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_RESERVE));
 		}
 		OLED_ShowChar(126,56,'/',8,1);
 		temp=abs(motorParam->forwardPosition);
 		if(temp<100)
 		{
-			OLED_ShowChar(144,56,' ',8,(selectNum!=4));
-			OLED_ShowNum(132,56,temp,2,8,(selectNum!=4));
+			OLED_ShowChar(144,56,' ',8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
+			OLED_ShowNum(132,56,temp,2,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
 		}
 		else
 		{
-			OLED_ShowNum(132,56,temp,3,8,(selectNum!=5));
+			OLED_ShowNum(132,56,temp,3,8,(selectNum!=ADJUST_MOTOR_PARAM_ANGLE_FORWARD));
 		}				
 	}
 	else if(motorParam->dir==EndoModeSpeedForward)
 	 {//forward
-		OLED_ShowString(116,0,"CW ",16,(selectNum!=3));	
+		OLED_ShowString(116,0,"CW ",16,(selectNum!=ADJUST_MOTOR_PARAM_DIRECTION));	
 		temp=360;	// angle	
 		OLED_ShowNum(120,56,temp,3,8,1);		
 		OLED_ShowString(96,56,"    ",8,1);
 		OLED_ShowString(138,56,"  ",8,1);	
 	}
 	else if(motorParam->dir==EndoModeSpeedReverse){//reserve
-		OLED_ShowString(116,0,"CCW",16,(selectNum!=3));		
+		OLED_ShowString(116,0,"CCW",16,(selectNum!=ADJUST_MOTOR_PARAM_DIRECTION));		
 		temp=360;
 		OLED_ShowNum(120,56,temp,3,8,1);		
 		OLED_ShowString(96,56,"   -",8,1);
@@ -685,7 +685,7 @@ static void OLED_disp_motor_param(SYSTEM_MOTOR_PARAM* motorParam,unsigned char s
   * @param   programNum ,uint8_t select
   * @retval none
   */
-static void OLED_Display_MAIN(unsigned short int programNum ,uint8_t select)
+static void OLED_Display_MAIN(unsigned short int programNum ,ADJUST_select_NUM select)
 {	
 	if(programNum<10) //programNum=10 only apex mode
 	{
@@ -749,7 +749,7 @@ static void SubmenuEntranceMotorOrApex(unsigned char motorOrApex)
   * @param  rec_Signal,enable
   * @retval none
   */
-static void HomePageHandle(task_notify_enum rec_Signal,unsigned char selectNum)
+static void HomePageHandle(task_notify_enum rec_Signal,ADJUST_select_NUM selectNum)
 {
 	error_status err;	
 	if(selectNum==ADJUST_MOTOR_PARAM_PROGRAM_NUM) 
@@ -2251,7 +2251,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 {	
 	static 	unsigned char auto_flag_ap=null_signal;
 	static  unsigned int recTimeMs;
-	static enum EndoMode  motor_run_mode=Max_endoMode;
+	static eEndoMode  motor_run_mode=Max_endoMode;
 	unsigned char sendSignal=null_signal;
 	if(recTimeMs>systemTimeMs) recTimeMs=systemTimeMs;
 	if(sys_param_un.device_param.apexFunctionLoad==1)
@@ -2535,7 +2535,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		}	
     	if(depth<=0)  //
 		{
-			if(systemTimeMs-recTimeMs>100)
+			if(systemTimeMs>100+recTimeMs)
 			{
 				recTimeMs=systemTimeMs;
 				sendSignal=BUZZER_MODE_GC_CONNECT_TEST;
@@ -2544,7 +2544,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		}
 		else if(depth<(3+sys_param_un.device_param.ref_tine))
 		{
-			if(systemTimeMs-recTimeMs>150)
+			if(systemTimeMs>150+recTimeMs)
 			{
 				recTimeMs=systemTimeMs;
 				sendSignal=BUZZER_MODE_GC_OVER;
@@ -2553,7 +2553,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		}		
 		else if(depth==(3+sys_param_un.device_param.ref_tine))
 		{
-			if(systemTimeMs-recTimeMs>400)
+			if(systemTimeMs>400+recTimeMs)
 			{
 				recTimeMs=systemTimeMs;
 				sendSignal=BUZZER_MODE_GC_ZREO_APEX;
@@ -2562,7 +2562,7 @@ static void  GC_ControlMotor(int depth,unsigned int systemTimeMs)
 		}		
 		else if(depth<(16+sys_param_un.device_param.ref_tine))
 		{
-			if(systemTimeMs-recTimeMs>800)
+			if(systemTimeMs>recTimeMs+800)
 			{
 				recTimeMs=systemTimeMs;
 				 sendSignal=BUZZER_MODE_GC_APEX;
@@ -2659,8 +2659,8 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 							motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];								
-							motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10;
-							motor_settings.lower_threshold= motor_settings.upper_threshold*3/5;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
+							motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.10f;
+							motor_settings.lower_threshold= motor_settings.upper_threshold*0.6f;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
 							motor_settings.forward_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition;
 							motor_settings.reverse_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition;
 //							App_MotorControl(MOTOR_SETTING_UPDATE);
@@ -2757,8 +2757,8 @@ static void MotorRunModeAndTorque(unsigned short int realTorque, unsigned int sy
 							motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.reverse_speed=-speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].motorSpeedNum];
 							motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].toggleSpeedNum];
-							motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.10;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//torque_list[torque40_Ncm]*0.10;
-							motor_settings.lower_threshold=motor_settings.upper_threshold*3/5;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
+							motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].recTorqueThresholdNum]*0.10f;//MAX_TORQUE_UUPER_THRESHOLD*0.10;//torque_list[torque40_Ncm]*0.10;
+							motor_settings.lower_threshold=motor_settings.upper_threshold*0.6f;//torque_list[motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].atcTorqueThresholdNum]*0.10;
 							motor_settings.forward_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].forwardPosition;
 							motor_settings.reverse_position=motor_param_un.system_motor_pattern[sys_param_un.device_param.use_p_num].reversePosition;
 							App_MotorControl(MOTOR_MODE_RESTART);	
@@ -3034,7 +3034,8 @@ static void MenuPageTurns(unsigned char pageID)
 void vAppMenuManageTask( void * pvParameters )
 { 
 	task_notify_enum rec_Signal=null_signal;//
-	SCREEN_SETTING_ENUM selectNum=SETTING_FOR,submenuPageNum=SETTING_FOR;
+	ADJUST_select_NUM selectNum=ADJUST_MOTOR_PARAM_PROGRAM_NUM;
+	SCREEN_SETTING_ENUM submenuPageNum=SETTING_FOR;
 	static uint8_t menuPage=MENU_LOGO_PAGE,motor_run_cmd=0,motorOrApexSetFlag=0,exitApexFlag=1;
 	confirm_state  apexMotorStartFlag =TRUE;//apex
 	static unsigned 	short int  batDispValue;
@@ -3152,8 +3153,8 @@ void vAppMenuManageTask( void * pvParameters )
 				else if(rec_Signal==s_button_long_press_signal)
 				{						
 					menuPage = MENU_SYSTEM_SET_PAGE;//to set 
-					submenuPageNum=0;			
-//					motorOrApexSetFlag%=2;	
+					submenuPageNum=SETTING_FOR;
+					//motorOrApexSetFlag%=2;	
 					motorOrApexSetFlag=0;	//濠电姵顔栭崰妤冩暜濡ゅ啰鐭欓柟鐑橆殕閺呮繈鏌曡箛瀣偓鏇㈠几娓氣偓閺岀喖骞戦幇闈涙濠碘槅鍋呴敃銏ゅ蓟閺囥垹閱囨繝闈涙祩濡偛顪冮妶鍛闁绘牕銈稿璇测槈濞嗘垹鐦堥梺鍛婃处閸樺綊鍩€椤掆偓濠€顨篛R						
 					MenuPageTurns(menuPage);
 				}							
@@ -3350,7 +3351,7 @@ void vAppMenuManageTask( void * pvParameters )
 								MenuPageTurns(menuPage);
 							}
 						}											
-					}					
+					}	
 				}						
 			break;
 			case MENU_MOTOR_WORK_PAGE:
@@ -3389,7 +3390,7 @@ void vAppMenuManageTask( void * pvParameters )
 				else if(rec_Signal==s_button_long_press_signal)
 				{								
 					menuPage = MENU_SYSTEM_SET_PAGE;//to set
-					submenuPageNum=0;					
+					submenuPageNum=SETTING_FOR;					
 					MenuPageTurns(menuPage);							
 				}												
 				else

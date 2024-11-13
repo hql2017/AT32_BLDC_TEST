@@ -95,7 +95,7 @@ void MotorParamInit(void)
 		}
 		else
 		{
-			motor_settings.mode=motor_param_un.system_motor_pattern[useNum].dir;
+			motor_settings.mode=(eEndoMode)motor_param_un.system_motor_pattern[useNum].dir;
 		}	
 		if(motor_param_un.system_motor_pattern[useNum].motorSpeedNum	>MAX_spd_Rpm_num) motor_param_un.system_motor_pattern[useNum].motorSpeedNum=MAX_spd_Rpm_num;	
 		if(motor_param_un.system_motor_pattern[useNum].toggleSpeedNum	>spd600_Rpm_num) motor_param_un.system_motor_pattern[useNum].toggleSpeedNum=spd600_Rpm_num;			
@@ -106,25 +106,25 @@ void MotorParamInit(void)
 		motor_settings.reverse_position=motor_param_un.system_motor_pattern[useNum].reversePosition;			
 		if(motor_param_un.system_motor_pattern[useNum].dir==EndoModeTorqueATC)
 		{			
-			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.1;//torque_list[MAX_torque_42_Ncm]*0.1;
+			motor_settings.upper_threshold=torque_list[torque40_Ncm]*0.1f;//torque_list[MAX_torque_42_Ncm]*0.1;
 			if(motor_param_un.system_motor_pattern[useNum].atcTorqueThresholdNum>torque20_Ncm)
 			{
-				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.1;
+				motor_settings.lower_threshold=torque_list[torque20_Ncm]*0.1f;
 			}
 			else
 			{			
-				motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].atcTorqueThresholdNum]*0.10;
+				motor_settings.lower_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].atcTorqueThresholdNum]*0.10f;
 			}			
 		}
 		else if(motor_param_un.system_motor_pattern[useNum].dir==EndoModePositionToggle)
 		{		
-			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].recTorqueThresholdNum]*0.10;
-			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;
+		 	motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].recTorqueThresholdNum]*0.10f;
+			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6f;
 		}
 		else 
 		{					
-			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].torqueThresholdNum]*0.10;			
-			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6;//60%		
+			motor_settings.upper_threshold=torque_list[motor_param_un.system_motor_pattern[useNum].torqueThresholdNum]*0.10f;			
+			motor_settings.lower_threshold=motor_settings.upper_threshold*0.6f;//60%		
 		}			
 		
 		update_settings(&motor_settings);	
