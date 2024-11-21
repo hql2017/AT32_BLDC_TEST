@@ -30,9 +30,9 @@ void APEXInit(void)
 	crm_periph_clock_enable(CRM_GPIOA_PERIPH_CLOCK, TRUE);
 	gpio_default_para_init(&gpio_init_structurt);
 	gpio_init_structurt.gpio_mode = GPIO_MODE_INPUT;
-	gpio_init_structurt.gpio_pins = GPIO_PINS_9;////GPIO_PINS_9;//tx
+	gpio_init_structurt.gpio_pins = APEX_INS_IO;
 	gpio_init_structurt.gpio_pull = GPIO_PULL_UP;
-	gpio_init(GPIOA, &gpio_init_structurt);		
+	gpio_init(APEX_INS_PORT, &gpio_init_structurt);		
 
 	crm_periph_clock_enable(APEX_RELEY_CLOCK, TRUE);
 	gpio_default_para_init(&gpio_init_structurt);
@@ -89,11 +89,11 @@ void gc_in_or_exit(unsigned char inOrExit)
 {
 	if(inOrExit==APEX_GC_IN)
 	{
-		gpio_bits_set(APEX_RELEY_PORT, APEX_RELEY_IO);
+		gpio_bits_reset(APEX_RELEY_PORT, APEX_RELEY_IO);
 	}
 	else 
 	{
-		gpio_bits_reset(APEX_RELEY_PORT, APEX_RELEY_IO);
+		gpio_bits_set(APEX_RELEY_PORT, APEX_RELEY_IO);
 	}		
 }	
 /**

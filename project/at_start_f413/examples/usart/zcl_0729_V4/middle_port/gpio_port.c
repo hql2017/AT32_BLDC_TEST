@@ -117,7 +117,7 @@ void device_power_off(void)
 flag_status get_gc_state(void)
 {
    flag_status re;
-   re=gpio_input_data_bit_read(GPIOA,GPIO_PINS_9);//GPIO_PINS_9);
+   re=gpio_input_data_bit_read(APEX_INS_PORT,APEX_INS_IO);
    return re;
 }
 #endif

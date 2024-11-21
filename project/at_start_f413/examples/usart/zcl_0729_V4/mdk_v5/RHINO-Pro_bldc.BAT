@@ -1,7 +1,4 @@
 SET PATH=C:\Keil_v5\ARM\ARMCC\Bin;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Nordic Semiconductor\nrf5x\bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin;C:\Program Files\dotnet\;C:\Users\nr001\AppData\Local\Microsoft\WindowsApps;C:\Users\nr001\.dotnet\tools;C:\Users\nr001\AppData\Local\Programs\Microsoft VS Code\bin
-SET ARMCC5_ASMOPT=--diag_suppress=9931
-SET ARMCC5_CCOPT=--diag_suppress=9931
-SET ARMCC5_LINKOPT=--diag_suppress=9931
 SET CPU_TYPE=-AT32F413CCU7
 SET CPU_VENDOR=ArteryTek
 SET UV2_TARGET=RHINO-Pro_bldc

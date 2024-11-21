@@ -1,0 +1,6 @@
+r
+halt
+loadfile "d:\纳瑞\A无刷二合一\瑞纳\历史版本\ENDOART_BLDC-20241107-ZHX（土耳其）\project\at_start_f413\examples\usart\zcl_0729_V4\mdk_v5\RHINO-Pro_bldc"
+r
+go
+exit

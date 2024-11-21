@@ -99,7 +99,7 @@ void MotorParamInit(void)
 		}	
 		if(motor_param_un.system_motor_pattern[useNum].motorSpeedNum	>MAX_spd_Rpm_num) motor_param_un.system_motor_pattern[useNum].motorSpeedNum=MAX_spd_Rpm_num;	
 		if(motor_param_un.system_motor_pattern[useNum].toggleSpeedNum	>spd600_Rpm_num) motor_param_un.system_motor_pattern[useNum].toggleSpeedNum=spd600_Rpm_num;			
-		motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[useNum].motorSpeedNum];//目前偏高 速度校准参数工程模式使用 int  param=0.01（0.01偏高1% ；-0.01 偏低1%）
+		motor_settings.forward_speed=speed_list[motor_param_un.system_motor_pattern[useNum].motorSpeedNum];
 		motor_settings.reverse_speed=-motor_settings.forward_speed;			
 		motor_settings.toggle_mode_speed=speed_list[motor_param_un.system_motor_pattern[useNum].toggleSpeedNum];//
 		motor_settings.forward_position=motor_param_un.system_motor_pattern[useNum].forwardPosition;
@@ -205,7 +205,7 @@ unsigned char App_MotorControl(unsigned char cmd)
 			taskEXIT_CRITICAL(); 
 			stop();	
 			foc_flag=0;
-			MotorStatusMonitor(0);	// status monitor 20ms periodic	
+			MotorStatusMonitor(0);	//status monitor 20ms periodic	
 			vTaskDelay(5);//20ms
 			tmr_counter_enable(TMR3, FALSE);	
 			#ifdef LED_INDICATE_ENABLE

@@ -425,26 +425,13 @@ void vApexGC_Task( void * pvParameters )
 void vAppKeyTask( void * pvParameters )
 { 
 	static uint8_t sendKeyMessage=null_signal,buttonLock=1;	
-	uint8_t countTimeMs=10;//scan
-	#ifdef LED_INDICATE_ENABLE			
-		
-		if(get_insert_state()==RESET)
-		{	//insert//charge
-			LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
-			LedFunctionSet(LED_Y ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
-		}
-		else
-		{
-			LedFunctionSet(LED_B ,LED_KEEP_ON,LED_T_IDLE,LED_OFF);
-			LedFunctionSet(LED_Y ,LED_OFF,LED_T_IDLE,LED_OFF);
-		}				
-	#endif
+	uint8_t countTimeMs=10;//scan	
 	for(;;)
 	{		
 		sendKeyMessage= ButtonScan(countTimeMs);//10ms,//get key value			
 		if(buttonLock!=0)	//button lock	
 		{	
-			if(sendKeyMessage!=null_signal||get_insert_state()==RESET||crm_flag_get(CRM_WDT_RESET_FLAG) != RESET)	
+			if(sendKeyMessage!=null_signal||get_insert_state()==SET||crm_flag_get(CRM_WDT_RESET_FLAG) != RESET)	
 			{
 				buttonLock=0;//unlock				
 			}

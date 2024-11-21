@@ -99,9 +99,9 @@ void InsertStatusMonitor(  unsigned int realTimeMs,unsigned int perTimeMs)
 	static unsigned char recValue;	
 	if(perTimeMs!=0&&realTimeMs%perTimeMs==0)	
 	{
-		if(get_insert_state()==RESET) 
+		if(get_insert_state()==SET) 
 		{		
-			if(get_charge_state()==SET)
+			if(get_charge_state()==RESET)
 			{
 				value=BAT_STATUS_CHARGING;
 			}
@@ -170,10 +170,18 @@ void vAppPeriodicTask( void * pvParameters )
 { 	
 	void *pMalloc=NULL;
 	static unsigned int countPeriodicTimeMs=5;//		
-#ifdef LED_INDICATE_ENABLE		
-	LedFunctionSet(LED_Y ,LED_OFF,0,LED_KEEP_ON);
-	LedFunctionSet(LED_B ,LED_KEEP_ON,0,LED_KEEP_ON);		
-#endif	
+	#ifdef LED_INDICATE_ENABLE		
+	if(get_insert_state()==SET)
+	{	//insert//charge
+		LedFunctionSet(LED_B ,LED_OFF,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
+		LedFunctionSet(LED_Y ,500,LED_T_HIGH_PRIORITY,LED_KEEP_ON);
+	}
+	else
+	{
+		LedFunctionSet(LED_B ,LED_KEEP_ON,LED_T_IDLE,LED_OFF);
+		LedFunctionSet(LED_Y ,LED_OFF,LED_T_IDLE,LED_OFF);
+	}				
+	#endif
 	for(;;)
 	{	
 		#ifdef WDT_ENABLE

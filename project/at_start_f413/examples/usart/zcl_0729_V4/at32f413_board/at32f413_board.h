@@ -48,7 +48,6 @@ extern "C" {
 #include "SEGGER_RTT.h"
 #endif 
 
-
 #ifndef WDT_ENABLE	
 	#define WDT_ENABLE
 	#define EVENT_BIT0  (1<<0)
@@ -72,7 +71,6 @@ extern "C" {
 #define SYSTEM_CLOCK_FREQUENCY  200000000U//系统时钟频率
 #define SYSTEM_TIME_BASE_MS 5U//系统时钟计数单位ms
 
-
 #ifndef  APEX_FUNCTION_EBABLE //二合一PDO-pro
 #define  APEX_FUNCTION_EBABLE  
 #define  APEX_GC_IN    0
@@ -81,6 +79,11 @@ extern "C" {
 #define  APEX_RELEY_CLOCK  CRM_GPIOA_PERIPH_CLOCK
 #define  APEX_RELEY_PORT   GPIOA
 #define  APEX_RELEY_IO     GPIO_PINS_12
+
+
+#define  APEX_INS_CLOCK  CRM_GPIOA_PERIPH_CLOCK
+#define  APEX_INS_PORT   GPIOA
+#define  APEX_INS_IO     GPIO_PINS_10//RX
 
 #define  APEX_PWM_CLOCK  	 CRM_GPIOA_PERIPH_CLOCK
 #define  APEX_PWM_PORT   		GPIOA

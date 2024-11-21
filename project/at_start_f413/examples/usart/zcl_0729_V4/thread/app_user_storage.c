@@ -25,8 +25,8 @@ void default_para_write_buff(void)
 	sys_param_un.device_param.apexFunctionLoad=0;		
 	if(sys_param_un.device_param.apex_tine_400Value==0||sys_param_un.device_param.apex_tine_400Value==0xFFFF)//
 	{
-		sys_param_un.device_param.gc_ref_rate=480;//670;//
-		sys_param_un.device_param.empty_rate=720;//1000;//no care
+		sys_param_un.device_param.gc_ref_rate=670;//480
+		sys_param_un.device_param.empty_rate=1000;//720;//no care
 		sys_param_un.device_param.apex_tine_400Value=2400;
 	}
 //	else {;} //不改变  
@@ -141,7 +141,6 @@ void default_para_write_buff(void)
 	motor_param_un.system_motor_pattern[10].atcTorqueThresholdNum=torque20_Ncm;//low = up *0.6
 //100,150,200,250,300,350,400,450,500,550,600,800,1000,1200,1500,1800,2000,2200,2500
 }
-
 void para_print(void)
 {
 
@@ -150,7 +149,6 @@ void para_print(void)
 	SEGGER_RTT_printf(0,"*******sys_para******\r\n",0);
 	SEGGER_RTT_printf(0,"W_flag %d , empty_rate %d , use_hand %d ,\r\n use_p_num %d , \
 	 apical_action_flag %d , auto_start_flag %d ,\r\n mt_i %d , auto_stop_flag %d , ref_rate %d , tine_400V %d ,ref_tine %d\r\n", 
-
 	sys_param_un.device_param.W_flag,
   sys_param_un.device_param.empty_rate,  
   sys_param_un.device_param.use_hand,  
